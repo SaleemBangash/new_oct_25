@@ -1,11 +1,12 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, file_names, unnecessary_new
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
+import 'package:new_oct_25/favourite.dart';
 import './Home.dart';
 import 'package:adobe_xd/page_link.dart';
-import './Detail.dart';
+
 import './Cart.dart';
-import './Iconawesomeheart.dart';
+// import './Iconawesomeheart.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 //import 'package:favorite_button/favorite_button.dart';
 
@@ -54,7 +55,7 @@ class _WishlistState extends State<Wishlist> {
             child: Text(
               "25OCT",
               style: TextStyle(
-                  fontSize: text * 40,
+                  fontSize: text * 25,
                   fontWeight: FontWeight.bold,
                   color: Colors.black),
             ),
@@ -64,7 +65,7 @@ class _WishlistState extends State<Wishlist> {
             child: Text(
               "Your Favourite",
               style: TextStyle(
-                  fontSize: text * 30,
+                  fontSize: text * 20,
                   fontWeight: FontWeight.bold,
                   color: Colors.black),
             ),
@@ -113,7 +114,7 @@ class _WishlistState extends State<Wishlist> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 290, top: 10),
-                        child: Iconawesomeheart(),
+                        child: Favourite(),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 130, top: 50),
@@ -132,7 +133,7 @@ class _WishlistState extends State<Wishlist> {
                               padding: const EdgeInsets.only(left: 10),
                               child: Icon(
                                 Icons.delete_outline_rounded,
-                                size: 30,
+                                size: 20,
                               ),
                             ),
                             Padding(
@@ -212,7 +213,7 @@ class _WishlistState extends State<Wishlist> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 290, top: 10),
-                        child: Iconawesomeheart(),
+                        child: Favourite(),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 130, top: 50),
@@ -231,7 +232,7 @@ class _WishlistState extends State<Wishlist> {
                               padding: const EdgeInsets.only(left: 10),
                               child: Icon(
                                 Icons.delete_outline_rounded,
-                                size: 30,
+                                size: 20,
                               ),
                             ),
                             Padding(
@@ -310,7 +311,7 @@ class _WishlistState extends State<Wishlist> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 290, top: 10),
-                        child: Iconawesomeheart(),
+                        child: Favourite(),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 130, top: 50),
@@ -329,7 +330,7 @@ class _WishlistState extends State<Wishlist> {
                               padding: const EdgeInsets.only(left: 10),
                               child: Icon(
                                 Icons.delete_outline_rounded,
-                                size: 30,
+                                size: 20,
                               ),
                             ),
                             Padding(

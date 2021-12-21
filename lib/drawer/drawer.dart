@@ -3,13 +3,17 @@
 import 'package:adobe_xd/page_link.dart';
 import 'package:flutter/material.dart';
 import 'package:new_oct_25/Location.dart';
-import 'package:new_oct_25/Register1.dart';
-import 'package:new_oct_25/Signin2.dart';
+// import 'package:new_oct_25/Register1.dart';
+// import 'package:new_oct_25/Signin2.dart';
+import 'package:new_oct_25/drawer/settings.dart';
 
 import 'package:new_oct_25/new.dart';
-import 'package:new_oct_25/settings.dart';
+// import 'package:new_oct_25/settings.dart';
 
-import 'Home.dart';
+import '../Home.dart';
+// import 'Home.dart';
+import 'Register1.dart';
+import 'Signin2.dart';
 
 class MyDrawer extends StatefulWidget {
   const MyDrawer({Key? key}) : super(key: key);
@@ -125,7 +129,7 @@ class _MyDrawerState extends State<MyDrawer> {
                     title: Text(
                       "SignIn",
                       style: TextStyle(
-                          fontSize: text * 30, fontWeight: FontWeight.bold),
+                          fontSize: text * 20, fontWeight: FontWeight.bold),
                     )),
               ),
             ),
@@ -142,7 +146,24 @@ class _MyDrawerState extends State<MyDrawer> {
                     title: Text(
                       "Registration",
                       style: TextStyle(
-                          fontSize: text * 30, fontWeight: FontWeight.bold),
+                          fontSize: text * 20, fontWeight: FontWeight.bold),
+                    )),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                onTap: () => Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => New())),
+                child: ListTile(
+                    leading: Icon(
+                      Icons.headphones,
+                      size: 40,
+                    ),
+                    title: Text(
+                      "Customer Care",
+                      style: TextStyle(
+                          fontSize: text * 20, fontWeight: FontWeight.bold),
                     )),
               ),
             ),
@@ -159,7 +180,7 @@ class _MyDrawerState extends State<MyDrawer> {
                     title: Text(
                       "Branches",
                       style: TextStyle(
-                          fontSize: text * 30, fontWeight: FontWeight.bold),
+                          fontSize: text * 20, fontWeight: FontWeight.bold),
                     )),
               ),
             ),
@@ -176,7 +197,7 @@ class _MyDrawerState extends State<MyDrawer> {
                     title: Text(
                       "Settings",
                       style: TextStyle(
-                          fontSize: text * 30, fontWeight: FontWeight.bold),
+                          fontSize: text * 20, fontWeight: FontWeight.bold),
                     )),
               ),
             ),

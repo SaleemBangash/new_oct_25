@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:new_oct_25/Home.dart';
 import 'package:new_oct_25/new.dart';
 // import 'package:newoct/Home.dart';
@@ -8,6 +9,8 @@ import 'package:new_oct_25/new.dart';
 // import 'package:newoct/snacks/kurkure.dart';
 
 void main() {
+  // SystemChrome.setPreferredOrientations(
+  //     [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
   runApp(const MyApp());
 }
 

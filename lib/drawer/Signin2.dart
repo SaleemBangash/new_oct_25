@@ -8,13 +8,13 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 //import 'package:newoct/component32.dart';
-import './Register1.dart';
+// import './Register1.dart';
 import 'package:adobe_xd/page_link.dart';
-import './Home.dart';
-import './Component31.dart';
+import '../Home.dart';
+// import './Component31.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'component32.dart';
+// import 'component32.dart';
 
 class Signin2 extends StatefulWidget {
   Signin2({
@@ -145,7 +145,8 @@ class _Signin2State extends State<Signin2> {
 
                       //StadiumBorder(),
                       // side: BorderSide(width: 6),
-                      minimumSize: Size(220, 40),
+                      minimumSize: Size(350, 40),
+                      maximumSize: Size(360, 40),
                       backgroundColor: Color(0xffbaa378)),
                   onPressed: () {
                     showDialog(
@@ -382,7 +383,7 @@ class _Signin2State extends State<Signin2> {
                                           child: Text(
                                             "verify",
                                             style: TextStyle(
-                                                fontSize: text * 18,
+                                                fontSize: text * 15,
                                                 color: Colors.black,
                                                 fontWeight: FontWeight.bold),
                                           ),
@@ -394,7 +395,11 @@ class _Signin2State extends State<Signin2> {
 
                                               //StadiumBorder(),
                                               // side: BorderSide(width: 6),
-                                              minimumSize: Size(150, 40),
+                                              minimumSize: Size(120, 30),
+                                              maximumSize: Size(
+                                                160,
+                                                30,
+                                              ),
                                               backgroundColor:
                                                   Color(0xffbaa378)),
                                           onPressed: () => Navigator.push(

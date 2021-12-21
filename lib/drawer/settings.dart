@@ -10,7 +10,7 @@ import 'package:adobe_xd/page_link.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'Home.dart';
+import '../Home.dart';
 
 import 'Signin2.dart';
 import 'drawer.dart';
@@ -113,8 +113,8 @@ class _settingsState extends State<settings> {
 
                           //StadiumBorder(),
                           // side: BorderSide(width: 6),
-                          minimumSize: Size(240, 40),
-                          maximumSize: Size(250, 40),
+                          minimumSize: Size(350, 40),
+                          maximumSize: Size(360, 40),
                           backgroundColor: Color(0xffbaa378)),
                       onPressed: () {
                         showModalBottomSheet(
@@ -146,7 +146,7 @@ class _settingsState extends State<settings> {
                                     padding: const EdgeInsets.all(8.0),
                                     child: Text(
                                       "Select Your Language",
-                                      style: TextStyle(fontSize: text * 25),
+                                      style: TextStyle(fontSize: text * 18),
                                     ),
                                   ),
                                   Text(
@@ -237,7 +237,7 @@ class _settingsState extends State<settings> {
                                               child: Text(
                                                 "Select",
                                                 style: TextStyle(
-                                                  fontSize: text * 15,
+                                                  fontSize: text * 10,
                                                   //color: Colors.black,
                                                   //fontWeight: FontWeight.bold
                                                 ),
@@ -250,7 +250,8 @@ class _settingsState extends State<settings> {
 
                                                   //StadiumBorder(),
                                                   // side: BorderSide(width: 6),
-                                                  minimumSize: Size(50, 10),
+                                                  minimumSize: Size(40, 20),
+                                                  maximumSize: Size(60, 20),
                                                   backgroundColor:
                                                       Colors.grey[500]),
                                               onPressed: () {
@@ -325,8 +326,8 @@ class _settingsState extends State<settings> {
 
                       //StadiumBorder(),
                       // side: BorderSide(width: 6),
-                      minimumSize: Size(220, 40),
-                      maximumSize: Size(270, 40),
+                      minimumSize: Size(350, 40),
+                      maximumSize: Size(360, 40),
                       backgroundColor: Color(0xffbaa378)),
                   onPressed: () {
                     Navigator.push(context,
@@ -347,8 +348,8 @@ class _settingsState extends State<settings> {
 
                       //StadiumBorder(),
                       // side: BorderSide(width: 6),
-                      minimumSize: Size(240, 40),
-                      maximumSize: Size(250, 40),
+                      minimumSize: Size(350, 40),
+                      maximumSize: Size(360, 40),
                       backgroundColor: Color(0xffbaa378)),
                   onPressed: () {
                     Navigator.push(context,

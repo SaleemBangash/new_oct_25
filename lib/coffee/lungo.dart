@@ -2,11 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import 'package:new_oct_25/coffee1.dart';
+import 'package:new_oct_25/favourite.dart';
+import 'package:new_oct_25/tabBar/coffee1.dart';
 import 'dart:ui' as ui;
 import '../Cart.dart';
 import 'package:adobe_xd/page_link.dart';
-import '../Component11.dart';
+// import '../Component11.dart';
 import '../Iconawesomeheart.dart';
 import '../Home.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -21,6 +22,7 @@ class Lungo extends StatefulWidget {
 }
 
 class _LungoState extends State<Lungo> {
+  bool _type = false;
   bool _hasBeenPressed = false;
   bool _isBeenPressed = false;
   bool _wasBeenPressed = false;
@@ -75,6 +77,10 @@ class _LungoState extends State<Lungo> {
                   ],
                 ),
               ),
+              // Padding(
+              //   padding: const EdgeInsets.only(left: 300, top: 240),
+              //   child: Iconawesomeheart(),
+              // ),
               Padding(
                   padding: const EdgeInsets.only(top: 280),
                   child: ClipRect(
@@ -95,20 +101,28 @@ class _LungoState extends State<Lungo> {
                         ),
                         child: Column(children: [
                           Padding(
-                            padding: const EdgeInsets.only(top: 20, right: 210),
-                            child: Text(
-                              'Details',
-                              style: TextStyle(
-                                fontFamily: 'Segoe UI',
-                                fontSize: text * 30,
-                                color: const Color(0xff668079),
-                                fontWeight: FontWeight.bold,
-                              ),
-                              textAlign: TextAlign.left,
+                            padding: const EdgeInsets.only(
+                              top: 20,
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Text(
+                                  'Details',
+                                  style: TextStyle(
+                                    fontFamily: 'Segoe UI',
+                                    fontSize: text * 30,
+                                    color: const Color(0xff668079),
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  textAlign: TextAlign.left,
+                                ),
+                                Favourite()
+                              ],
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(top: 20, right: 180),
+                            padding: const EdgeInsets.only(top: 20, right: 160),
                             child: Text(
                               'Lungo Coffee',
                               style: TextStyle(
@@ -143,15 +157,15 @@ class _LungoState extends State<Lungo> {
                                           textColor: Color(0xffbaa378),
                                           // 2
                                           color: _hasBeenPressed
-                                              ? Colors.white70
-                                              : Colors.black,
+                                              ? Colors.black
+                                              : Colors.white70,
                                           // 3
                                           onPressed: () => {
                                             setState(() {
                                               _hasBeenPressed =
                                                   !_hasBeenPressed;
-                                              _isBeenPressed = true;
-                                              _wasBeenPressed = true;
+                                              _isBeenPressed = false;
+                                              _wasBeenPressed = false;
                                             })
                                           },
                                         ),
@@ -173,14 +187,14 @@ class _LungoState extends State<Lungo> {
                                           textColor: Color(0xffbaa378),
                                           // 2
                                           color: _isBeenPressed
-                                              ? Colors.white70
-                                              : Colors.black,
+                                              ? Colors.black
+                                              : Colors.white70,
                                           // 3
                                           onPressed: () => {
                                             setState(() {
                                               _isBeenPressed = !_isBeenPressed;
-                                              _hasBeenPressed = true;
-                                              _wasBeenPressed = true;
+                                              _hasBeenPressed = false;
+                                              _wasBeenPressed = false;
                                             })
                                           },
                                         ),
@@ -201,15 +215,15 @@ class _LungoState extends State<Lungo> {
                                           textColor: Color(0xffbaa378),
                                           // 2
                                           color: _wasBeenPressed
-                                              ? Colors.white70
-                                              : Colors.black,
+                                              ? Colors.black
+                                              : Colors.white70,
                                           // 3
                                           onPressed: () => {
                                             setState(() {
                                               _wasBeenPressed =
                                                   !_wasBeenPressed;
-                                              _hasBeenPressed = true;
-                                              _isBeenPressed = true;
+                                              _hasBeenPressed = false;
+                                              _isBeenPressed = false;
                                             })
                                           },
                                         ),

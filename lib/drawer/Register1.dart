@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import './Signin2.dart';
 import 'package:adobe_xd/page_link.dart';
-import './Home.dart';
-import './Component31.dart';
+import '../Home.dart';
+// import './Component31.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Register1 extends StatefulWidget {
@@ -175,7 +175,8 @@ class _Register1State extends State<Register1> {
 
                       //StadiumBorder(),
                       // side: BorderSide(width: 6),
-                      minimumSize: Size(220, 40),
+                      minimumSize: Size(350, 40),
+                      maximumSize: Size(360, 40),
                       backgroundColor: Color(0xffbaa378)),
                   onPressed: () {
                     Navigator.push(context,

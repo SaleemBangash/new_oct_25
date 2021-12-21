@@ -35,6 +35,10 @@ class Checkout extends StatefulWidget {
 class _CheckoutState extends State<Checkout> {
   int _itemCount = 0;
   int _itemCountt = 0;
+  bool _hasBeenPressed = false;
+  bool _hadBeenPressed = false;
+  bool _wasBeenPressed = false;
+  bool _isBeenPressed = false;
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -68,7 +72,7 @@ class _CheckoutState extends State<Checkout> {
             child: Text(
               "25OCT",
               style: TextStyle(
-                  fontSize: text * 40,
+                  fontSize: text * 25,
                   fontWeight: FontWeight.bold,
                   color: Color(0xffbaa378)),
             ),
@@ -78,7 +82,7 @@ class _CheckoutState extends State<Checkout> {
             child: Text(
               "CheckOut",
               style: TextStyle(
-                  fontSize: text * 30,
+                  fontSize: text * 20,
                   fontWeight: FontWeight.bold,
                   color: Colors.black),
             ),
@@ -118,7 +122,9 @@ class _CheckoutState extends State<Checkout> {
                               children: [
                                 Text(
                                   "Vanilla Flavor",
-                                  style: TextStyle(fontSize: text * 20),
+                                  style: TextStyle(
+                                      // fontSize: text * 17
+                                      ),
                                 ),
                               ],
                             ),
@@ -131,20 +137,23 @@ class _CheckoutState extends State<Checkout> {
                                     const EdgeInsets.only(top: 20, left: 10),
                                 child: Text(
                                   "Small",
-                                  style: TextStyle(fontSize: text * 20),
+                                  style: TextStyle(
+                                      // fontSize: text * 17
+                                      ),
                                 ),
                               ),
                               Padding(
                                 padding:
-                                    const EdgeInsets.only(top: 20, left: 30),
+                                    const EdgeInsets.only(top: 20, left: 60),
                                 child: ElevatedButton(
                                   child: Center(
                                     child: Text(
                                       "      Add\nDescription",
                                       style: TextStyle(
-                                          fontSize: text * 18,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.bold),
+                                        // fontSize: text * 15,
+                                        color: Colors.black,
+                                        // fontWeight: FontWeight.bold
+                                      ),
                                     ),
                                   ),
                                   style: TextButton.styleFrom(
@@ -154,7 +163,8 @@ class _CheckoutState extends State<Checkout> {
 
                                       //StadiumBorder(),
                                       // side: BorderSide(width: 6),
-                                      //minimumSize: Size(100, 10),
+                                      // minimumSize: Size(60, 40),
+                                      // maximumSize: Size(120, 40),
                                       backgroundColor: Color(0xffbaa378)),
                                   onPressed: () {
                                     showModalBottomSheet(
@@ -189,13 +199,15 @@ class _CheckoutState extends State<Checkout> {
                                                 child: Text(
                                                   "Select Your Language",
                                                   style: TextStyle(
-                                                      fontSize: text * 25),
+                                                      // fontSize: text * 16
+                                                      ),
                                                 ),
                                               ),
                                               Text(
                                                 "Build Your Understanding",
                                                 style: TextStyle(
-                                                    fontSize: text * 15),
+                                                    // fontSize: text * 15
+                                                    ),
                                               ),
                                               SizedBox(
                                                 height: 10,
@@ -214,24 +226,62 @@ class _CheckoutState extends State<Checkout> {
                                                                       20)),
                                                       child: Row(
                                                         children: [
+                                                          Container(
+                                                            decoration:
+                                                                BoxDecoration(
+                                                                    shape: BoxShape
+                                                                        .circle),
+                                                            width: width / 40,
+                                                            height: height / 70,
+                                                            child: RaisedButton(
+                                                              shape: RoundedRectangleBorder(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              40)),
+                                                              child: new Text(
+                                                                '',
+                                                              ),
+                                                              textColor: Color(
+                                                                  0xffbaa378),
+                                                              // 2
+                                                              color: _hasBeenPressed
+                                                                  ? Colors
+                                                                      .white70
+                                                                  : Colors
+                                                                      .green,
+                                                              // 3
+                                                              onPressed: () => {
+                                                                setState(() {
+                                                                  _hasBeenPressed =
+                                                                      !_hasBeenPressed;
+                                                                  _isBeenPressed =
+                                                                      true;
+                                                                  _wasBeenPressed =
+                                                                      true;
+                                                                  _hadBeenPressed =
+                                                                      true;
+                                                                })
+                                                              },
+                                                            ),
+                                                          ),
                                                           Column(
                                                             children: [
                                                               Padding(
                                                                 padding:
                                                                     const EdgeInsets
                                                                             .only(
-                                                                        top: 13,
+                                                                        top: 20,
                                                                         left:
                                                                             5),
                                                                 child: Text(
                                                                   "Add some toppings",
                                                                   style: TextStyle(
-                                                                      fontSize:
-                                                                          text *
-                                                                              18,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .bold),
+                                                                      // fontSize:
+                                                                      //     text *
+                                                                      //         14,
+                                                                      // fontWeight: FontWeight.bold
+                                                                      ),
                                                                 ),
                                                               )
                                                             ],
@@ -257,9 +307,10 @@ class _CheckoutState extends State<Checkout> {
                                                                 _itemCountt
                                                                     .toString(),
                                                                 style: TextStyle(
-                                                                    fontSize:
-                                                                        text *
-                                                                            20),
+                                                                    // fontSize:
+                                                                    //     text *
+                                                                    //         15
+                                                                    ),
                                                               ),
                                                               new IconButton(
                                                                   icon:
@@ -284,7 +335,7 @@ class _CheckoutState extends State<Checkout> {
                                                   Padding(
                                                     padding:
                                                         const EdgeInsets.only(
-                                                            left: 260, top: 8),
+                                                            left: 250, top: 8),
                                                     child: Column(
                                                       children: [
                                                         Padding(
@@ -296,11 +347,12 @@ class _CheckoutState extends State<Checkout> {
                                                           child: Text(
                                                             "+7.00SR",
                                                             style: TextStyle(
-                                                                fontSize:
-                                                                    text * 15,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold),
+                                                                // fontSize:
+                                                                //     text * 12,
+                                                                // fontWeight:
+                                                                //     FontWeight
+                                                                //         .bold
+                                                                ),
                                                           ),
                                                         ),
                                                       ],
@@ -325,24 +377,62 @@ class _CheckoutState extends State<Checkout> {
                                                                       20)),
                                                       child: Row(
                                                         children: [
+                                                          Container(
+                                                            decoration:
+                                                                BoxDecoration(
+                                                                    shape: BoxShape
+                                                                        .circle),
+                                                            width: width / 40,
+                                                            height: height / 70,
+                                                            child: RaisedButton(
+                                                              shape: RoundedRectangleBorder(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              40)),
+                                                              child: new Text(
+                                                                '',
+                                                              ),
+                                                              textColor: Color(
+                                                                  0xffbaa378),
+                                                              // 2
+                                                              color: _hasBeenPressed
+                                                                  ? Colors
+                                                                      .white70
+                                                                  : Colors
+                                                                      .green,
+                                                              // 3
+                                                              onPressed: () => {
+                                                                setState(() {
+                                                                  _hasBeenPressed =
+                                                                      !_hasBeenPressed;
+                                                                  _isBeenPressed =
+                                                                      true;
+                                                                  _wasBeenPressed =
+                                                                      true;
+                                                                  _hadBeenPressed =
+                                                                      true;
+                                                                })
+                                                              },
+                                                            ),
+                                                          ),
                                                           Column(
                                                             children: [
                                                               Padding(
                                                                 padding:
                                                                     const EdgeInsets
                                                                             .only(
-                                                                        top: 13,
+                                                                        top: 20,
                                                                         left:
                                                                             5),
                                                                 child: Text(
                                                                   "Add extra scopes",
                                                                   style: TextStyle(
-                                                                      fontSize:
-                                                                          text *
-                                                                              18,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .bold),
+                                                                      // fontSize:
+                                                                      //     text *
+                                                                      //         14,
+                                                                      // fontWeight: FontWeight.bold
+                                                                      ),
                                                                 ),
                                                               )
                                                             ],
@@ -374,9 +464,10 @@ class _CheckoutState extends State<Checkout> {
                                                                   _itemCountt
                                                                       .toString(),
                                                                   style: TextStyle(
-                                                                      fontSize:
-                                                                          text *
-                                                                              20),
+                                                                      // fontSize:
+                                                                      //     text *
+                                                                      //         15
+                                                                      ),
                                                                 ),
                                                                 new IconButton(
                                                                     icon:
@@ -401,7 +492,7 @@ class _CheckoutState extends State<Checkout> {
                                                   Padding(
                                                     padding:
                                                         const EdgeInsets.only(
-                                                            left: 260, top: 8),
+                                                            left: 250, top: 8),
                                                     child: Column(
                                                       children: [
                                                         Padding(
@@ -413,11 +504,12 @@ class _CheckoutState extends State<Checkout> {
                                                           child: Text(
                                                             "+7.00SR",
                                                             style: TextStyle(
-                                                                fontSize:
-                                                                    text * 15,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold),
+                                                                // fontSize:
+                                                                //     text * 12,
+                                                                // fontWeight:
+                                                                //     FontWeight
+                                                                //         .bold
+                                                                ),
                                                           ),
                                                         ),
                                                       ],
@@ -442,24 +534,62 @@ class _CheckoutState extends State<Checkout> {
                                                                       20)),
                                                       child: Row(
                                                         children: [
+                                                          Container(
+                                                            decoration:
+                                                                BoxDecoration(
+                                                                    shape: BoxShape
+                                                                        .circle),
+                                                            width: width / 40,
+                                                            height: height / 70,
+                                                            child: RaisedButton(
+                                                              shape: RoundedRectangleBorder(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              40)),
+                                                              child: new Text(
+                                                                '',
+                                                              ),
+                                                              textColor: Color(
+                                                                  0xffbaa378),
+                                                              // 2
+                                                              color: _hasBeenPressed
+                                                                  ? Colors
+                                                                      .white70
+                                                                  : Colors
+                                                                      .green,
+                                                              // 3
+                                                              onPressed: () => {
+                                                                setState(() {
+                                                                  _hasBeenPressed =
+                                                                      !_hasBeenPressed;
+                                                                  _isBeenPressed =
+                                                                      true;
+                                                                  _wasBeenPressed =
+                                                                      true;
+                                                                  _hadBeenPressed =
+                                                                      true;
+                                                                })
+                                                              },
+                                                            ),
+                                                          ),
                                                           Column(
                                                             children: [
                                                               Padding(
                                                                 padding:
                                                                     const EdgeInsets
                                                                             .only(
-                                                                        top: 13,
+                                                                        top: 20,
                                                                         left:
                                                                             5),
                                                                 child: Text(
                                                                   "Add extra flavor",
                                                                   style: TextStyle(
-                                                                      fontSize:
-                                                                          text *
-                                                                              18,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .bold),
+                                                                      // fontSize:
+                                                                      //     // text *
+                                                                      //     //     14,
+                                                                      // fontWeight: FontWeight.bold
+                                                                      ),
                                                                 ),
                                                               )
                                                             ],
@@ -491,9 +621,10 @@ class _CheckoutState extends State<Checkout> {
                                                                   _itemCountt
                                                                       .toString(),
                                                                   style: TextStyle(
-                                                                      fontSize:
-                                                                          text *
-                                                                              20),
+                                                                      // fontSize:
+                                                                      //     text *
+                                                                      //         15
+                                                                      ),
                                                                 ),
                                                                 new IconButton(
                                                                     icon:
@@ -518,7 +649,7 @@ class _CheckoutState extends State<Checkout> {
                                                   Padding(
                                                     padding:
                                                         const EdgeInsets.only(
-                                                            left: 260, top: 8),
+                                                            left: 250, top: 8),
                                                     child: Column(
                                                       children: [
                                                         Padding(
@@ -530,11 +661,12 @@ class _CheckoutState extends State<Checkout> {
                                                           child: Text(
                                                             "+7.00SR",
                                                             style: TextStyle(
-                                                                fontSize:
-                                                                    text * 15,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold),
+                                                                // fontSize:
+                                                                //     // text * 12,
+                                                                // fontWeight:
+                                                                //     FontWeight
+                                                                //         .bold
+                                                                ),
                                                           ),
                                                         ),
                                                       ],
@@ -546,82 +678,103 @@ class _CheckoutState extends State<Checkout> {
                                                 height: 10,
                                               ),
                                               Container(
-                                                width: width / 1.5,
-                                                height: height / 6.5,
+                                                width: width / 1.2,
+                                                height: height / 6.7,
                                                 decoration: BoxDecoration(
                                                     color: Color(0xffbaa378),
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             20)),
-                                                child: Column(
-                                                  // mainAxisAlignment:
-                                                  //     MainAxisAlignment.start,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          const EdgeInsets.only(
-                                                              right: 40,
-                                                              top: 10),
-                                                      child: Text(
-                                                        "Add some extra toppings\non ice cream with",
-                                                        style: TextStyle(
-                                                            fontSize: text * 15,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .bold),
+                                                child: Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          right: 100),
+                                                  child: Column(
+                                                    // mainAxisAlignment:
+                                                    //     MainAxisAlignment.start,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .only(
+                                                                right: 50,
+                                                                top: 10),
+                                                        child: Text(
+                                                          "Add some extra toppings\non ice cream with",
+                                                          style: TextStyle(
+                                                            // fontSize:
+                                                            //     // text * 10,
+                                                            color: Colors.white,
+                                                            // fontWeight:
+                                                            //     FontWeight
+                                                            //         .bold
+                                                          ),
+                                                        ),
                                                       ),
-                                                    ),
-                                                    Padding(
-                                                      padding:
-                                                          const EdgeInsets.only(
-                                                              right: 130,
-                                                              top: 5),
-                                                      child: Text(
-                                                        "Hot fudges",
-                                                        style: TextStyle(
-                                                            fontSize: text * 15,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .bold),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .only(
+                                                                right: 130,
+                                                                top: 5),
+                                                        child: Text(
+                                                          "Hot fudges",
+                                                          style: TextStyle(
+                                                            // fontSize:
+                                                            //     text * 10,
+                                                            color: Colors.white,
+                                                            // fontWeight:
+                                                            //     FontWeight
+                                                            //         .bold
+                                                          ),
+                                                        ),
                                                       ),
-                                                    ),
-                                                    Padding(
-                                                      padding:
-                                                          const EdgeInsets.only(
-                                                              right: 140,
-                                                              top: 5),
-                                                      child: Text(
-                                                        "Sprinkles",
-                                                        style: TextStyle(
-                                                            fontSize: text * 15,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .bold),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .only(
+                                                                right: 140,
+                                                                top: 5),
+                                                        child: Text(
+                                                          "Sprinkles",
+                                                          style: TextStyle(
+                                                            // fontSize:
+                                                            //     text * 10,
+                                                            color: Colors.white,
+                                                            // fontWeight:
+                                                            //     FontWeight
+                                                            //         .bold
+                                                          ),
+                                                        ),
                                                       ),
-                                                    ),
-                                                    Padding(
-                                                      padding:
-                                                          const EdgeInsets.only(
-                                                              right: 150,
-                                                              top: 5),
-                                                      child: Text(
-                                                        "Carame",
-                                                        style: TextStyle(
-                                                            fontSize: text * 15,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .bold),
-                                                      ),
-                                                    )
-                                                  ],
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .only(
+                                                                right: 150,
+                                                                top: 5),
+                                                        child: Text(
+                                                          "Carame",
+                                                          style: TextStyle(
+                                                            // fontSize:
+                                                            //     text * 10,
+                                                            color: Colors.white,
+                                                            // fontWeight:
+                                                            //     FontWeight
+                                                            //         .bold
+                                                          ),
+                                                        ),
+                                                      )
+                                                    ],
+                                                  ),
                                                 ),
                                               ),
                                               Padding(
                                                 padding: const EdgeInsets.only(
-                                                    right: 60),
+                                                    left: 10, right: 10),
                                                 child: Row(
                                                   mainAxisAlignment:
-                                                      MainAxisAlignment.end,
+                                                      MainAxisAlignment.center,
                                                   children: [
                                                     Padding(
                                                       padding:
@@ -631,8 +784,8 @@ class _CheckoutState extends State<Checkout> {
                                                         child: Text(
                                                           "Add",
                                                           style: TextStyle(
-                                                              fontSize:
-                                                                  text * 18,
+                                                              // fontSize:
+                                                              //     // text * 10,
                                                               color: Colors
                                                                   .grey[300],
                                                               fontWeight:
@@ -649,8 +802,11 @@ class _CheckoutState extends State<Checkout> {
                                                                 //StadiumBorder(),
                                                                 // side: BorderSide(width: 6),
                                                                 minimumSize:
-                                                                    Size(
-                                                                        50, 10),
+                                                                    Size(140,
+                                                                        20),
+                                                                maximumSize:
+                                                                    Size(150,
+                                                                        20),
                                                                 backgroundColor:
                                                                     Color(
                                                                         0xffbaa378)),
@@ -668,7 +824,7 @@ class _CheckoutState extends State<Checkout> {
                                                       child: Text(
                                                         "Cancel",
                                                         style: TextStyle(
-                                                            fontSize: text * 18,
+                                                            // fontSize: text * 10,
                                                             color: Colors
                                                                 .grey[300],
                                                             fontWeight:
@@ -686,7 +842,9 @@ class _CheckoutState extends State<Checkout> {
                                                               //StadiumBorder(),
                                                               // side: BorderSide(width: 6),
                                                               minimumSize:
-                                                                  Size(40, 10),
+                                                                  Size(140, 20),
+                                                              maximumSize:
+                                                                  Size(150, 20),
                                                               backgroundColor:
                                                                   Color(
                                                                       0xffbaa378)),
@@ -758,9 +916,7 @@ class _CheckoutState extends State<Checkout> {
                     ],
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(
-                      top: 10,
-                    ),
+                    padding: const EdgeInsets.only(),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -768,7 +924,7 @@ class _CheckoutState extends State<Checkout> {
                           padding: const EdgeInsets.only(left: 20),
                           child: Row(
                             children: <Widget>[
-                              _itemCount != 0
+                              _itemCount != -1
                                   ? new IconButton(
                                       icon: CircleAvatar(
                                           radius: 10,
@@ -783,7 +939,7 @@ class _CheckoutState extends State<Checkout> {
                                   : new Container(),
                               new Text(
                                 _itemCount.toString(),
-                                style: TextStyle(fontSize: text * 25),
+                                style: TextStyle(fontSize: text * 15),
                               ),
                               new IconButton(
                                   icon: CircleAvatar(
@@ -803,17 +959,18 @@ class _CheckoutState extends State<Checkout> {
                             child: Text(
                               "Remove",
                               style: TextStyle(
-                                  fontSize: text * 18,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold),
+                                // fontSize: text * 15,
+                                color: Colors.black,
+                                // fontWeight: FontWeight.bold
+                              ),
                             ),
                             style: TextButton.styleFrom(
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(12)),
 
                                 //StadiumBorder(),
-                                // side: BorderSide(width: 6),
-                                //minimumSize: Size(100, 10),
+                                // minimumSize: Size(60, 30),
+                                // maximumSize: Size(100, 30),
                                 backgroundColor: Color(0xffbaa378)),
                             onPressed: () {
                               Navigator.push(
@@ -834,8 +991,8 @@ class _CheckoutState extends State<Checkout> {
             padding: const EdgeInsets.only(left: 20, right: 20),
             child: Container(
               // margin: EdgeInsets.all(12),
-              height: height / 9.8,
-              width: width / 5,
+              height: height / 12.5,
+              width: width / 4.5,
               decoration: BoxDecoration(
                   border: Border.all(
                     //width: 2,
@@ -849,7 +1006,8 @@ class _CheckoutState extends State<Checkout> {
                     child: TextFormField(
                       maxLines: 2,
                       style: TextStyle(
-                        color: Colors.white, fontSize: 30,
+                        color: Colors.white,
+                        // fontSize: 15,
                         //height: 1.5
                       ),
                       keyboardType: TextInputType.number,
@@ -862,12 +1020,12 @@ class _CheckoutState extends State<Checkout> {
                         ),
                         labelStyle: TextStyle(
                             color: Colors.white,
-                            fontSize: 20,
+                            // fontSize: 20,
                             fontWeight: FontWeight.bold),
 
                         //labelText: "Enter PickUp Time",
                         hintStyle:
-                            TextStyle(color: Colors.black, fontSize: text * 25),
+                            TextStyle(color: Colors.black, fontSize: text * 16),
                         hintText: "Coupon Code",
                         // border: OutlineInputBorder(
                         //     borderRadius: BorderRadius.circular(16)),
@@ -887,7 +1045,7 @@ class _CheckoutState extends State<Checkout> {
                       child: Text(
                         "Apply Code",
                         style: TextStyle(
-                            fontSize: text * 18,
+                            // fontSize: text * 15,
                             color: Colors.black,
                             fontWeight: FontWeight.bold),
                       ),
@@ -896,8 +1054,8 @@ class _CheckoutState extends State<Checkout> {
                               borderRadius: BorderRadius.circular(12)),
 
                           //StadiumBorder(),
-                          // side: BorderSide(width: 6),
-                          //minimumSize: Size(100, 10),
+                          // minimumSize: Size(60, 30),
+                          // maximumSize: Size(110, 30),
                           backgroundColor: Color(0xffbaa378)),
                       onPressed: () {
                         Navigator.push(context,
@@ -912,18 +1070,20 @@ class _CheckoutState extends State<Checkout> {
           SizedBox(
             height: 10,
           ),
-          Center(
+          Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20),
             child: ElevatedButton(
               child: Text(
                 "PickUp Place",
                 style: TextStyle(
-                    fontSize: text * 18,
+                    // fontSize: text * 15,
                     color: Colors.black,
                     fontWeight: FontWeight.bold),
               ),
               style: TextButton.styleFrom(
                   shadowColor: Colors.black,
-                  minimumSize: Size(150, 40),
+                  minimumSize: Size(350, 40),
+                  maximumSize: Size(360, 40),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(4)),
 
@@ -946,14 +1106,14 @@ class _CheckoutState extends State<Checkout> {
                     padding: const EdgeInsets.only(left: 20),
                     child: Text(
                       "Time Spane",
-                      style: TextStyle(fontSize: text * 20),
+                      style: TextStyle(fontSize: text * 15),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(right: 20),
                     child: Text(
                       "17min",
-                      style: TextStyle(fontSize: text * 20),
+                      style: TextStyle(fontSize: text * 15),
                     ),
                   ),
                 ],
@@ -965,14 +1125,14 @@ class _CheckoutState extends State<Checkout> {
                     padding: const EdgeInsets.only(left: 20),
                     child: Text(
                       "Extra Toppings",
-                      style: TextStyle(fontSize: text * 20),
+                      style: TextStyle(fontSize: text * 15),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(right: 20),
                     child: Text(
                       "20.00SR",
-                      style: TextStyle(fontSize: text * 20),
+                      style: TextStyle(fontSize: text * 15),
                     ),
                   ),
                 ],
@@ -984,14 +1144,14 @@ class _CheckoutState extends State<Checkout> {
                     padding: const EdgeInsets.only(left: 20),
                     child: Text(
                       "SubTotal",
-                      style: TextStyle(fontSize: text * 20),
+                      style: TextStyle(fontSize: text * 15),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(right: 20),
                     child: Text(
                       "20.00SR",
-                      style: TextStyle(fontSize: text * 20),
+                      style: TextStyle(fontSize: text * 15),
                     ),
                   ),
                 ],
@@ -1003,14 +1163,14 @@ class _CheckoutState extends State<Checkout> {
                     padding: const EdgeInsets.only(left: 20),
                     child: Text(
                       "Total",
-                      style: TextStyle(fontSize: text * 20),
+                      style: TextStyle(fontSize: text * 15),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(right: 20),
                     child: Text(
                       "20.00SR",
-                      style: TextStyle(fontSize: text * 20),
+                      style: TextStyle(fontSize: text * 15),
                     ),
                   ),
                 ],
@@ -1020,36 +1180,36 @@ class _CheckoutState extends State<Checkout> {
           SizedBox(
             height: 10,
           ),
-          Column(
-            children: [
-              ElevatedButton(
-                child: Text(
-                  "Place Order",
-                  style: TextStyle(
-                      fontSize: text * 18,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold),
-                ),
-                style: TextButton.styleFrom(
-                    shadowColor: Colors.black,
-                    minimumSize: Size(240, 40),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(4)),
-
-                    //StadiumBorder(),
-                    // side: BorderSide(width: 6),
-                    //minimumSize: Size(100, 10),
-                    backgroundColor: Color(0xffbaa378)),
-                onPressed: () {
-                  // Scaffold.of(context).showSnackBar(new SnackBar(
-                  //   content: new Text("Sending Message"),
-                  // ));
-                  showToast();
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => paymentmethod()));
-                },
+          Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            child: ElevatedButton(
+              child: Text(
+                "Place Order",
+                style: TextStyle(
+                    // fontSize: text * 15,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold),
               ),
-            ],
+              style: TextButton.styleFrom(
+                  shadowColor: Colors.black,
+                  minimumSize: Size(350, 40),
+                  maximumSize: Size(360, 40),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(4)),
+
+                  //StadiumBorder(),
+                  // side: BorderSide(width: 6),
+                  //minimumSize: Size(100, 10),
+                  backgroundColor: Color(0xffbaa378)),
+              onPressed: () {
+                // Scaffold.of(context).showSnackBar(new SnackBar(
+                //   content: new Text("Sending Message"),
+                // ));
+                showToast();
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => paymentmethod()));
+              },
+            ),
           )
         ],
       ),

@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, file_names
 import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/material.dart';
-import 'package:adobe_xd/pinned.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:adobe_xd/pinned.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
 
 class Iconawesomeheart extends StatelessWidget {
   Iconawesomeheart({

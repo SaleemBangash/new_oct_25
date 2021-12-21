@@ -26,119 +26,94 @@ class _cardinfoState extends State<cardinfo> {
     return Scaffold(
         backgroundColor: const Color(0xfffdfdfd),
         body: ListView(children: [
-          Column(children: [
-            Padding(
-              padding: const EdgeInsets.only(right: 290, top: 10),
-              child: PageLink(
-                links: [
-                  PageLinkInfo(
-                    transition: LinkTransition.Fade,
-                    ease: Curves.easeOut,
-                    duration: 0.3,
-                    pageBuilder: () => paymentmethod(),
-                  ),
-                ],
-                // ignore: prefer_const_constructors
-                child: CircleAvatar(
-                    backgroundColor: Color(0xffbaa378),
-                    child: Icon(
-                      Icons.arrow_back,
-                      color: Colors.black,
-                    )),
-              ),
-            ),
-            Center(
-              child: Text(
-                "25OCT",
-                style: TextStyle(
-                    fontSize: text * 40,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xffbaa378)),
-              ),
-            ),
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 95),
-                  child: Text(
-                    "Add credit Card",
-                    style: TextStyle(
-                        fontSize: text * 30,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black),
-                  ),
+          Padding(
+            padding: const EdgeInsets.only(right: 290, top: 10),
+            child: PageLink(
+              links: [
+                PageLinkInfo(
+                  transition: LinkTransition.Fade,
+                  ease: Curves.easeOut,
+                  duration: 0.3,
+                  pageBuilder: () => paymentmethod(),
                 ),
               ],
+              // ignore: prefer_const_constructors
+              child: CircleAvatar(
+                  backgroundColor: Color(0xffbaa378),
+                  child: Icon(
+                    Icons.arrow_back,
+                    color: Colors.black,
+                  )),
             ),
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: Container(
-                    width: width / 1.5,
-                    child: TextFormField(
-                      style: TextStyle(color: Colors.black),
-                      decoration: InputDecoration(
-                          // border: OutlineInputBorder(
-                          //     borderRadius: BorderRadius.circular(16)),
-                          labelStyle: TextStyle(
-                              color: Colors.black,
-                              fontSize: text * 20,
-                              fontWeight: FontWeight.bold),
-                          // hintText: "Enter First Name",
-                          // hintStyle: TextStyle(color: Colors.black),
-                          labelText: "Name"),
-                    ),
+          ),
+          Center(
+            child: Text(
+              "25OCT",
+              style: TextStyle(
+                  fontSize: text * 30,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xffbaa378)),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 70),
+            child: Text(
+              "Add credit Card",
+              style: TextStyle(
+                  fontSize: text * 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black),
+            ),
+          ),
+          Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Container(
+                  width: width / 1.5,
+                  child: TextFormField(
+                    style: TextStyle(color: Colors.black),
+                    decoration: InputDecoration(
+                        // border: OutlineInputBorder(
+                        //     borderRadius: BorderRadius.circular(16)),
+                        labelStyle: TextStyle(
+                            color: Colors.black,
+                            fontSize: text * 17,
+                            fontWeight: FontWeight.bold),
+                        // hintText: "Enter First Name",
+                        // hintStyle: TextStyle(color: Colors.black),
+                        labelText: "Name"),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: Container(
-                    width: width / 1.5,
-                    //height: height / 6,
-                    child: TextFormField(
-                      style: TextStyle(color: Colors.black),
-                      keyboardType: TextInputType.visiblePassword,
-                      decoration: InputDecoration(
-                          // border: OutlineInputBorder(
-                          //     borderRadius: BorderRadius.circular(16)),
-                          labelStyle: TextStyle(
-                              color: Colors.black,
-                              fontSize: text * 20,
-                              fontWeight: FontWeight.bold),
-                          //hintText: "Enter Card number",
-                          hintStyle: TextStyle(color: Colors.black),
-                          labelText: "Credit Card Number"),
-                      obscureText: true,
-                    ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Container(
+                  width: width / 1.5,
+                  //height: height / 6,
+                  child: TextFormField(
+                    style: TextStyle(color: Colors.black),
+                    keyboardType: TextInputType.visiblePassword,
+                    decoration: InputDecoration(
+                        // border: OutlineInputBorder(
+                        //     borderRadius: BorderRadius.circular(16)),
+                        labelStyle: TextStyle(
+                            color: Colors.black,
+                            fontSize: text * 17,
+                            fontWeight: FontWeight.bold),
+                        //hintText: "Enter Card number",
+                        hintStyle: TextStyle(color: Colors.black),
+                        labelText: "Credit Card Number"),
+                    obscureText: true,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 70),
-                  child: Row(children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 70),
-                      child: Container(
-                        width: width / 4.5,
-                        //height: height / 6,
-                        child: TextFormField(
-                          style: TextStyle(color: Colors.black),
-                          keyboardType: TextInputType.visiblePassword,
-                          decoration: InputDecoration(
-                              // border: OutlineInputBorder(
-                              //     borderRadius: BorderRadius.circular(16)),
-                              labelStyle: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: text * 20,
-                                  fontWeight: FontWeight.bold),
-                              //hintText: "",
-                              hintStyle: TextStyle(color: Colors.black),
-                              labelText: "Expires"),
-                          obscureText: true,
-                        ),
-                      ),
-                    ),
-                    Container(
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 70),
+                child: Row(children: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 70),
+                    child: Container(
                       width: width / 4.5,
                       //height: height / 6,
                       child: TextFormField(
@@ -149,48 +124,68 @@ class _cardinfoState extends State<cardinfo> {
                             //     borderRadius: BorderRadius.circular(16)),
                             labelStyle: TextStyle(
                                 color: Colors.black,
-                                fontSize: text * 20,
+                                fontSize: text * 17,
                                 fontWeight: FontWeight.bold),
                             //hintText: "",
                             hintStyle: TextStyle(color: Colors.black),
-                            labelText: "CCV"),
+                            labelText: "Expires"),
                         obscureText: true,
                       ),
                     ),
-                  ]),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 170),
-                  child: ElevatedButton(
-                    child: Text(
-                      "Save",
-                      style: TextStyle(
-                          fontSize: text * 18,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    style: TextButton.styleFrom(
-                        shadowColor: Colors.black,
-                        minimumSize: Size(80, 40),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8)),
-
-                        //StadiumBorder(),
-                        // side: BorderSide(width: 6),
-                        //minimumSize: Size(100, 10),
-                        backgroundColor: Color(0xffbaa378)),
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => cardinfo()));
-                    },
                   ),
+                  Container(
+                    width: width / 4.5,
+                    //height: height / 6,
+                    child: TextFormField(
+                      style: TextStyle(color: Colors.black),
+                      keyboardType: TextInputType.visiblePassword,
+                      decoration: InputDecoration(
+                          // border: OutlineInputBorder(
+                          //     borderRadius: BorderRadius.circular(16)),
+                          labelStyle: TextStyle(
+                              color: Colors.black,
+                              fontSize: text * 17,
+                              fontWeight: FontWeight.bold),
+                          //hintText: "",
+                          hintStyle: TextStyle(color: Colors.black),
+                          labelText: "CCV"),
+                      obscureText: true,
+                    ),
+                  ),
+                ]),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 170),
+                child: ElevatedButton(
+                  child: Text(
+                    "Save",
+                    style: TextStyle(
+                        fontSize: text * 15,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  style: TextButton.styleFrom(
+                      shadowColor: Colors.black,
+                      minimumSize: Size(80, 30),
+                      maximumSize: Size(100, 30),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8)),
+
+                      //StadiumBorder(),
+                      // side: BorderSide(width: 6),
+                      //minimumSize: Size(100, 10),
+                      backgroundColor: Color(0xffbaa378)),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => cardinfo()));
+                  },
                 ),
-              ],
-            ),
-          ])
+              ),
+            ],
+          )
         ]));
   }
 }

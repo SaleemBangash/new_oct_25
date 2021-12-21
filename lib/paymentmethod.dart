@@ -39,414 +39,412 @@ class _paymentmethodState extends State<paymentmethod> {
       backgroundColor: const Color(0xfffdfdfd),
       body: ListView(
         children: [
-          Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 290, top: 10),
-                child: PageLink(
-                  links: [
-                    PageLinkInfo(
-                      transition: LinkTransition.Fade,
-                      ease: Curves.easeOut,
-                      duration: 0.3,
-                      pageBuilder: () => Home(),
-                    ),
-                  ],
-                  // ignore: prefer_const_constructors
-                  child: CircleAvatar(
-                      backgroundColor: Color(0xffbaa378),
-                      child: Icon(
-                        Icons.arrow_back,
+          Padding(
+            padding: const EdgeInsets.only(right: 290, top: 10),
+            child: PageLink(
+              links: [
+                PageLinkInfo(
+                  transition: LinkTransition.Fade,
+                  ease: Curves.easeOut,
+                  duration: 0.3,
+                  pageBuilder: () => Home(),
+                ),
+              ],
+              // ignore: prefer_const_constructors
+              child: CircleAvatar(
+                  backgroundColor: Color(0xffbaa378),
+                  child: Icon(
+                    Icons.arrow_back,
+                    color: Colors.black,
+                  )),
+            ),
+          ),
+          Center(
+            child: Text(
+              "25OCT",
+              style: TextStyle(
+                  fontSize: text * 25,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xffbaa378)),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20),
+            child: Text(
+              "Payment Method",
+              style: TextStyle(
+                  fontSize: text * 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20),
+            child: Text(
+              "Coose Your Desired Payment Method",
+              style: TextStyle(
+                  fontSize: text * 17,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black),
+            ),
+          ),
+          Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Container(
+                  height: height / 8.9,
+                  width: width / 1,
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        //width: 2,
                         color: Colors.black,
-                      )),
-                ),
+                      ),
+                      color: Colors.grey[350],
+                      borderRadius: BorderRadius.circular(16)),
+                  child: Stack(
+                    children: [
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(35),
+                              child: Image.asset(
+                                "assets/images/visa.png",
+                                width: width / 4,
+                                height: height / 10,
+                              ),
+                            ),
+                          ),
+                          Column(
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(right: 110, top: 10),
+                                child: Text(
+                                  "12345678",
+                                  style: TextStyle(fontSize: text * 15),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 110),
+                                child: Text(
+                                  "Expiry 01/26",
+                                  style: TextStyle(fontSize: text * 15),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  left: 190,
+                                ),
+                                child: Container(
+                                  decoration:
+                                      BoxDecoration(shape: BoxShape.circle),
+                                  width: width / 26,
+                                  height: height / 50,
+                                  child: RaisedButton(
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(40)),
+                                    child: new Text(
+                                      '',
+                                    ),
+                                    textColor: Color(0xffbaa378),
+                                    // 2
+                                    color: _hasBeenPressed
+                                        ? Colors.white70
+                                        : Colors.green,
+                                    // 3
+                                    onPressed: () => {
+                                      setState(() {
+                                        _hasBeenPressed = !_hasBeenPressed;
+                                        _isBeenPressed = true;
+                                        _wasBeenPressed = true;
+                                        _hadBeenPressed = true;
+                                      })
+                                    },
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ],
+                  ))),
+          Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Container(
+                  height: height / 8.9,
+                  width: width / 1,
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        //width: 2,
+                        color: Colors.black,
+                      ),
+                      color: Colors.grey[350],
+                      borderRadius: BorderRadius.circular(16)),
+                  child: Stack(
+                    children: [
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(35),
+                              child: Image.asset(
+                                "assets/images/omni.jpg",
+                                width: width / 4,
+                                height: height / 10,
+                              ),
+                            ),
+                          ),
+                          Column(
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(right: 120, top: 10),
+                                child: Text(
+                                  "12345678",
+                                  style: TextStyle(fontSize: text * 15),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 120),
+                                child: Text(
+                                  "Expiry 01/26",
+                                  style: TextStyle(fontSize: text * 15),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  left: 190,
+                                ),
+                                child: Container(
+                                  decoration:
+                                      BoxDecoration(shape: BoxShape.circle),
+                                  width: width / 26,
+                                  height: height / 50,
+                                  child: RaisedButton(
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(40)),
+                                    child: new Text(
+                                      '',
+                                    ),
+                                    textColor: Color(0xffbaa378),
+                                    // 2
+                                    color: _isBeenPressed
+                                        ? Colors.white70
+                                        : Colors.green,
+                                    // 3
+                                    onPressed: () => {
+                                      setState(() {
+                                        _isBeenPressed = !_isBeenPressed;
+                                        _hasBeenPressed = true;
+                                        _wasBeenPressed = true;
+                                        _hadBeenPressed = true;
+                                      })
+                                    },
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ],
+                  ))),
+          Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Container(
+                  height: height / 8.9,
+                  width: width / 1,
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        //width: 2,
+                        color: Colors.black,
+                      ),
+                      color: Colors.grey[350],
+                      borderRadius: BorderRadius.circular(16)),
+                  child: Stack(
+                    children: [
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(35),
+                              child: Image.asset(
+                                "assets/images/master.png",
+                                width: width / 4,
+                                height: height / 10,
+                              ),
+                            ),
+                          ),
+                          Column(
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(right: 110, top: 10),
+                                child: Text(
+                                  "12345678",
+                                  style: TextStyle(fontSize: text * 15),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 110),
+                                child: Text(
+                                  "Expiry 01/26",
+                                  style: TextStyle(fontSize: text * 15),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  left: 190,
+                                ),
+                                child: Container(
+                                  decoration:
+                                      BoxDecoration(shape: BoxShape.circle),
+                                  width: width / 26,
+                                  height: height / 50,
+                                  child: RaisedButton(
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(40)),
+                                    child: new Text(
+                                      '',
+                                    ),
+                                    textColor: Color(0xffbaa378),
+                                    // 2
+                                    color: _hadBeenPressed
+                                        ? Colors.white70
+                                        : Colors.green,
+                                    // 3
+                                    onPressed: () => {
+                                      setState(() {
+                                        _hadBeenPressed = !_hadBeenPressed;
+                                        _isBeenPressed = true;
+                                        _wasBeenPressed = true;
+                                        _hasBeenPressed = true;
+                                      })
+                                    },
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ],
+                  ))),
+          Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Container(
+                  height: height / 8.9,
+                  width: width / 1,
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        //width: 2,
+                        color: Colors.black,
+                      ),
+                      color: Colors.grey[350],
+                      borderRadius: BorderRadius.circular(16)),
+                  child: Stack(
+                    children: [
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(35),
+                              child: Image.asset(
+                                "assets/images/cash.png",
+                                width: width / 4,
+                                height: height / 10,
+                              ),
+                            ),
+                          ),
+                          Column(
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(right: 120, top: 10),
+                                child: Text(
+                                  "12345678",
+                                  style: TextStyle(fontSize: text * 15),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 120),
+                                child: Text(
+                                  "Expiry 01/26",
+                                  style: TextStyle(fontSize: text * 15),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  left: 190,
+                                ),
+                                child: Container(
+                                  decoration:
+                                      BoxDecoration(shape: BoxShape.circle),
+                                  width: width / 26,
+                                  height: height / 50,
+                                  child: RaisedButton(
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(40)),
+                                    child: new Text(
+                                      '',
+                                    ),
+                                    textColor: Color(0xffbaa378),
+                                    // 2
+                                    color: _wasBeenPressed
+                                        ? Colors.white70
+                                        : Colors.green,
+                                    // 3
+                                    onPressed: () => {
+                                      setState(() {
+                                        _wasBeenPressed = !_wasBeenPressed;
+                                        _isBeenPressed = true;
+                                        _hasBeenPressed = true;
+                                        _hadBeenPressed = true;
+                                      })
+                                    },
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ],
+                  ))),
+          Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            child: ElevatedButton(
+              child: Text(
+                "Add Payment Method",
+                style: TextStyle(
+                    fontSize: text * 15,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold),
               ),
-              Center(
-                child: Text(
-                  "25OCT",
-                  style: TextStyle(
-                      fontSize: text * 40,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xffbaa378)),
-                ),
-              ),
-              Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(right: 95),
-                    child: Text(
-                      "Payment Method",
-                      style: TextStyle(
-                          fontSize: text * 30,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
-                    ),
-                  ),
-                  Text(
-                    "Coose Your Desired Payment Method",
-                    style: TextStyle(
-                        fontSize: text * 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black),
-                  ),
-                ],
-              ),
-              Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Container(
-                      height: height / 8.9,
-                      width: width / 1,
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            //width: 2,
-                            color: Colors.black,
-                          ),
-                          color: Colors.grey[350],
-                          borderRadius: BorderRadius.circular(16)),
-                      child: Stack(
-                        children: [
-                          Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left: 10),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(35),
-                                  child: Image.asset(
-                                    "assets/images/visa.png",
-                                    width: width / 4,
-                                    height: height / 10,
-                                  ),
-                                ),
-                              ),
-                              Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        right: 130, top: 10),
-                                    child: Text(
-                                      "12345678",
-                                      style: TextStyle(fontSize: text * 25),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(right: 130),
-                                    child: Text(
-                                      "Expiry 01/26",
-                                      style: TextStyle(fontSize: text * 15),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                      left: 210,
-                                    ),
-                                    child: Container(
-                                      decoration:
-                                          BoxDecoration(shape: BoxShape.circle),
-                                      width: width / 20,
-                                      height: height / 39,
-                                      child: RaisedButton(
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(40)),
-                                        child: new Text(
-                                          '',
-                                        ),
-                                        textColor: Color(0xffbaa378),
-                                        // 2
-                                        color: _hasBeenPressed
-                                            ? Colors.white70
-                                            : Colors.green,
-                                        // 3
-                                        onPressed: () => {
-                                          setState(() {
-                                            _hasBeenPressed = !_hasBeenPressed;
-                                            _isBeenPressed = true;
-                                            _wasBeenPressed = true;
-                                            _hadBeenPressed = true;
-                                          })
-                                        },
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ],
-                      ))),
-              Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Container(
-                      height: height / 8.9,
-                      width: width / 1,
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            //width: 2,
-                            color: Colors.black,
-                          ),
-                          color: Colors.grey[350],
-                          borderRadius: BorderRadius.circular(16)),
-                      child: Stack(
-                        children: [
-                          Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left: 10),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(35),
-                                  child: Image.asset(
-                                    "assets/images/omni.jpg",
-                                    width: width / 4,
-                                    height: height / 10,
-                                  ),
-                                ),
-                              ),
-                              Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        right: 130, top: 10),
-                                    child: Text(
-                                      "12345678",
-                                      style: TextStyle(fontSize: text * 25),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(right: 130),
-                                    child: Text(
-                                      "Expiry 01/26",
-                                      style: TextStyle(fontSize: text * 15),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                      left: 210,
-                                    ),
-                                    child: Container(
-                                      decoration:
-                                          BoxDecoration(shape: BoxShape.circle),
-                                      width: width / 20,
-                                      height: height / 39,
-                                      child: RaisedButton(
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(40)),
-                                        child: new Text(
-                                          '',
-                                        ),
-                                        textColor: Color(0xffbaa378),
-                                        // 2
-                                        color: _isBeenPressed
-                                            ? Colors.white70
-                                            : Colors.green,
-                                        // 3
-                                        onPressed: () => {
-                                          setState(() {
-                                            _isBeenPressed = !_isBeenPressed;
-                                            _hasBeenPressed = true;
-                                            _wasBeenPressed = true;
-                                            _hadBeenPressed = true;
-                                          })
-                                        },
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ],
-                      ))),
-              Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Container(
-                      height: height / 8.9,
-                      width: width / 1,
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            //width: 2,
-                            color: Colors.black,
-                          ),
-                          color: Colors.grey[350],
-                          borderRadius: BorderRadius.circular(16)),
-                      child: Stack(
-                        children: [
-                          Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left: 10),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(35),
-                                  child: Image.asset(
-                                    "assets/images/master.png",
-                                    width: width / 4,
-                                    height: height / 10,
-                                  ),
-                                ),
-                              ),
-                              Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        right: 130, top: 10),
-                                    child: Text(
-                                      "12345678",
-                                      style: TextStyle(fontSize: text * 25),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(right: 130),
-                                    child: Text(
-                                      "Expiry 01/26",
-                                      style: TextStyle(fontSize: text * 15),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                      left: 210,
-                                    ),
-                                    child: Container(
-                                      decoration:
-                                          BoxDecoration(shape: BoxShape.circle),
-                                      width: width / 20,
-                                      height: height / 39,
-                                      child: RaisedButton(
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(40)),
-                                        child: new Text(
-                                          '',
-                                        ),
-                                        textColor: Color(0xffbaa378),
-                                        // 2
-                                        color: _hadBeenPressed
-                                            ? Colors.white70
-                                            : Colors.green,
-                                        // 3
-                                        onPressed: () => {
-                                          setState(() {
-                                            _hadBeenPressed = !_hadBeenPressed;
-                                            _isBeenPressed = true;
-                                            _wasBeenPressed = true;
-                                            _hasBeenPressed = true;
-                                          })
-                                        },
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ],
-                      ))),
-              Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Container(
-                      height: height / 8.9,
-                      width: width / 1,
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            //width: 2,
-                            color: Colors.black,
-                          ),
-                          color: Colors.grey[350],
-                          borderRadius: BorderRadius.circular(16)),
-                      child: Stack(
-                        children: [
-                          Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left: 10),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(35),
-                                  child: Image.asset(
-                                    "assets/images/cash.png",
-                                    width: width / 4,
-                                    height: height / 10,
-                                  ),
-                                ),
-                              ),
-                              Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        right: 130, top: 10),
-                                    child: Text(
-                                      "12345678",
-                                      style: TextStyle(fontSize: text * 25),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(right: 130),
-                                    child: Text(
-                                      "Expiry 01/26",
-                                      style: TextStyle(fontSize: text * 15),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                      left: 210,
-                                    ),
-                                    child: Container(
-                                      decoration:
-                                          BoxDecoration(shape: BoxShape.circle),
-                                      width: width / 20,
-                                      height: height / 39,
-                                      child: RaisedButton(
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(40)),
-                                        child: new Text(
-                                          '',
-                                        ),
-                                        textColor: Color(0xffbaa378),
-                                        // 2
-                                        color: _wasBeenPressed
-                                            ? Colors.white70
-                                            : Colors.green,
-                                        // 3
-                                        onPressed: () => {
-                                          setState(() {
-                                            _wasBeenPressed = !_wasBeenPressed;
-                                            _isBeenPressed = true;
-                                            _hasBeenPressed = true;
-                                            _hadBeenPressed = true;
-                                          })
-                                        },
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ],
-                      ))),
-              ElevatedButton(
-                child: Text(
-                  "Add Payment Method",
-                  style: TextStyle(
-                      fontSize: text * 18,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold),
-                ),
-                style: TextButton.styleFrom(
-                    shadowColor: Colors.black,
-                    minimumSize: Size(240, 40),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8)),
+              style: TextButton.styleFrom(
+                  shadowColor: Colors.black,
+                  minimumSize: Size(120, 40),
+                  maximumSize: Size(140, 40),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8)),
 
-                    //StadiumBorder(),
-                    // side: BorderSide(width: 6),
-                    //minimumSize: Size(100, 10),
-                    backgroundColor: Color(0xffbaa378)),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => cardinfo()));
-                },
-              ),
-            ],
+                  //StadiumBorder(),
+
+                  backgroundColor: Color(0xffbaa378)),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => cardinfo()));
+              },
+            ),
           ),
         ],
       ),
@@ -465,7 +463,7 @@ class _paymentmethodState extends State<paymentmethod> {
               TextStyle(fontWeight: FontWeight.bold, fontSize: text * 15),
 
           unselectedItemColor: Colors.black,
-          iconSize: 30,
+          iconSize: 25,
 
           elevation: 5,
           items: [
@@ -480,7 +478,7 @@ class _paymentmethodState extends State<paymentmethod> {
                   child: Icon(Icons.home)),
               title: Text(
                 'Home',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
               ),
               backgroundColor: Colors.white,
             ),
@@ -499,7 +497,7 @@ class _paymentmethodState extends State<paymentmethod> {
                 ),
                 title: Text(
                   'Cart',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                 ),
                 backgroundColor: Colors.white),
             BottomNavigationBarItem(
@@ -517,7 +515,7 @@ class _paymentmethodState extends State<paymentmethod> {
               ),
               title: Text(
                 'Favourite',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
               ),
               backgroundColor: Colors.white,
             ),

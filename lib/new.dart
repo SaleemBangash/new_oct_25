@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:adobe_xd/page_link.dart';
 import 'package:flutter/material.dart';
@@ -65,7 +65,7 @@ class _NewState extends State<New> {
                   child: Text(
                     "25OCT",
                     style: TextStyle(
-                        fontSize: text * 40,
+                        fontSize: text * 30,
                         fontWeight: FontWeight.bold,
                         color: Colors.white),
                   ),
@@ -77,7 +77,7 @@ class _NewState extends State<New> {
                       Text(
                         "Select Branch (From map)",
                         style: TextStyle(
-                            fontSize: text * 20,
+                            fontSize: text * 15,
                             fontWeight: FontWeight.bold,
                             color: Colors.white),
                       ),
@@ -87,7 +87,7 @@ class _NewState extends State<New> {
                           child: Text(
                             "Skip",
                             style: TextStyle(
-                                fontSize: text * 18,
+                                fontSize: text * 15,
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -96,8 +96,8 @@ class _NewState extends State<New> {
                                   borderRadius: BorderRadius.circular(12)),
 
                               //StadiumBorder(),
-                              // side: BorderSide(width: 6),
-                              //minimumSize: Size(100, 10),
+                              minimumSize: Size(60, 30),
+                              maximumSize: Size(100, 30),
                               backgroundColor: Color(0xffbaa378)),
                           onPressed: () {
                             Navigator.push(
@@ -211,7 +211,7 @@ class _NewState extends State<New> {
                                                     child: Text(
                                                       "Select Branch(Manually)",
                                                       style: TextStyle(
-                                                          fontSize: text * 20,
+                                                          fontSize: text * 15,
                                                           fontWeight:
                                                               FontWeight.bold),
                                                     ),
@@ -274,10 +274,11 @@ class _NewState extends State<New> {
                                                               children: [
                                                                 Text(
                                                                   "Branch1",
-                                                                  style: TextStyle(
-                                                                      fontSize:
-                                                                          text *
-                                                                              20),
+                                                                  // style: TextStyle(
+                                                                  //     fontSize:
+                                                                  //         // text *
+                                                                  //         //     15
+                                                                  //             ),
                                                                 ),
                                                               ],
                                                             ),
@@ -308,7 +309,7 @@ class _NewState extends State<New> {
                                                                     style: TextStyle(
                                                                         fontSize:
                                                                             text *
-                                                                                20),
+                                                                                15),
                                                                   ),
                                                                 ),
                                                                 Padding(
@@ -320,19 +321,17 @@ class _NewState extends State<New> {
                                                                     child: Text(
                                                                       "Select",
                                                                       style: TextStyle(
-                                                                          fontSize: text *
-                                                                              18,
-                                                                          color: Colors
-                                                                              .black,
-                                                                          fontWeight:
-                                                                              FontWeight.bold),
+                                                                          // fontSize: text *
+                                                                          //     15,
+                                                                          color: Colors.black,
+                                                                          fontWeight: FontWeight.bold),
                                                                     ),
                                                                     style: TextButton.styleFrom(
                                                                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
 
                                                                         //StadiumBorder(),
-                                                                        // side: BorderSide(width: 6),
-                                                                        //minimumSize: Size(100, 10),
+                                                                        // minimumSize: Size(60, 30),
+                                                                        // maximumSize: Size(100, 30),
                                                                         backgroundColor: Color(0xffbaa378)),
                                                                     onPressed:
                                                                         () {
@@ -357,9 +356,9 @@ class _NewState extends State<New> {
                                                                 Container(
                                                                   height:
                                                                       height /
-                                                                          17,
+                                                                          19,
                                                                   width:
-                                                                      width / 4,
+                                                                      width / 5,
                                                                   decoration: BoxDecoration(
                                                                       color: Colors
                                                                               .grey[
@@ -373,16 +372,15 @@ class _NewState extends State<New> {
                                                                           Icons
                                                                               .add_location,
                                                                           size:
-                                                                              35,
+                                                                              20,
                                                                           color:
                                                                               Colors.black),
                                                                       Text(
                                                                         "200KM",
                                                                         style: TextStyle(
-                                                                            fontSize: text *
-                                                                                15,
-                                                                            fontWeight:
-                                                                                FontWeight.bold),
+                                                                            // fontSize: text *
+                                                                            //     10,
+                                                                            fontWeight: FontWeight.bold),
                                                                       )
                                                                     ],
                                                                   ),
@@ -467,9 +465,10 @@ class _NewState extends State<New> {
                                                                 Text(
                                                                   "Branch1",
                                                                   style: TextStyle(
-                                                                      fontSize:
-                                                                          text *
-                                                                              20),
+                                                                      // fontSize:
+                                                                      //     text *
+                                                                      //         15
+                                                                      ),
                                                                 ),
                                                               ],
                                                             ),
@@ -500,7 +499,7 @@ class _NewState extends State<New> {
                                                                     style: TextStyle(
                                                                         fontSize:
                                                                             text *
-                                                                                20),
+                                                                                15),
                                                                   ),
                                                                 ),
                                                                 Padding(
@@ -512,19 +511,17 @@ class _NewState extends State<New> {
                                                                     child: Text(
                                                                       "Select",
                                                                       style: TextStyle(
-                                                                          fontSize: text *
-                                                                              18,
-                                                                          color: Colors
-                                                                              .black,
-                                                                          fontWeight:
-                                                                              FontWeight.bold),
+                                                                          // fontSize: text *
+                                                                          //     15,
+                                                                          color: Colors.black,
+                                                                          fontWeight: FontWeight.bold),
                                                                     ),
                                                                     style: TextButton.styleFrom(
                                                                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
 
                                                                         //StadiumBorder(),
-                                                                        // side: BorderSide(width: 6),
-                                                                        //minimumSize: Size(100, 10),
+                                                                        // minimumSize: Size(60, 30),
+                                                                        // maximumSize: Size(100, 30),
                                                                         backgroundColor: Color(0xffbaa378)),
                                                                     onPressed:
                                                                         () {
@@ -549,9 +546,9 @@ class _NewState extends State<New> {
                                                                 Container(
                                                                   height:
                                                                       height /
-                                                                          17,
+                                                                          19,
                                                                   width:
-                                                                      width / 4,
+                                                                      width / 5,
                                                                   decoration: BoxDecoration(
                                                                       color: Colors
                                                                               .grey[
@@ -565,16 +562,15 @@ class _NewState extends State<New> {
                                                                           Icons
                                                                               .add_location,
                                                                           size:
-                                                                              35,
+                                                                              20,
                                                                           color:
                                                                               Colors.black),
                                                                       Text(
                                                                         "200KM",
                                                                         style: TextStyle(
-                                                                            fontSize: text *
-                                                                                15,
-                                                                            fontWeight:
-                                                                                FontWeight.bold),
+                                                                            // fontSize: text *
+                                                                            //     10,
+                                                                            fontWeight: FontWeight.bold),
                                                                       )
                                                                     ],
                                                                   ),
@@ -659,9 +655,10 @@ class _NewState extends State<New> {
                                                                 Text(
                                                                   "Branch1",
                                                                   style: TextStyle(
-                                                                      fontSize:
-                                                                          text *
-                                                                              20),
+                                                                      // fontSize:
+                                                                      //     text *
+                                                                      //         15
+                                                                      ),
                                                                 ),
                                                               ],
                                                             ),
@@ -692,7 +689,7 @@ class _NewState extends State<New> {
                                                                     style: TextStyle(
                                                                         fontSize:
                                                                             text *
-                                                                                20),
+                                                                                15),
                                                                   ),
                                                                 ),
                                                                 Padding(
@@ -704,19 +701,17 @@ class _NewState extends State<New> {
                                                                     child: Text(
                                                                       "Select",
                                                                       style: TextStyle(
-                                                                          fontSize: text *
-                                                                              18,
-                                                                          color: Colors
-                                                                              .black,
-                                                                          fontWeight:
-                                                                              FontWeight.bold),
+                                                                          // fontSize: text *
+                                                                          //     15,
+                                                                          color: Colors.black,
+                                                                          fontWeight: FontWeight.bold),
                                                                     ),
                                                                     style: TextButton.styleFrom(
                                                                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
 
                                                                         //StadiumBorder(),
-                                                                        // side: BorderSide(width: 6),
-                                                                        //minimumSize: Size(100, 10),
+                                                                        // minimumSize: Size(60, 30),
+                                                                        // maximumSize: Size(100, 30),
                                                                         backgroundColor: Color(0xffbaa378)),
                                                                     onPressed:
                                                                         () {
@@ -741,9 +736,9 @@ class _NewState extends State<New> {
                                                                 Container(
                                                                   height:
                                                                       height /
-                                                                          17,
+                                                                          19,
                                                                   width:
-                                                                      width / 4,
+                                                                      width / 5,
                                                                   decoration: BoxDecoration(
                                                                       color: Colors
                                                                               .grey[
@@ -757,16 +752,15 @@ class _NewState extends State<New> {
                                                                           Icons
                                                                               .add_location,
                                                                           size:
-                                                                              35,
+                                                                              20,
                                                                           color:
                                                                               Colors.black),
                                                                       Text(
                                                                         "200KM",
                                                                         style: TextStyle(
-                                                                            fontSize: text *
-                                                                                15,
-                                                                            fontWeight:
-                                                                                FontWeight.bold),
+                                                                            // fontSize: text *
+                                                                            //     10,
+                                                                            fontWeight: FontWeight.bold),
                                                                       )
                                                                     ],
                                                                   ),
@@ -851,9 +845,10 @@ class _NewState extends State<New> {
                                                                 Text(
                                                                   "Branch1",
                                                                   style: TextStyle(
-                                                                      fontSize:
-                                                                          text *
-                                                                              20),
+                                                                      // fontSize:
+                                                                      //     text *
+                                                                      //         15
+                                                                      ),
                                                                 ),
                                                               ],
                                                             ),
@@ -884,7 +879,7 @@ class _NewState extends State<New> {
                                                                     style: TextStyle(
                                                                         fontSize:
                                                                             text *
-                                                                                20),
+                                                                                15),
                                                                   ),
                                                                 ),
                                                                 Padding(
@@ -896,19 +891,17 @@ class _NewState extends State<New> {
                                                                     child: Text(
                                                                       "Select",
                                                                       style: TextStyle(
-                                                                          fontSize: text *
-                                                                              18,
-                                                                          color: Colors
-                                                                              .black,
-                                                                          fontWeight:
-                                                                              FontWeight.bold),
+                                                                          // fontSize: text *
+                                                                          //     15,
+                                                                          color: Colors.black,
+                                                                          fontWeight: FontWeight.bold),
                                                                     ),
                                                                     style: TextButton.styleFrom(
                                                                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
 
                                                                         //StadiumBorder(),
-                                                                        // side: BorderSide(width: 6),
-                                                                        //minimumSize: Size(100, 10),
+                                                                        // minimumSize: Size(60, 30),
+                                                                        // maximumSize: Size(100, 30),
                                                                         backgroundColor: Color(0xffbaa378)),
                                                                     onPressed:
                                                                         () {
@@ -933,9 +926,9 @@ class _NewState extends State<New> {
                                                                 Container(
                                                                   height:
                                                                       height /
-                                                                          17,
+                                                                          19,
                                                                   width:
-                                                                      width / 4,
+                                                                      width / 5,
                                                                   decoration: BoxDecoration(
                                                                       color: Colors
                                                                               .grey[
@@ -949,16 +942,15 @@ class _NewState extends State<New> {
                                                                           Icons
                                                                               .add_location,
                                                                           size:
-                                                                              35,
+                                                                              20,
                                                                           color:
                                                                               Colors.black),
                                                                       Text(
                                                                         "200KM",
                                                                         style: TextStyle(
-                                                                            fontSize: text *
-                                                                                15,
-                                                                            fontWeight:
-                                                                                FontWeight.bold),
+                                                                            // fontSize: text *
+                                                                            //     10,
+                                                                            fontWeight: FontWeight.bold),
                                                                       )
                                                                     ],
                                                                   ),
@@ -1042,10 +1034,11 @@ class _NewState extends State<New> {
                                                               children: [
                                                                 Text(
                                                                   "Branch1",
-                                                                  style: TextStyle(
-                                                                      fontSize:
-                                                                          text *
-                                                                              20),
+                                                                  // style: TextStyle(
+                                                                  //     fontSize:
+                                                                  //         text *
+                                                                  //             15
+                                                                  //             ),
                                                                 ),
                                                               ],
                                                             ),
@@ -1076,7 +1069,7 @@ class _NewState extends State<New> {
                                                                     style: TextStyle(
                                                                         fontSize:
                                                                             text *
-                                                                                20),
+                                                                                15),
                                                                   ),
                                                                 ),
                                                                 Padding(
@@ -1088,19 +1081,17 @@ class _NewState extends State<New> {
                                                                     child: Text(
                                                                       "Select",
                                                                       style: TextStyle(
-                                                                          fontSize: text *
-                                                                              18,
-                                                                          color: Colors
-                                                                              .black,
-                                                                          fontWeight:
-                                                                              FontWeight.bold),
+                                                                          // fontSize: text *
+                                                                          //     15,
+                                                                          color: Colors.black,
+                                                                          fontWeight: FontWeight.bold),
                                                                     ),
                                                                     style: TextButton.styleFrom(
                                                                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
 
                                                                         //StadiumBorder(),
-                                                                        // side: BorderSide(width: 6),
-                                                                        //minimumSize: Size(100, 10),
+                                                                        // minimumSize: Size(60, 30),
+                                                                        // maximumSize: Size(100, 30),
                                                                         backgroundColor: Color(0xffbaa378)),
                                                                     onPressed:
                                                                         () {
@@ -1125,9 +1116,9 @@ class _NewState extends State<New> {
                                                                 Container(
                                                                   height:
                                                                       height /
-                                                                          17,
+                                                                          19,
                                                                   width:
-                                                                      width / 4,
+                                                                      width / 5,
                                                                   decoration: BoxDecoration(
                                                                       color: Colors
                                                                               .grey[
@@ -1141,16 +1132,15 @@ class _NewState extends State<New> {
                                                                           Icons
                                                                               .add_location,
                                                                           size:
-                                                                              35,
+                                                                              20,
                                                                           color:
                                                                               Colors.black),
                                                                       Text(
                                                                         "200KM",
                                                                         style: TextStyle(
-                                                                            fontSize: text *
-                                                                                15,
-                                                                            fontWeight:
-                                                                                FontWeight.bold),
+                                                                            // fontSize: text *
+                                                                            //     10,
+                                                                            fontWeight: FontWeight.bold),
                                                                       )
                                                                     ],
                                                                   ),
@@ -1215,7 +1205,7 @@ class _NewState extends State<New> {
                                 child: Text(
                                   "Select Branch(Manually)",
                                   style: TextStyle(
-                                      fontSize: text * 20,
+                                      fontSize: text * 15,
                                       fontWeight: FontWeight.bold),
                                 ),
                               ),
@@ -1257,8 +1247,8 @@ class _NewState extends State<New> {
                                           children: [
                                             Text(
                                               "Branch1",
-                                              style: TextStyle(
-                                                  fontSize: text * 20),
+                                              // style: TextStyle(
+                                              //     fontSize: text * 15),
                                             ),
                                           ],
                                         ),
@@ -1283,7 +1273,7 @@ class _NewState extends State<New> {
                                               child: Text(
                                                 "City",
                                                 style: TextStyle(
-                                                    fontSize: text * 20),
+                                                    fontSize: text * 15),
                                               ),
                                             ),
                                             Padding(
@@ -1293,7 +1283,7 @@ class _NewState extends State<New> {
                                                 child: Text(
                                                   "Select",
                                                   style: TextStyle(
-                                                      fontSize: text * 18,
+                                                      // fontSize: text * 15,
                                                       color: Colors.black,
                                                       fontWeight:
                                                           FontWeight.bold),
@@ -1307,8 +1297,8 @@ class _NewState extends State<New> {
                                                                         12)),
 
                                                     //StadiumBorder(),
-                                                    // side: BorderSide(width: 6),
-                                                    //minimumSize: Size(100, 10),
+                                                    minimumSize: Size(60, 30),
+                                                    maximumSize: Size(100, 30),
                                                     backgroundColor:
                                                         Color(0xffbaa378)),
                                                 onPressed: () {
@@ -1329,8 +1319,8 @@ class _NewState extends State<New> {
                                         child: Row(
                                           children: [
                                             Container(
-                                              height: height / 17,
-                                              width: width / 4,
+                                              height: height / 19,
+                                              width: width / 5,
                                               decoration: BoxDecoration(
                                                   color: Colors.grey[400],
                                                   borderRadius:
@@ -1339,12 +1329,12 @@ class _NewState extends State<New> {
                                               child: Row(
                                                 children: [
                                                   Icon(Icons.add_location,
-                                                      size: 35,
+                                                      size: 20,
                                                       color: Colors.black),
                                                   Text(
                                                     "200KM",
                                                     style: TextStyle(
-                                                        fontSize: text * 15,
+                                                        // fontSize: text * 10,
                                                         fontWeight:
                                                             FontWeight.bold),
                                                   )

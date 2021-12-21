@@ -2,16 +2,20 @@
 
 import 'package:adobe_xd/page_link.dart';
 import 'package:flutter/material.dart';
+import 'package:new_oct_25/Drinks/cocacola.dart';
+import 'package:new_oct_25/Drinks/dew.dart';
+import 'package:new_oct_25/Drinks/redbull.dart';
+import 'package:new_oct_25/Drinks/sprite.dart';
 // import 'package:newoct/Drinks/cocacola.dart';
 // import 'package:newoct/Drinks/dew.dart';
 // import 'package:newoct/Drinks/redbull.dart';
 // import 'package:newoct/Drinks/sprite.dart';
 
-import 'Drinks/cocacola.dart';
-import 'Drinks/dew.dart';
-import 'Drinks/redbull.dart';
-import 'Drinks/sprite.dart';
-import 'coffee/americano.dart';
+// import 'Drinks/cocacola.dart';
+// import 'Drinks/dew.dart';
+// import 'Drinks/redbull.dart';
+// import 'Drinks/sprite.dart';
+// import 'coffee/americano.dart';
 
 class Drinks extends StatefulWidget {
   const Drinks({Key? key}) : super(key: key);

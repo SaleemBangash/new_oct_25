@@ -4,8 +4,7 @@ import 'package:adobe_xd/pinned.dart';
 import 'package:new_oct_25/Checkout.dart';
 import './Home.dart';
 import 'package:adobe_xd/page_link.dart';
-import './Detail.dart';
-import './Cart1.dart';
+
 import './Wishlist.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:slide_to_confirm/slide_to_confirm.dart';
@@ -57,17 +56,17 @@ class _CartState extends State<Cart> {
             child: Text(
               "25OCT",
               style: TextStyle(
-                  fontSize: text * 40,
+                  fontSize: text * 25,
                   fontWeight: FontWeight.bold,
                   color: Colors.black),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8),
+            padding: const EdgeInsets.only(left: 20),
             child: Text(
               "Your Cart",
               style: TextStyle(
-                  fontSize: text * 30,
+                  fontSize: text * 20,
                   fontWeight: FontWeight.bold,
                   color: Colors.black),
             ),
@@ -76,7 +75,7 @@ class _CartState extends State<Cart> {
             padding: const EdgeInsets.all(16.0),
             child: Container(
               // margin: EdgeInsets.all(12),
-              height: height / 9.8,
+              height: height / 11.8,
               decoration: BoxDecoration(
                   border: Border.all(
                     //width: 2,
@@ -87,7 +86,8 @@ class _CartState extends State<Cart> {
               child: TextFormField(
                 maxLines: 2,
                 style: TextStyle(
-                  color: Colors.white, fontSize: 30,
+                  color: Colors.white,
+                  // fontSize: 30,
                   //height: 1.5
                 ),
                 keyboardType: TextInputType.number,
@@ -96,16 +96,16 @@ class _CartState extends State<Cart> {
                   //suffixText: "@gmail.com",
                   prefixIcon: Icon(
                     Icons.timer_sharp,
-                    size: 35,
+                    size: 25,
                   ),
-                  labelStyle: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
+                  // labelStyle: TextStyle(
+                  //     color: Colors.white,
+                  //     fontSize: 20,
+                  //     fontWeight: FontWeight.bold),
 
                   //labelText: "Enter PickUp Time",
                   hintStyle:
-                      TextStyle(color: Colors.black, fontSize: text * 20),
+                      TextStyle(color: Colors.black, fontSize: text * 17),
                   hintText: "Enter PickUp Time",
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(16)),
@@ -121,11 +121,11 @@ class _CartState extends State<Cart> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 05),
+            padding: const EdgeInsets.only(left: 15, right: 15, bottom: 05),
             child: Container(
               // margin: EdgeInsets.all(12),
-              height: height / 9.8,
-              width: width / 5,
+              height: height / 12.5,
+              width: width / 4.5,
               decoration: BoxDecoration(
                   border: Border.all(
                     //width: 2,
@@ -139,7 +139,8 @@ class _CartState extends State<Cart> {
                     child: TextFormField(
                       maxLines: 2,
                       style: TextStyle(
-                        color: Colors.white, fontSize: 30,
+                        color: Colors.white,
+                        // fontSize: 30,
                         //height: 1.5
                       ),
                       keyboardType: TextInputType.number,
@@ -148,16 +149,16 @@ class _CartState extends State<Cart> {
                         //suffixText: "@gmail.com",
                         prefixIcon: Icon(
                           Icons.cast_outlined,
-                          size: 35,
+                          size: 25,
                         ),
-                        labelStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
+                        // labelStyle: TextStyle(
+                        //     color: Colors.white,
+                        //     fontSize: 15,
+                        //     fontWeight: FontWeight.bold),
 
                         //labelText: "Enter PickUp Time",
                         hintStyle:
-                            TextStyle(color: Colors.black, fontSize: text * 20),
+                            TextStyle(color: Colors.black, fontSize: text * 17),
                         hintText: "Coupon Code",
                         // border: OutlineInputBorder(
                         //     borderRadius: BorderRadius.circular(16)),
@@ -177,9 +178,10 @@ class _CartState extends State<Cart> {
                       child: Text(
                         "Apply Code",
                         style: TextStyle(
-                            fontSize: text * 15,
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold),
+                          // fontSize: text * 15,
+                          color: Colors.black,
+                          // fontWeight: FontWeight.bold
+                        ),
                       ),
                       style: TextButton.styleFrom(
                           shape: RoundedRectangleBorder(
@@ -187,8 +189,8 @@ class _CartState extends State<Cart> {
 
                           //StadiumBorder(),
                           // side: BorderSide(width: 6),
-                          minimumSize: Size(60, 30),
-                          maximumSize: Size(110, 30),
+                          // minimumSize: Size(60, 30),
+                          // maximumSize: Size(110, 30),
                           backgroundColor: Color(0xffbaa378)),
                       onPressed: () {
                         Navigator.push(context,
@@ -205,7 +207,7 @@ class _CartState extends State<Cart> {
             child: Text(
               "Cart Items",
               style: TextStyle(
-                  fontSize: text * 25,
+                  fontSize: text * 20,
                   fontWeight: FontWeight.bold,
                   color: Colors.black),
             ),
@@ -246,7 +248,9 @@ class _CartState extends State<Cart> {
                         children: [
                           Text(
                             "Vanilla Flavor",
-                            style: TextStyle(fontSize: text * 16),
+                            style: TextStyle(
+                                // fontSize: text * 16
+                                ),
                           ),
                         ],
                       ),
@@ -255,18 +259,22 @@ class _CartState extends State<Cart> {
                       padding: const EdgeInsets.only(left: 270, top: 10),
                       child: Text(
                         "20.00SR",
-                        style: TextStyle(fontSize: text * 15),
+                        style: TextStyle(
+                            // fontSize: text * 15
+                            ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 130, top: 50),
                       child: Text(
                         "20.00SR",
-                        style: TextStyle(fontSize: text * 16),
+                        style: TextStyle(
+                            // fontSize: text * 16
+                            ),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 120, top: 80),
+                      padding: const EdgeInsets.only(left: 120, top: 70),
                       child: Row(
                         children: <Widget>[
                           _itemCount != -1
@@ -283,7 +291,7 @@ class _CartState extends State<Cart> {
                               : new Container(),
                           new Text(
                             _itemCount.toString(),
-                            style: TextStyle(fontSize: text * 25),
+                            style: TextStyle(fontSize: text * 15),
                           ),
                           new IconButton(
                               icon: CircleAvatar(
@@ -298,14 +306,15 @@ class _CartState extends State<Cart> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 240, top: 80),
+                      padding: const EdgeInsets.only(left: 240, top: 70),
                       child: ElevatedButton(
                         child: Text(
                           "Remove",
                           style: TextStyle(
-                              fontSize: text * 15,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold),
+                            // fontSize: text * 15,
+                            color: Colors.black,
+                            // fontWeight: FontWeight.bold
+                          ),
                         ),
                         style: TextButton.styleFrom(
                             shape: RoundedRectangleBorder(
@@ -313,8 +322,8 @@ class _CartState extends State<Cart> {
 
                             //StadiumBorder(),
                             // side: BorderSide(width: 6),
-                            minimumSize: Size(60, 30),
-                            maximumSize: Size(100, 30),
+                            // minimumSize: Size(60, 30),
+                            // maximumSize: Size(100, 30),
                             backgroundColor: Color(0xffbaa378)),
                         onPressed: () {
                           Navigator.push(context,
@@ -452,14 +461,14 @@ class _CartState extends State<Cart> {
                     padding: const EdgeInsets.only(left: 20),
                     child: Text(
                       "Total",
-                      style: TextStyle(fontSize: text * 20),
+                      style: TextStyle(fontSize: text * 15),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(right: 20),
                     child: Text(
                       "20.00SR",
-                      style: TextStyle(fontSize: text * 20),
+                      style: TextStyle(fontSize: text * 15),
                     ),
                   ),
                 ],
@@ -471,40 +480,43 @@ class _CartState extends State<Cart> {
                     padding: const EdgeInsets.only(top: 10, left: 20),
                     child: Text(
                       "SubTotal",
-                      style: TextStyle(fontSize: text * 20),
+                      style: TextStyle(fontSize: text * 15),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 20, right: 20),
                     child: Text(
                       "20.00SR",
-                      style: TextStyle(fontSize: text * 20),
+                      style: TextStyle(fontSize: text * 15),
                     ),
                   ),
                 ],
               ),
             ],
           ),
-          Container(
-            width: width / 1.0,
-            color: Colors.black87,
-            child: Center(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ConfirmationSlider(
-                  height: 54.0,
-                  width: 250,
-                  backgroundColor: Color(0xffbaa378),
-                  foregroundColor: Colors.brown,
-                  backgroundShape: BorderRadius.circular(10),
-                  foregroundShape: BorderRadius.circular(16),
-                  text: "Swipe To Order",
-                  textStyle: TextStyle(
-                      fontSize: text * 17,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold),
-                  onConfirmation: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Checkout())),
+          Padding(
+            padding: const EdgeInsets.only(top: 20),
+            child: Container(
+              width: width / 1.0,
+              color: Colors.black87,
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ConfirmationSlider(
+                    height: 54.0,
+                    width: 250,
+                    backgroundColor: Color(0xffbaa378),
+                    foregroundColor: Colors.brown,
+                    backgroundShape: BorderRadius.circular(10),
+                    foregroundShape: BorderRadius.circular(16),
+                    text: "Swipe To Order",
+                    textStyle: TextStyle(
+                        fontSize: text * 17,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                    onConfirmation: () => Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Checkout())),
+                  ),
                 ),
               ),
             ),
