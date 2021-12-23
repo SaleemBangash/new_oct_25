@@ -60,7 +60,7 @@ class _Register1State extends State<Register1> {
               child: Text(
                 "25OCT",
                 style: TextStyle(
-                    fontSize: text * 40,
+                    fontSize: text * 25,
                     fontWeight: FontWeight.bold,
                     color: Color(0xffbaa378)),
               ),
@@ -72,7 +72,7 @@ class _Register1State extends State<Register1> {
                 child: Text(
               "Register",
               style: TextStyle(
-                  fontSize: text * 40,
+                  fontSize: text * 25,
                   fontWeight: FontWeight.bold,
                   color: Color(0xffbaa378)),
             )),
@@ -82,15 +82,15 @@ class _Register1State extends State<Register1> {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
-                      hintText: "FirstName",
-                      hintStyle: TextStyle(fontSize: 20),
+                      labelText: "First Name",
+                      // hintStyle: TextStyle(fontSize: 20),
                       prefixIcon: Icon(
                         Icons.person,
-                        size: 35,
+                        size: 20,
                       ),
                     ),
                   ),
@@ -99,15 +99,15 @@ class _Register1State extends State<Register1> {
                 //   height: height / 40,
                 // ),
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
-                      hintText: "LastName",
-                      hintStyle: TextStyle(fontSize: 20),
+                      labelText: "Last Name",
+                      // hintStyle: TextStyle(fontSize: 20),
                       prefixIcon: Icon(
                         Icons.person,
-                        size: 35,
+                        size: 20,
                       ),
                     ),
                   ),
@@ -116,15 +116,15 @@ class _Register1State extends State<Register1> {
                 //   height: height / 40,
                 // ),
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
                     keyboardType: TextInputType.phone,
                     decoration: InputDecoration(
-                      hintText: "Phone",
-                      hintStyle: TextStyle(fontSize: 20),
+                      labelText: "Phone",
+                      // hintStyle: TextStyle(fontSize: 20),
                       prefixIcon: Icon(
                         Icons.call,
-                        size: 35,
+                        size: 20,
                       ),
                     ),
                   ),
@@ -144,7 +144,9 @@ class _Register1State extends State<Register1> {
                       text: TextSpan(
                           text: 'You are Agreeing To Our',
                           style: TextStyle(
-                              color: Colors.black, fontSize: text * 15),
+                            color: Colors.black,
+                            // fontSize: text * 15
+                          ),
                           children: <TextSpan>[
                             TextSpan(
                               text: ' Terms and Policies',
@@ -165,7 +167,7 @@ class _Register1State extends State<Register1> {
                   child: Text(
                     "Register",
                     style: TextStyle(
-                        fontSize: text * 18,
+                        // fontSize: text * 18,
                         color: Colors.black,
                         fontWeight: FontWeight.bold),
                   ),

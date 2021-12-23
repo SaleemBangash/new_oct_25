@@ -1,10 +1,11 @@
-// ignore_for_file: file_names, prefer_const_constructors
+// ignore_for_file: file_names, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:new_oct_25/IceCream/chocolate.dart';
 import 'package:new_oct_25/IceCream/strawberry.dart';
 import 'package:new_oct_25/IceCream/vanila.dart';
 import 'package:new_oct_25/Favourite.dart';
+import 'package:new_oct_25/cartIcon.dart';
 
 import '../Cart.dart';
 
@@ -50,18 +51,8 @@ class _IceCreamState extends State<IceCream> {
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: CircleAvatar(
-                                backgroundColor: Color(0xffbaa378),
-                                child: IconButton(
-                                  icon: Icon(
-                                    Icons.shopping_bag_outlined,
-                                    color: Colors.white,
-                                  ),
-                                  onPressed: () => Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => Cart())),
-                                ),
-                              ),
+                                  backgroundColor: Color(0xffbaa378),
+                                  child: CartIcon()),
                             ),
                             Padding(
                               padding:
@@ -79,15 +70,15 @@ class _IceCreamState extends State<IceCream> {
                                   // Favourite(),
                                   Text(
                                     "Vanilla",
-                                    style: TextStyle(
-                                        fontSize: text * 14,
-                                        fontWeight: FontWeight.bold),
+                                    // style: TextStyle(
+                                    //     // fontSize: text * 14,
+                                    //     fontWeight: FontWeight.bold),
                                   ),
                                   Text(
                                     "20.00SR",
-                                    style: TextStyle(
-                                        fontSize: text * 14,
-                                        fontWeight: FontWeight.bold),
+                                    // style: TextStyle(
+                                    //     // fontSize: text * 14,
+                                    //     fontWeight: FontWeight.bold),
                                   ),
                                 ],
                               ),
@@ -106,62 +97,117 @@ class _IceCreamState extends State<IceCream> {
                         MaterialPageRoute(builder: (context) => Chocolate()),
                       ),
                       child: Container(
-                          decoration: BoxDecoration(
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.circular(22)),
-                          width: width / 2.5,
-                          height: height / 3.9,
-                          child: Stack(children: <Widget>[
-                            Image.asset("assets/images/sheri-silver-2.png"),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: CircleAvatar(
-                                backgroundColor: Color(0xffbaa378),
-                                child: IconButton(
-                                  icon: Icon(
-                                    Icons.shopping_bag_outlined,
-                                    color: Colors.white,
-                                  ),
-                                  onPressed: () => Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => Cart())),
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 110, left: 110),
-                              child: Favourite(),
-                            ),
-                            // SizedBox(
-                            //   height: height / 93,
-                            // ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 150, left: 40),
-                              child: Column(
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          // borderRadius: BorderRadius.only(
+                          //   bottomLeft: Radius.circular(40.0),
+                          //   bottomRight: Radius.circular(40.0),
+                          // ),
+                        ),
+                        width: width / 2.6,
+                        height: height / 4.45,
+                        child: Card(
+                          color: Colors.grey[200],
+
+                          // elevation: 10.0,
+                          child: Column(
+                            children: [
+                              Stack(
                                 children: [
-                                  // Favourite(),
-                                  Text(
-                                    "Chocolate",
-                                    style: TextStyle(
-                                        fontSize: text * 14,
-                                        fontWeight: FontWeight.bold),
+                                  Image.asset(
+                                    "assets/images/sheri-silver-2.png",
+                                    height: 120,
+                                    width: 150,
+                                    fit: BoxFit.cover,
                                   ),
-                                  Text(
-                                    "20.00SR",
-                                    style: TextStyle(
-                                        fontSize: text * 14,
-                                        fontWeight: FontWeight.bold),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: CircleAvatar(
+                                        backgroundColor: Color(0xffbaa378),
+                                        child: CartIcon()),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 70, left: 100),
+                                    child: Favourite(),
                                   ),
                                 ],
                               ),
-                            ),
-                            // SizedBox(
-                            //   height: height / 93,
-                            // ),
-                          ])),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                "Chocolate",
+                                // style: TextStyle(
+                                //     fontSize: text * 14,
+                                //     fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                "20.00SR",
+                                // style: TextStyle(
+                                //     // fontSize: text * 14,
+                                //     fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ),
+                        // decoration: BoxDecoration(
+                        //     color: Colors.grey,
+                        //     borderRadius: BorderRadius.circular(22)),
+                        // width: width / 2.5,
+                        // height: height / 3.9,
+                        // child: Stack(children: <Widget>[
+                        //   Image.asset("assets/images/sheri-silver-2.png"),
+                        //   Padding(
+                        //     padding: const EdgeInsets.all(8.0),
+                        //     child: CircleAvatar(
+                        //       backgroundColor: Color(0xffbaa378),
+                        //       child: IconButton(
+                        //         icon: Icon(
+                        //           Icons.shopping_bag_outlined,
+                        //           color: Colors.white,
+                        //         ),
+                        //         onPressed: () => Navigator.push(
+                        //             context,
+                        //             MaterialPageRoute(
+                        //                 builder: (context) => Cart())),
+                        //       ),
+                        //     ),
+                        //   ),
+                        //   Padding(
+                        //     padding:
+                        //         const EdgeInsets.only(top: 110, left: 110),
+                        //     child: Favourite(),
+                        //   ),
+                        //   // SizedBox(
+                        //   //   height: height / 93,
+                        //   // ),
+                        //   Padding(
+                        //     padding:
+                        //         const EdgeInsets.only(top: 150, left: 40),
+                        //     child: Column(
+                        //       children: [
+                        //         // Favourite(),
+                        //         Text(
+                        //           "Chocolate",
+                        //           // style: TextStyle(
+                        //           //     fontSize: text * 14,
+                        //           //     fontWeight: FontWeight.bold),
+                        //         ),
+                        //         Text(
+                        //           "20.00SR",
+                        //           // style: TextStyle(
+                        //           //     fontSize: text * 14,
+                        //           //     fontWeight: FontWeight.bold),
+                        //         ),
+                        //       ],
+                        //     ),
+                        //   ),
+                        //   // SizedBox(
+                        //   //   height: height / 93,
+                        //   // ),
+                        // ])
+                      ),
                     ),
                   ],
                 ),
@@ -215,15 +261,15 @@ class _IceCreamState extends State<IceCream> {
                                   // Favourite(),
                                   Text(
                                     "Vanilla",
-                                    style: TextStyle(
-                                        fontSize: text * 14,
-                                        fontWeight: FontWeight.bold),
+                                    // style: TextStyle(
+                                    //     fontSize: text * 14,
+                                    //     fontWeight: FontWeight.bold),
                                   ),
                                   Text(
                                     "20.00SR",
-                                    style: TextStyle(
-                                        fontSize: text * 14,
-                                        fontWeight: FontWeight.bold),
+                                    // style: TextStyle(
+                                    //     fontSize: text * 14,
+                                    //     fontWeight: FontWeight.bold),
                                   ),
                                 ],
                               ),
@@ -281,15 +327,15 @@ class _IceCreamState extends State<IceCream> {
                                   // Favourite(),
                                   Text(
                                     "StrawBerry",
-                                    style: TextStyle(
-                                        fontSize: text * 14,
-                                        fontWeight: FontWeight.bold),
+                                    // style: TextStyle(
+                                    //     fontSize: text * 14,
+                                    //     fontWeight: FontWeight.bold),
                                   ),
                                   Text(
                                     "20.00SR",
-                                    style: TextStyle(
-                                        fontSize: text * 14,
-                                        fontWeight: FontWeight.bold),
+                                    // style: TextStyle(
+                                    //     fontSize: text * 14,
+                                    //     fontWeight: FontWeight.bold),
                                   ),
                                 ],
                               ),
@@ -301,9 +347,7 @@ class _IceCreamState extends State<IceCream> {
                     ),
                   ],
                 ),
-                // SizedBox(
-                //   height: height / 41,
-                // ),
+
                 // Row(
                 //   children: [
                 //     Container(

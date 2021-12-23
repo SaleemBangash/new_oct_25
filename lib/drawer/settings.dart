@@ -76,7 +76,7 @@ class _settingsState extends State<settings> {
               child: Text(
                 "25OCT",
                 style: TextStyle(
-                    fontSize: text * 40,
+                    fontSize: text * 25,
                     fontWeight: FontWeight.bold,
                     color: Color(0xffbaa378)),
               ),
@@ -88,7 +88,7 @@ class _settingsState extends State<settings> {
                 child: Text(
               "Settings",
               style: TextStyle(
-                  fontSize: text * 40,
+                  fontSize: text * 25,
                   fontWeight: FontWeight.bold,
                   color: Color(0xffbaa378)),
             )),
@@ -103,7 +103,7 @@ class _settingsState extends State<settings> {
                       child: Text(
                         "Languages",
                         style: TextStyle(
-                            fontSize: text * 18,
+                            // fontSize: text * 18,
                             color: Colors.black,
                             fontWeight: FontWeight.bold),
                       ),
@@ -146,12 +146,12 @@ class _settingsState extends State<settings> {
                                     padding: const EdgeInsets.all(8.0),
                                     child: Text(
                                       "Select Your Language",
-                                      style: TextStyle(fontSize: text * 18),
+                                      // style: TextStyle(fontSize: text * 18),
                                     ),
                                   ),
                                   Text(
                                     "Build Your Understanding",
-                                    style: TextStyle(fontSize: text * 15),
+                                    // style: TextStyle(fontSize: text * 15),
                                   ),
                                   Column(
                                     children: [
@@ -237,10 +237,10 @@ class _settingsState extends State<settings> {
                                               child: Text(
                                                 "Select",
                                                 style: TextStyle(
-                                                  fontSize: text * 10,
-                                                  //color: Colors.black,
-                                                  //fontWeight: FontWeight.bold
-                                                ),
+                                                    // fontSize: text * 10,
+                                                    //color: Colors.black,
+                                                    //fontWeight: FontWeight.bold
+                                                    ),
                                               ),
                                               style: TextButton.styleFrom(
                                                   shape: RoundedRectangleBorder(
@@ -312,33 +312,33 @@ class _settingsState extends State<settings> {
                     ),
                   );
                 }),
-                ElevatedButton(
-                  child: Text(
-                    "LogIn to Another Account",
-                    style: TextStyle(
-                        fontSize: text * 18,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  style: TextButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12)),
+                // ElevatedButton(
+                //   child: Text(
+                //     "LogIn to Another Account",
+                //     style: TextStyle(
+                //         // fontSize: text * 18,
+                //         color: Colors.black,
+                //         fontWeight: FontWeight.bold),
+                //   ),
+                //   style: TextButton.styleFrom(
+                //       shape: RoundedRectangleBorder(
+                //           borderRadius: BorderRadius.circular(12)),
 
-                      //StadiumBorder(),
-                      // side: BorderSide(width: 6),
-                      minimumSize: Size(350, 40),
-                      maximumSize: Size(360, 40),
-                      backgroundColor: Color(0xffbaa378)),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Signin2()));
-                  },
-                ),
+                //       //StadiumBorder(),
+                //       // side: BorderSide(width: 6),
+                //       minimumSize: Size(350, 40),
+                //       maximumSize: Size(360, 40),
+                //       backgroundColor: Color(0xffbaa378)),
+                //   onPressed: () {
+                //     Navigator.push(context,
+                //         MaterialPageRoute(builder: (context) => Signin2()));
+                //   },
+                // ),
                 ElevatedButton(
                   child: Text(
                     "LogOut",
                     style: TextStyle(
-                        fontSize: text * 18,
+                        // fontSize: text * 18,
                         color: Colors.black,
                         fontWeight: FontWeight.bold),
                   ),

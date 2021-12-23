@@ -16,7 +16,7 @@ class _FavouriteState extends State<Favourite> {
         IconButton(
           icon: Icon(
             Icons.favorite,
-            color: _type ? Colors.black : Colors.red,
+            color: _type ? Colors.red : Colors.black,
           ),
           onPressed: () {
             setState(() {

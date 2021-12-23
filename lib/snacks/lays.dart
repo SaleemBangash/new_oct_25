@@ -11,6 +11,8 @@ import '../Iconawesomeheart.dart';
 import '../Home.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../cartIcon.dart';
+
 class Lays extends StatefulWidget {
   Lays({
     Key? key,
@@ -61,10 +63,12 @@ class _LaysState extends State<Lays> {
                             pageBuilder: () => Home(),
                           ),
                         ],
-                        child: Icon(
-                          Icons.arrow_back,
-                          size: 30,
-                        ),
+                        child: CircleAvatar(
+                            backgroundColor: Color(0xffbaa378),
+                            child: Icon(
+                              Icons.arrow_back,
+                              color: Colors.black,
+                            )),
                       ),
                     ),
                     // Padding(
@@ -85,289 +89,291 @@ class _LaysState extends State<Lays> {
                   child: ClipRect(
                     child: BackdropFilter(
                       filter: ui.ImageFilter.blur(sigmaX: 30.0, sigmaY: 20.0),
-                      child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Container(
-                          height: height / 1.53,
-                          width: width / 1.0,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(50.0),
-                              topRight: Radius.circular(50.0),
-                            ),
-                            //color: Colors.transparent,
-                            border: Border.all(
-                                width: 2.0, color: const Color(0xff707070)),
+                      child: Container(
+                        height: height / 1.53,
+                        width: width / 1.0,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(50.0),
+                            topRight: Radius.circular(50.0),
                           ),
-                          child: Column(children: [
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                top: 20,
-                              ),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  Text(
-                                    'Details',
-                                    style: TextStyle(
-                                      fontFamily: 'Segoe UI',
-                                      fontSize: text * 30,
-                                      color: const Color(0xff668079),
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                    textAlign: TextAlign.left,
-                                  ),
-                                  Favourite()
-                                ],
-                              ),
+                          //color: Colors.transparent,
+                          border: Border.all(
+                              width: 2.0, color: const Color(0xff707070)),
+                        ),
+                        child: Column(children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              top: 20,
                             ),
-                            Padding(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Text(
+                                  'Details',
+                                  style: TextStyle(
+                                    fontFamily: 'Segoe UI',
+                                    fontSize: text * 15,
+                                    color: const Color(0xff668079),
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  textAlign: TextAlign.left,
+                                ),
+                                Favourite()
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 20, right: 200),
+                            child: Text(
+                              'Lays',
+                              style: TextStyle(
+                                fontFamily: 'Segoe UI',
+                                fontSize: text * 15,
+                                color: const Color(0xff668079),
+                                fontWeight: FontWeight.bold,
+                              ),
+                              textAlign: TextAlign.left,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 20),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 50),
+                                  child: Row(
+                                    children: [
+                                      Container(
+                                        width: width / 10,
+                                        height: height / 24,
+                                        decoration: BoxDecoration(
+                                            shape: BoxShape.circle),
+                                        child: RaisedButton(
+                                          shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(40)),
+                                          child: Text('S',
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                  // fontSize: text * 10
+                                                  )),
+                                          textColor: Color(0xffbaa378),
+                                          // 2
+                                          color: _hasBeenPressed
+                                              ? Colors.black
+                                              : Colors.white70,
+                                          // 3
+                                          onPressed: () => {
+                                            setState(() {
+                                              _hasBeenPressed =
+                                                  !_hasBeenPressed;
+                                              _isBeenPressed = false;
+                                              _wasBeenPressed = false;
+                                            })
+                                          },
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      Container(
+                                        width: width / 10,
+                                        height: height / 24,
+                                        child: RaisedButton(
+                                          shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(40)),
+                                          child: Center(
+                                              child: Text('M',
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                      // fontSize: text * 16
+                                                      ))),
+                                          textColor: Color(0xffbaa378),
+                                          // 2
+                                          color: _isBeenPressed
+                                              ? Colors.black
+                                              : Colors.white70,
+                                          // 3
+                                          onPressed: () => {
+                                            setState(() {
+                                              _isBeenPressed = !_isBeenPressed;
+                                              _hasBeenPressed = false;
+                                              _wasBeenPressed = false;
+                                            })
+                                          },
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      Container(
+                                        width: width / 10,
+                                        height: height / 24,
+                                        child: RaisedButton(
+                                          shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(40)),
+                                          child: Text('L',
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                  // fontSize: text * 16
+                                                  )),
+                                          textColor: Color(0xffbaa378),
+                                          // 2
+                                          color: _wasBeenPressed
+                                              ? Colors.black
+                                              : Colors.white70,
+                                          // 3
+                                          onPressed: () => {
+                                            setState(() {
+                                              _wasBeenPressed =
+                                                  !_wasBeenPressed;
+                                              _hasBeenPressed = false;
+                                              _isBeenPressed = false;
+                                            })
+                                          },
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                // RaisedButton(
+                                //   onPressed: () {},
+                                //   color: Colors.amber,
+                                //   shape: RoundedRectangleBorder(
+                                //       borderRadius:
+                                //           BorderRadius.circular(10)),
+                                //   child: Text("s"),
+                                // ),
+                                // child: Text.rich(
+                                //   TextSpan(
+                                //     style: TextStyle(
+                                //       fontFamily: 'Segoe UI',
+                                //       fontSize: 20,
+                                //       color: const Color(0xff0a0a0a),
+                                //     ),
+                                //     children: [
+                                //       TextSpan(
+                                //         text: '300 g.',
+                                //         style: TextStyle(
+                                //           fontWeight: FontWeight.w700,
+                                //         ),
+                                //       ),
+                                //       TextSpan(
+                                //         text: '/',
+                                //         style: TextStyle(
+                                //           fontWeight: FontWeight.w300,
+                                //         ),
+                                //       ),
+                                //       TextSpan(
+                                //         text: '530kcal.  ',
+                                //         style: TextStyle(
+                                //           color: const Color(0xff668079),
+                                //           fontWeight: FontWeight.w300,
+                                //         ),
+                                //       ),
+                                //     ],
+                                //   ),
+                                //   textHeightBehavior: TextHeightBehavior(
+                                //       applyHeightToFirstAscent: false),
+                                //   textAlign: TextAlign.left,
+                                // ),
+
+                                Row(
+                                  children: <Widget>[
+                                    _itemCount != -1
+                                        ? IconButton(
+                                            icon: CircleAvatar(
+                                                radius: 10,
+                                                backgroundColor: Colors.black,
+                                                child: Icon(
+                                                  Icons.remove,
+                                                  size: 15,
+                                                )),
+                                            onPressed: () =>
+                                                setState(() => _itemCount--),
+                                          )
+                                        : Container(),
+                                    Text(
+                                      _itemCount.toString(),
+                                      style: TextStyle(fontSize: text * 15),
+                                    ),
+                                    IconButton(
+                                        icon: CircleAvatar(
+                                            radius: 10,
+                                            backgroundColor: Colors.black,
+                                            child: Icon(
+                                              Icons.add,
+                                              size: 15,
+                                            )),
+                                        onPressed: () =>
+                                            setState(() => _itemCount++))
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
                               padding:
                                   const EdgeInsets.only(top: 20, right: 200),
                               child: Text(
-                                'Lays',
+                                "Description",
                                 style: TextStyle(
-                                  fontFamily: 'Segoe UI',
-                                  fontSize: text * 20,
-                                  color: const Color(0xff668079),
-                                  fontWeight: FontWeight.bold,
-                                ),
-                                textAlign: TextAlign.left,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 20),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 30),
-                                    child: Row(
-                                      children: [
-                                        Container(
-                                          width: width / 9,
-                                          height: height / 18,
-                                          child: RaisedButton(
-                                            shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(40)),
-                                            child: Center(
-                                                child: new Text('S',
-                                                    style: TextStyle(
-                                                        fontSize: text * 16))),
-                                            textColor: Color(0xffbaa378),
-                                            // 2
-                                            color: _hasBeenPressed
-                                                ? Colors.black
-                                                : Colors.white70,
-                                            // 3
-                                            onPressed: () => {
-                                              setState(() {
-                                                _hasBeenPressed =
-                                                    !_hasBeenPressed;
-                                                _isBeenPressed = false;
-                                                _wasBeenPressed = false;
-                                              })
-                                            },
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: 10,
-                                        ),
-                                        Container(
-                                          width: width / 9,
-                                          height: height / 18,
-                                          child: RaisedButton(
-                                            shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(40)),
-                                            child: Center(
-                                                child: new Text('M',
-                                                    style: TextStyle(
-                                                        fontSize: text * 16))),
-                                            textColor: Color(0xffbaa378),
-                                            // 2
-                                            color: _isBeenPressed
-                                                ? Colors.black
-                                                : Colors.white70,
-                                            // 3
-                                            onPressed: () => {
-                                              setState(() {
-                                                _isBeenPressed =
-                                                    !_isBeenPressed;
-                                                _hasBeenPressed = false;
-                                                _wasBeenPressed = false;
-                                              })
-                                            },
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: 10,
-                                        ),
-                                        Container(
-                                          width: width / 9,
-                                          height: height / 18,
-                                          child: RaisedButton(
-                                            shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(40)),
-                                            child: new Text('L',
-                                                style: TextStyle(
-                                                    fontSize: text * 16)),
-                                            textColor: Color(0xffbaa378),
-                                            // 2
-                                            color: _wasBeenPressed
-                                                ? Colors.black
-                                                : Colors.white70,
-                                            // 3
-                                            onPressed: () => {
-                                              setState(() {
-                                                _wasBeenPressed =
-                                                    !_wasBeenPressed;
-                                                _hasBeenPressed = false;
-                                                _isBeenPressed = false;
-                                              })
-                                            },
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  // RaisedButton(
-                                  //   onPressed: () {},
-                                  //   color: Colors.amber,
-                                  //   shape: RoundedRectangleBorder(
-                                  //       borderRadius:
-                                  //           BorderRadius.circular(10)),
-                                  //   child: Text("s"),
-                                  // ),
-                                  // child: Text.rich(
-                                  //   TextSpan(
-                                  //     style: TextStyle(
-                                  //       fontFamily: 'Segoe UI',
-                                  //       fontSize: 20,
-                                  //       color: const Color(0xff0a0a0a),
-                                  //     ),
-                                  //     children: [
-                                  //       TextSpan(
-                                  //         text: '300 g.',
-                                  //         style: TextStyle(
-                                  //           fontWeight: FontWeight.w700,
-                                  //         ),
-                                  //       ),
-                                  //       TextSpan(
-                                  //         text: '/',
-                                  //         style: TextStyle(
-                                  //           fontWeight: FontWeight.w300,
-                                  //         ),
-                                  //       ),
-                                  //       TextSpan(
-                                  //         text: '530kcal.  ',
-                                  //         style: TextStyle(
-                                  //           color: const Color(0xff668079),
-                                  //           fontWeight: FontWeight.w300,
-                                  //         ),
-                                  //       ),
-                                  //     ],
-                                  //   ),
-                                  //   textHeightBehavior: TextHeightBehavior(
-                                  //       applyHeightToFirstAscent: false),
-                                  //   textAlign: TextAlign.left,
-                                  // ),
-
-                                  Row(
-                                    children: <Widget>[
-                                      _itemCount != -1
-                                          ? new IconButton(
-                                              icon: CircleAvatar(
-                                                  radius: 15,
-                                                  backgroundColor: Colors.black,
-                                                  child:
-                                                      new Icon(Icons.remove)),
-                                              onPressed: () =>
-                                                  setState(() => _itemCount--),
-                                            )
-                                          : new Container(),
-                                      new Text(
-                                        _itemCount.toString(),
-                                        style: TextStyle(fontSize: text * 25),
-                                      ),
-                                      new IconButton(
-                                          icon: CircleAvatar(
-                                              radius: 15,
-                                              backgroundColor: Colors.black,
-                                              child: new Icon(Icons.add)),
-                                          onPressed: () =>
-                                              setState(() => _itemCount++))
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                                padding:
-                                    const EdgeInsets.only(top: 20, right: 200),
-                                child: Text(
-                                  "Description",
-                                  style: TextStyle(
-                                      fontSize: text * 25,
-                                      fontWeight: FontWeight.bold),
-                                )),
-                            SizedBox(height: 10),
-                            Text(
-                              'Lorem ipsumm fusahgbfauifa agbvas\nuasgfbub8yadsifb agbfi8ofag iasbvio\n  ibiahgbi9anidn9azsngofnd hgbizsngf\nLorem ipsumm fusahgbfauifa ',
+                                    fontSize: text * 15,
+                                    fontWeight: FontWeight.bold),
+                              )),
+                          SizedBox(height: 10),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 20, right: 30),
+                            child: Text(
+                              'Lorem ipsumm fusahgbfauifa agbvas\nuasgfbub8yadsifb agbfi8ofag iasbvio\n ibiahgbi9anidn9azsngofnd hgbizsngf\nLorem ipsumm fusahgbfauifa ',
                               style: TextStyle(
                                 fontFamily: 'Poppins',
-                                fontSize: 19,
+                                fontSize: 15,
                                 color: const Color(0xff2a2a2a),
                               ),
                               textAlign: TextAlign.left,
                             ),
-                            SizedBox(height: 10),
-                            Padding(
-                              padding: const EdgeInsets.all(20.0),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Container(
+                          ),
+                          SizedBox(height: 10),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 50, top: 20),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Container(
+                                    decoration: BoxDecoration(
+                                        color: Color(0xffbaa378),
+                                        borderRadius:
+                                            BorderRadius.circular(15)),
+                                    width: width / 4.5,
+                                    height: height / 23,
+                                    child: Center(
+                                        child: Text(
+                                      "20.00SR",
+                                      // style: TextStyle(fontSize: text * 15),
+                                    ))),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                    right: 20,
+                                  ),
+                                  child: Container(
                                       decoration: BoxDecoration(
                                           color: Color(0xffbaa378),
                                           borderRadius:
                                               BorderRadius.circular(20)),
-                                      width: width / 4,
-                                      height: height / 17,
-                                      child: Center(
-                                          child: Text(
-                                        "20.00SR",
-                                        style: TextStyle(fontSize: text * 16),
-                                      ))),
-                                  Container(
-                                      decoration: BoxDecoration(
-                                          color: Color(0xffbaa378),
-                                          borderRadius:
-                                              BorderRadius.circular(20)),
-                                      width: width / 4,
-                                      height: height / 17,
-                                      child: Center(
-                                        child: IconButton(
-                                          icon:
-                                              Icon(Icons.shopping_bag_outlined),
-                                          onPressed: () => Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      Cart())),
-                                        ),
-                                      ))
-                                ],
-                              ),
-                            )
-                          ]),
-                        ),
+                                      width: width / 5,
+                                      height: height / 23,
+                                      child: Center(child: CartIcon())),
+                                )
+                              ],
+                            ),
+                          )
+                        ]),
                       ),
                     ),
                   )),

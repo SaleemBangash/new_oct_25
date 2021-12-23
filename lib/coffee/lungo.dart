@@ -12,6 +12,8 @@ import '../Iconawesomeheart.dart';
 import '../Home.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../cartIcon.dart';
+
 class Lungo extends StatefulWidget {
   Lungo({
     Key? key,
@@ -62,10 +64,12 @@ class _LungoState extends State<Lungo> {
                             pageBuilder: () => Home(),
                           ),
                         ],
-                        child: Icon(
-                          Icons.arrow_back,
-                          size: 30,
-                        ),
+                        child: CircleAvatar(
+                            backgroundColor: Color(0xffbaa378),
+                            child: Icon(
+                              Icons.arrow_back,
+                              color: Colors.black,
+                            )),
                       ),
                     ),
                     // Padding(
@@ -111,7 +115,7 @@ class _LungoState extends State<Lungo> {
                                   'Details',
                                   style: TextStyle(
                                     fontFamily: 'Segoe UI',
-                                    fontSize: text * 30,
+                                    fontSize: text * 15,
                                     color: const Color(0xff668079),
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -122,12 +126,12 @@ class _LungoState extends State<Lungo> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(top: 20, right: 160),
+                            padding: const EdgeInsets.only(top: 20, right: 200),
                             child: Text(
-                              'Lungo Coffee',
+                              'Lungo',
                               style: TextStyle(
                                 fontFamily: 'Segoe UI',
-                                fontSize: text * 20,
+                                fontSize: text * 15,
                                 color: const Color(0xff668079),
                                 fontWeight: FontWeight.bold,
                               ),
@@ -140,20 +144,23 @@ class _LungoState extends State<Lungo> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 30),
+                                  padding: const EdgeInsets.only(left: 50),
                                   child: Row(
                                     children: [
                                       Container(
-                                        width: width / 9,
-                                        height: height / 18,
+                                        width: width / 10,
+                                        height: height / 24,
+                                        decoration: BoxDecoration(
+                                            shape: BoxShape.circle),
                                         child: RaisedButton(
                                           shape: RoundedRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(40)),
-                                          child: Center(
-                                              child: new Text('S',
-                                                  style: TextStyle(
-                                                      fontSize: text * 16))),
+                                          child: Text('S',
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                  // fontSize: text * 10
+                                                  )),
                                           textColor: Color(0xffbaa378),
                                           // 2
                                           color: _hasBeenPressed
@@ -174,16 +181,18 @@ class _LungoState extends State<Lungo> {
                                         width: 10,
                                       ),
                                       Container(
-                                        width: width / 9,
-                                        height: height / 18,
+                                        width: width / 10,
+                                        height: height / 24,
                                         child: RaisedButton(
                                           shape: RoundedRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(40)),
                                           child: Center(
-                                              child: new Text('M',
+                                              child: Text('M',
+                                                  textAlign: TextAlign.center,
                                                   style: TextStyle(
-                                                      fontSize: text * 16))),
+                                                      // fontSize: text * 16
+                                                      ))),
                                           textColor: Color(0xffbaa378),
                                           // 2
                                           color: _isBeenPressed
@@ -203,15 +212,17 @@ class _LungoState extends State<Lungo> {
                                         width: 10,
                                       ),
                                       Container(
-                                        width: width / 9,
-                                        height: height / 18,
+                                        width: width / 10,
+                                        height: height / 24,
                                         child: RaisedButton(
                                           shape: RoundedRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(40)),
-                                          child: new Text('L',
+                                          child: Text('L',
+                                              textAlign: TextAlign.center,
                                               style: TextStyle(
-                                                  fontSize: text * 16)),
+                                                  // fontSize: text * 16
+                                                  )),
                                           textColor: Color(0xffbaa378),
                                           // 2
                                           color: _wasBeenPressed
@@ -276,24 +287,30 @@ class _LungoState extends State<Lungo> {
                                 Row(
                                   children: <Widget>[
                                     _itemCount != -1
-                                        ? new IconButton(
+                                        ? IconButton(
                                             icon: CircleAvatar(
-                                                radius: 15,
+                                                radius: 10,
                                                 backgroundColor: Colors.black,
-                                                child: new Icon(Icons.remove)),
+                                                child: Icon(
+                                                  Icons.remove,
+                                                  size: 15,
+                                                )),
                                             onPressed: () =>
                                                 setState(() => _itemCount--),
                                           )
-                                        : new Container(),
-                                    new Text(
+                                        : Container(),
+                                    Text(
                                       _itemCount.toString(),
-                                      style: TextStyle(fontSize: text * 25),
+                                      style: TextStyle(fontSize: text * 15),
                                     ),
-                                    new IconButton(
+                                    IconButton(
                                         icon: CircleAvatar(
-                                            radius: 15,
+                                            radius: 10,
                                             backgroundColor: Colors.black,
-                                            child: new Icon(Icons.add)),
+                                            child: Icon(
+                                              Icons.add,
+                                              size: 15,
+                                            )),
                                         onPressed: () =>
                                             setState(() => _itemCount++))
                                   ],
@@ -307,22 +324,25 @@ class _LungoState extends State<Lungo> {
                               child: Text(
                                 "Description",
                                 style: TextStyle(
-                                    fontSize: text * 25,
+                                    fontSize: text * 15,
                                     fontWeight: FontWeight.bold),
                               )),
                           SizedBox(height: 10),
-                          Text(
-                            'Lorem ipsumm fusahgbfauifa agbvas\nuasgfbub8yadsifb agbfi8ofag iasbvio\n  ibiahgbi9anidn9azsngofnd hgbizsngf\nLorem ipsumm fusahgbfauifa ',
-                            style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontSize: 19,
-                              color: const Color(0xff2a2a2a),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 20, right: 30),
+                            child: Text(
+                              'Lorem ipsumm fusahgbfauifa agbvas\nuasgfbub8yadsifb agbfi8ofag iasbvio\n ibiahgbi9anidn9azsngofnd hgbizsngf\nLorem ipsumm fusahgbfauifa ',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 15,
+                                color: const Color(0xff2a2a2a),
+                              ),
+                              textAlign: TextAlign.left,
                             ),
-                            textAlign: TextAlign.left,
                           ),
                           SizedBox(height: 10),
                           Padding(
-                            padding: const EdgeInsets.all(20.0),
+                            padding: const EdgeInsets.only(left: 50, top: 20),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -330,30 +350,27 @@ class _LungoState extends State<Lungo> {
                                     decoration: BoxDecoration(
                                         color: Color(0xffbaa378),
                                         borderRadius:
-                                            BorderRadius.circular(20)),
-                                    width: width / 4,
-                                    height: height / 17,
+                                            BorderRadius.circular(15)),
+                                    width: width / 4.5,
+                                    height: height / 23,
                                     child: Center(
                                         child: Text(
                                       "20.00SR",
-                                      style: TextStyle(fontSize: text * 16),
+                                      // style: TextStyle(fontSize: text * 15),
                                     ))),
-                                Container(
-                                    decoration: BoxDecoration(
-                                        color: Color(0xffbaa378),
-                                        borderRadius:
-                                            BorderRadius.circular(20)),
-                                    width: width / 4,
-                                    height: height / 17,
-                                    child: Center(
-                                      child: IconButton(
-                                        icon: Icon(Icons.shopping_bag_outlined),
-                                        onPressed: () => Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) => Cart())),
-                                      ),
-                                    ))
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                    right: 20,
+                                  ),
+                                  child: Container(
+                                      decoration: BoxDecoration(
+                                          color: Color(0xffbaa378),
+                                          borderRadius:
+                                              BorderRadius.circular(20)),
+                                      width: width / 5,
+                                      height: height / 23,
+                                      child: Center(child: CartIcon())),
+                                )
                               ],
                             ),
                           )

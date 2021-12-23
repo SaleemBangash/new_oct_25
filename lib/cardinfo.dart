@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:adobe_xd/page_link.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
@@ -50,17 +52,17 @@ class _cardinfoState extends State<cardinfo> {
             child: Text(
               "25OCT",
               style: TextStyle(
-                  fontSize: text * 30,
+                  fontSize: text * 25,
                   fontWeight: FontWeight.bold,
                   color: Color(0xffbaa378)),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 70),
+            padding: const EdgeInsets.only(left: 70, top: 20),
             child: Text(
               "Add credit Card",
               style: TextStyle(
-                  fontSize: text * 20,
+                  fontSize: text * 15,
                   fontWeight: FontWeight.bold,
                   color: Colors.black),
             ),
@@ -77,9 +79,10 @@ class _cardinfoState extends State<cardinfo> {
                         // border: OutlineInputBorder(
                         //     borderRadius: BorderRadius.circular(16)),
                         labelStyle: TextStyle(
-                            color: Colors.black,
-                            fontSize: text * 17,
-                            fontWeight: FontWeight.bold),
+                          color: Colors.black,
+                          // fontSize: text * 17,
+                          // fontWeight: FontWeight.bold
+                        ),
                         // hintText: "Enter First Name",
                         // hintStyle: TextStyle(color: Colors.black),
                         labelText: "Name"),
@@ -98,9 +101,10 @@ class _cardinfoState extends State<cardinfo> {
                         // border: OutlineInputBorder(
                         //     borderRadius: BorderRadius.circular(16)),
                         labelStyle: TextStyle(
-                            color: Colors.black,
-                            fontSize: text * 17,
-                            fontWeight: FontWeight.bold),
+                          color: Colors.black,
+                          // fontSize: text * 17,
+                          // fontWeight: FontWeight.bold
+                        ),
                         //hintText: "Enter Card number",
                         hintStyle: TextStyle(color: Colors.black),
                         labelText: "Credit Card Number"),
@@ -123,9 +127,10 @@ class _cardinfoState extends State<cardinfo> {
                             // border: OutlineInputBorder(
                             //     borderRadius: BorderRadius.circular(16)),
                             labelStyle: TextStyle(
-                                color: Colors.black,
-                                fontSize: text * 17,
-                                fontWeight: FontWeight.bold),
+                              color: Colors.black,
+                              // fontSize: text * 17,
+                              // fontWeight: FontWeight.bold
+                            ),
                             //hintText: "",
                             hintStyle: TextStyle(color: Colors.black),
                             labelText: "Expires"),
@@ -143,9 +148,10 @@ class _cardinfoState extends State<cardinfo> {
                           // border: OutlineInputBorder(
                           //     borderRadius: BorderRadius.circular(16)),
                           labelStyle: TextStyle(
-                              color: Colors.black,
-                              fontSize: text * 17,
-                              fontWeight: FontWeight.bold),
+                            color: Colors.black,
+                            // fontSize: text * 17,
+                            // fontWeight: FontWeight.bold
+                          ),
                           //hintText: "",
                           hintStyle: TextStyle(color: Colors.black),
                           labelText: "CCV"),
@@ -163,9 +169,10 @@ class _cardinfoState extends State<cardinfo> {
                   child: Text(
                     "Save",
                     style: TextStyle(
-                        fontSize: text * 15,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold),
+                      // fontSize: text * 15,
+                      color: Colors.black,
+                      // fontWeight: FontWeight.bold
+                    ),
                   ),
                   style: TextButton.styleFrom(
                       shadowColor: Colors.black,

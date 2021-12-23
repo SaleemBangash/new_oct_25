@@ -1,6 +1,11 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, file_names
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
+import 'package:new_oct_25/Tab2/coffee2.dart';
+import 'package:new_oct_25/Tab2/drinks2.dart';
+import 'package:new_oct_25/Tab2/iceCream2.dart';
+import 'package:new_oct_25/Tab2/snacks2.dart';
+import 'package:new_oct_25/bottomsheet.dart';
 import 'package:new_oct_25/tabBar/coffee1.dart';
 import 'package:new_oct_25/tabBar/coldDrinks.dart';
 import 'package:new_oct_25/tabBar/drinks1.dart';
@@ -62,7 +67,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   @override
-  int _currentIndex = 0;
+  int _currentIndex = 1;
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
@@ -85,7 +90,7 @@ class _HomeState extends State<Home> {
               height: 20,
             ),
             SizedBox(
-              height: height / 4,
+              height: height / 5,
               width: width / 5,
               child: CarouselSlider(
                 options: CarouselOptions(
@@ -131,13 +136,16 @@ class _HomeState extends State<Home> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(
-                            bottom: 10, left: 15, right: 10, top: 10),
+                          bottom: 5,
+                          left: 15,
+                          right: 10,
+                        ),
                         child: Container(
                           width: width / 1.27,
                           child: TextField(
                             keyboardType: TextInputType.text,
                             decoration: InputDecoration(
-                              hintText: "Search",
+                              labelText: "Search",
                               hintStyle: TextStyle(fontSize: 15),
                               suffixIcon: Icon(
                                 Icons.search,
@@ -171,14 +179,14 @@ class _HomeState extends State<Home> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                height: 50,
+                height: 15,
                 decoration: BoxDecoration(
                   // color: Color(0xffbaa378),
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: TabBar(
-                    indicatorColor: Color(0xffbaa378),
-                    indicatorWeight: 4,
+                    indicatorColor: Colors.black,
+                    indicatorWeight: 1,
                     indicatorSize: TabBarIndicatorSize.tab,
                     //indicatorWeight: 15,
                     // indicatorPadding: const EdgeInsets.all(10),
@@ -214,115 +222,120 @@ class _HomeState extends State<Home> {
                     ]),
               ),
             ),
+            // SizedBox(
+            //   height: 10,
+            // ),
             SizedBox(
-              height: 20,
-            ),
-            SizedBox(
-              height: height / 3.5,
-              child: TabBarView(
-                  children: [IceCream(), Coffee1(), Snacks1(), Drinks1()]),
+              height: 390,
+              child: TabBarView(children: [
+                NewIcream(),
+                NewCoffee(),
+                NewSnacks(),
+                NewDrinks()
+              ]),
             ),
           ],
         ),
-        bottomNavigationBar: ClipRRect(
-          borderRadius: BorderRadius.only(
-            topRight: Radius.circular(25.0),
-            topLeft: Radius.circular(25.0),
-          ),
-          child: BottomNavigationBar(
-            onTap: onTabTapped, // new
-            currentIndex: _currentIndex,
-            backgroundColor: Color(0xffbaa378),
-            type: BottomNavigationBarType.fixed,
-            selectedItemColor: Colors.black,
+        bottomNavigationBar: Bottomsheet(),
+        // ClipRRect(
+        //   borderRadius: BorderRadius.only(
+        //     topRight: Radius.circular(25.0),
+        //     topLeft: Radius.circular(25.0),
+        //   ),
+        //   child: BottomNavigationBar(
+        //     onTap: onTabTapped, // new
+        //     currentIndex: _currentIndex,
+        //     backgroundColor: Color(0xffbaa378),
+        //     type: BottomNavigationBarType.fixed,
+        //     selectedItemColor: Colors.black,
 
-            selectedLabelStyle:
-                TextStyle(fontWeight: FontWeight.bold, fontSize: text * 15),
+        //     selectedLabelStyle:
+        //         TextStyle(fontWeight: FontWeight.bold, fontSize: text * 15),
 
-            unselectedItemColor: Colors.black,
-            iconSize: 25,
+        //     unselectedItemColor: Colors.black,
+        //     iconSize: 25,
 
-            //elevation: 5,
-            items: [
-              BottomNavigationBarItem(
-                icon: InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Home()),
-                      );
-                    },
-                    child: Icon(Icons.home)),
-                title: Text(
-                  'Home',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ),
-                backgroundColor: Colors.white,
-              ),
-              BottomNavigationBarItem(
-                  icon: InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Cart()),
-                      );
-                    },
-                    child: Icon(
-                      Icons.store_mall_directory_outlined,
-                      color: Colors.black,
-                    ),
-                  ),
-                  title: Text(
-                    'Cart',
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                  ),
-                  backgroundColor: Colors.white),
-              BottomNavigationBarItem(
-                icon: InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Wishlist()),
-                    );
-                  },
-                  child: Icon(
-                    Icons.favorite_outline,
-                    color: Colors.black,
-                  ),
-                ),
-                title: Text(
-                  'Favourite',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ),
-                //backgroundColor: Colors.white,
-              ),
-              // BottomNavigationBarItem(
-              //   icon: InkWell(
-              //     onTap: () {
-              //       Navigator.push(
-              //         context,
-              //         MaterialPageRoute(builder: (context) => Profile()),
-              //       );
-              //     },
-              //     child: Icon(
-              //       Icons.person,
-              //       color: Colors.black,
-              //     ),
-              //   ),
-              //   title: Text(
-              //     'Profile',
-              //   ),
-              //   backgroundColor: Colors.white,
-              // ),
-            ],
-            // type: BottomNavigationBarType.shifting,
-            // currentIndex: _selectedIndex,
-            // selectedItemColor: Colors.black,
-            // iconSize: 40,
-            // onTap: _onItemTapped,
-            // elevation: 5
-          ),
-        ),
+        //     //elevation: 5,
+        //     items: [
+        //       BottomNavigationBarItem(
+        //         icon: InkWell(
+        //             onTap: () {
+        //               Navigator.push(
+        //                 context,
+        //                 MaterialPageRoute(builder: (context) => Home()),
+        //               );
+        //             },
+        //             child: Icon(Icons.home)),
+        //         title: Text(
+        //           'Home',
+        //           style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+        //         ),
+        //         backgroundColor: Colors.white,
+        //       ),
+        //       BottomNavigationBarItem(
+        //           icon: InkWell(
+        //             onTap: () {
+        //               Navigator.push(
+        //                 context,
+        //                 MaterialPageRoute(builder: (context) => Cart()),
+        //               );
+        //             },
+        //             child: Icon(
+        //               Icons.store_mall_directory_outlined,
+        //               color: Colors.black,
+        //             ),
+        //           ),
+        //           title: Text(
+        //             'Cart',
+        //             style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+        //           ),
+        //           backgroundColor: Colors.white),
+        //       BottomNavigationBarItem(
+        //         icon: InkWell(
+        //           onTap: () {
+        //             Navigator.push(
+        //               context,
+        //               MaterialPageRoute(builder: (context) => Wishlist()),
+        //             );
+        //           },
+        //           child: Icon(
+        //             Icons.favorite_outline,
+        //             color: Colors.black,
+        //           ),
+        //         ),
+        //         title: Text(
+        //           'Favourite',
+        //           style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+        //         ),
+        //         //backgroundColor: Colors.white,
+        //       ),
+        //       // BottomNavigationBarItem(
+        //       //   icon: InkWell(
+        //       //     onTap: () {
+        //       //       Navigator.push(
+        //       //         context,
+        //       //         MaterialPageRoute(builder: (context) => Profile()),
+        //       //       );
+        //       //     },
+        //       //     child: Icon(
+        //       //       Icons.person,
+        //       //       color: Colors.black,
+        //       //     ),
+        //       //   ),
+        //       //   title: Text(
+        //       //     'Profile',
+        //       //   ),
+        //       //   backgroundColor: Colors.white,
+        //       // ),
+        //     ],
+        //     // type: BottomNavigationBarType.shifting,
+        //     // currentIndex: _selectedIndex,
+        //     // selectedItemColor: Colors.black,
+        //     // iconSize: 40,
+        //     // onTap: _onItemTapped,
+        //     // elevation: 5
+        //   ),
+        // ),
       ),
     );
   }

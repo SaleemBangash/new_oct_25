@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:new_oct_25/snacks/cheetos.dart';
 import 'package:new_oct_25/snacks/doritos.dart';
@@ -82,15 +84,15 @@ class _Snacks1State extends State<Snacks1> {
                                   // Favourite(),
                                   Text(
                                     "Lays",
-                                    style: TextStyle(
-                                        fontSize: text * 14,
-                                        fontWeight: FontWeight.bold),
+                                    // style: TextStyle(
+                                    //     fontSize: text * 14,
+                                    //     fontWeight: FontWeight.bold),
                                   ),
                                   Text(
                                     "20.00SR",
-                                    style: TextStyle(
-                                        fontSize: text * 14,
-                                        fontWeight: FontWeight.bold),
+                                    // style: TextStyle(
+                                    //     fontSize: text * 14,
+                                    //     fontWeight: FontWeight.bold),
                                   ),
                                 ],
                               ),
@@ -152,15 +154,15 @@ class _Snacks1State extends State<Snacks1> {
                                   // Favourite(),
                                   Text(
                                     "Doritos",
-                                    style: TextStyle(
-                                        fontSize: text * 14,
-                                        fontWeight: FontWeight.bold),
+                                    // style: TextStyle(
+                                    //     fontSize: text * 14,
+                                    //     fontWeight: FontWeight.bold),
                                   ),
                                   Text(
                                     "20.00SR",
-                                    style: TextStyle(
-                                        fontSize: text * 14,
-                                        fontWeight: FontWeight.bold),
+                                    // style: TextStyle(
+                                    //     fontSize: text * 14,
+                                    //     fontWeight: FontWeight.bold),
                                   ),
                                 ],
                               ),
@@ -226,15 +228,15 @@ class _Snacks1State extends State<Snacks1> {
                                   // Favourite(),
                                   Text(
                                     "Cheetos",
-                                    style: TextStyle(
-                                        fontSize: text * 14,
-                                        fontWeight: FontWeight.bold),
+                                    // style: TextStyle(
+                                    //     fontSize: text * 14,
+                                    //     fontWeight: FontWeight.bold),
                                   ),
                                   Text(
                                     "20.00SR",
-                                    style: TextStyle(
-                                        fontSize: text * 14,
-                                        fontWeight: FontWeight.bold),
+                                    // style: TextStyle(
+                                    //     fontSize: text * 14,
+                                    //     fontWeight: FontWeight.bold),
                                   ),
                                 ],
                               ),
@@ -296,15 +298,15 @@ class _Snacks1State extends State<Snacks1> {
                                   // Favourite(),
                                   Text(
                                     "Kurkure",
-                                    style: TextStyle(
-                                        fontSize: text * 14,
-                                        fontWeight: FontWeight.bold),
+                                    // style: TextStyle(
+                                    //     fontSize: text * 14,
+                                    //     fontWeight: FontWeight.bold),
                                   ),
                                   Text(
                                     "20.00SR",
-                                    style: TextStyle(
-                                        fontSize: text * 14,
-                                        fontWeight: FontWeight.bold),
+                                    // style: TextStyle(
+                                    //     fontSize: text * 14,
+                                    //     fontWeight: FontWeight.bold),
                                   ),
                                 ],
                               ),

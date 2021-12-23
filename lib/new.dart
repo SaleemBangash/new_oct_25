@@ -33,10 +33,9 @@ class _NewState extends State<New> {
                 scrollDirection: Axis.horizontal,
                 children: [
                   Image.asset(
-                    "assets/images/map.jpg",
+                    "assets/images/map4.png",
                     height: height / 2,
-
-                    //fit: BoxFit.cover,
+                    fit: BoxFit.cover,
                   ),
                 ],
               ),
@@ -67,7 +66,7 @@ class _NewState extends State<New> {
                     style: TextStyle(
                         fontSize: text * 30,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white),
+                        color: Colors.black),
                   ),
                 ),
                 Padding(
@@ -79,25 +78,26 @@ class _NewState extends State<New> {
                         style: TextStyle(
                             fontSize: text * 15,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white),
+                            color: Colors.black),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 20),
+                        padding: const EdgeInsets.only(left: 100),
                         child: ElevatedButton(
                           child: Text(
                             "Skip",
                             style: TextStyle(
-                                fontSize: text * 15,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold),
+                              // fontSize: text * 15,
+                              color: Colors.black,
+                              // fontWeight: FontWeight.bold
+                            ),
                           ),
                           style: TextButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12)),
+                              // shape: RoundedRectangleBorder(
+                              //     borderRadius: BorderRadius.circular(12)),
 
                               //StadiumBorder(),
-                              minimumSize: Size(60, 30),
-                              maximumSize: Size(100, 30),
+                              minimumSize: Size(60, 20),
+                              maximumSize: Size(100, 20),
                               backgroundColor: Color(0xffbaa378)),
                           onPressed: () {
                             Navigator.push(

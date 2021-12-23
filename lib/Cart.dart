@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:new_oct_25/Checkout.dart';
+import 'package:new_oct_25/bottomsheet.dart';
 import './Home.dart';
 import 'package:adobe_xd/page_link.dart';
 
@@ -21,7 +22,7 @@ class Cart extends StatefulWidget {
 }
 
 class _CartState extends State<Cart> {
-  int _currentIndex = 1;
+  int _currentIndex = 0;
   int _itemCount = 0;
   @override
   Widget build(BuildContext context) {
@@ -29,287 +30,154 @@ class _CartState extends State<Cart> {
     double width = MediaQuery.of(context).size.width;
     double text = MediaQuery.textScaleFactorOf(context);
     return Scaffold(
-      backgroundColor: const Color(0xfffdfdfd),
-      body: ListView(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(right: 290, top: 10),
-            child: PageLink(
-              links: [
-                PageLinkInfo(
-                  transition: LinkTransition.Fade,
-                  ease: Curves.easeOut,
-                  duration: 0.3,
-                  pageBuilder: () => Home(),
-                ),
-              ],
-              // ignore: prefer_const_constructors
-              child: CircleAvatar(
-                  backgroundColor: Color(0xffbaa378),
-                  child: Icon(
-                    Icons.arrow_back,
-                    color: Colors.black,
-                  )),
-            ),
-          ),
-          Center(
-            child: Text(
-              "25OCT",
-              style: TextStyle(
-                  fontSize: text * 25,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20),
-            child: Text(
-              "Your Cart",
-              style: TextStyle(
-                  fontSize: text * 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Container(
-              // margin: EdgeInsets.all(12),
-              height: height / 11.8,
-              decoration: BoxDecoration(
-                  border: Border.all(
-                    //width: 2,
-                    color: Colors.black,
-                  ),
-                  color: Colors.grey[300],
-                  borderRadius: BorderRadius.circular(16)),
-              child: TextFormField(
-                maxLines: 2,
-                style: TextStyle(
-                  color: Colors.white,
-                  // fontSize: 30,
-                  //height: 1.5
-                ),
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                  //fillColor: Colors.grey[300],
-                  //suffixText: "@gmail.com",
-                  prefixIcon: Icon(
-                    Icons.timer_sharp,
-                    size: 25,
-                  ),
-                  // labelStyle: TextStyle(
-                  //     color: Colors.white,
-                  //     fontSize: 20,
-                  //     fontWeight: FontWeight.bold),
-
-                  //labelText: "Enter PickUp Time",
-                  hintStyle:
-                      TextStyle(color: Colors.black, fontSize: text * 17),
-                  hintText: "Enter PickUp Time",
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(16)),
-                  // labelText: "Email"
-                ),
-                // validator: (email) {
-                //   if (isEmailValid("email"))
-                //     return null;
-                //   else
-                //     return 'Enter a valid email address';
-                // },
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 15, right: 15, bottom: 05),
-            child: Container(
-              // margin: EdgeInsets.all(12),
-              height: height / 12.5,
-              width: width / 4.5,
-              decoration: BoxDecoration(
-                  border: Border.all(
-                    //width: 2,
-                    color: Colors.black,
-                  ),
-                  color: Colors.grey[300],
-                  borderRadius: BorderRadius.circular(16)),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: TextFormField(
-                      maxLines: 2,
-                      style: TextStyle(
-                        color: Colors.white,
-                        // fontSize: 30,
-                        //height: 1.5
-                      ),
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                        //fillColor: Colors.grey[300],
-                        //suffixText: "@gmail.com",
-                        prefixIcon: Icon(
-                          Icons.cast_outlined,
-                          size: 25,
-                        ),
-                        // labelStyle: TextStyle(
-                        //     color: Colors.white,
-                        //     fontSize: 15,
-                        //     fontWeight: FontWeight.bold),
-
-                        //labelText: "Enter PickUp Time",
-                        hintStyle:
-                            TextStyle(color: Colors.black, fontSize: text * 17),
-                        hintText: "Coupon Code",
-                        // border: OutlineInputBorder(
-                        //     borderRadius: BorderRadius.circular(16)),
-                        // labelText: "Email"
-                      ),
-                      // validator: (email) {
-                      //   if (isEmailValid("email"))
-                      //     return null;
-                      //   else
-                      //     return 'Enter a valid email address';
-                      // },
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ElevatedButton(
-                      child: Text(
-                        "Apply Code",
-                        style: TextStyle(
-                          // fontSize: text * 15,
-                          color: Colors.black,
-                          // fontWeight: FontWeight.bold
-                        ),
-                      ),
-                      style: TextButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12)),
-
-                          //StadiumBorder(),
-                          // side: BorderSide(width: 6),
-                          // minimumSize: Size(60, 30),
-                          // maximumSize: Size(110, 30),
-                          backgroundColor: Color(0xffbaa378)),
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Cart()));
-                      },
-                    ),
+        backgroundColor: const Color(0xfffdfdfd),
+        body: ListView(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(right: 290, top: 10),
+              child: PageLink(
+                links: [
+                  PageLinkInfo(
+                    transition: LinkTransition.Fade,
+                    ease: Curves.easeOut,
+                    duration: 0.3,
+                    pageBuilder: () => Home(),
                   ),
                 ],
+                // ignore: prefer_const_constructors
+                child: CircleAvatar(
+                    backgroundColor: Color(0xffbaa378),
+                    child: Icon(
+                      Icons.arrow_back,
+                      color: Colors.black,
+                    )),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20),
-            child: Text(
-              "Cart Items",
-              style: TextStyle(
-                  fontSize: text * 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black),
+            Center(
+              child: Text(
+                "25OCT",
+                style: TextStyle(
+                    fontSize: text * 25,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black),
+              ),
             ),
-          ),
-          Column(children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Text(
+                "Your Cart",
+                style: TextStyle(
+                    // fontSize: text * 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black),
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Container(
-                height: height / 5.8,
-                width: width / 1,
+                // margin: EdgeInsets.all(12),
+                height: height / 11.8,
                 decoration: BoxDecoration(
                     border: Border.all(
                       //width: 2,
                       color: Colors.black,
                     ),
-                    color: Colors.grey[350],
+                    color: Colors.grey[300],
                     borderRadius: BorderRadius.circular(16)),
-                child: Stack(
+                child: TextFormField(
+                  maxLines: 2,
+                  style: TextStyle(
+                      // color: Colors.white,
+                      // fontSize: 30,
+                      //height: 1.5
+                      ),
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    //fillColor: Colors.grey[300],
+                    //suffixText: "@gmail.com",
+                    prefixIcon: Icon(
+                      Icons.timer_sharp,
+                      size: 25,
+                    ),
+                    // labelStyle: TextStyle(
+                    //     color: Colors.white,
+                    //     fontSize: 20,
+                    //     fontWeight: FontWeight.bold),
+
+                    //labelText: "Enter PickUp Time",
+                    labelStyle:
+                        TextStyle(color: Colors.black, fontSize: text * 15),
+                    labelText: "Coupon Code",
+                    // border: OutlineInputBorder(
+                    //     borderRadius: BorderRadius.circular(16)),
+                    // labelText: "Email"
+                  ),
+                  // validator: (email) {
+                  //   if (isEmailValid("email"))
+                  //     return null;
+                  //   else
+                  //     return 'Enter a valid email address';
+                  // },
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 15, right: 15, bottom: 05),
+              child: Container(
+                // margin: EdgeInsets.all(12),
+                height: height / 12.5,
+                width: width / 4.5,
+                decoration: BoxDecoration(
+                    border: Border.all(
+                      //width: 2,
+                      color: Colors.black,
+                    ),
+                    color: Colors.grey[300],
+                    borderRadius: BorderRadius.circular(16)),
+                child: Row(
                   children: [
-                    Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 10),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(35),
-                            child: Image.asset(
-                              "assets/images/sheri-silver-1.png",
-                              width: width / 3.5,
-                              height: height / 6,
-                            ),
-                          ),
+                    Expanded(
+                      child: TextFormField(
+                        maxLines: 2,
+                        style: TextStyle(
+                          color: Colors.white,
+                          // fontSize: 30,
+                          //height: 1.5
                         ),
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 130, top: 20),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Vanilla Flavor",
-                            style: TextStyle(
-                                // fontSize: text * 16
-                                ),
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                          //fillColor: Colors.grey[300],
+                          //suffixText: "@gmail.com",
+                          prefixIcon: Icon(
+                            Icons.cast_outlined,
+                            size: 25,
                           ),
-                        ],
+                          // labelStyle: TextStyle(
+                          //     color: Colors.white,
+                          //     fontSize: 15,
+                          //     fontWeight: FontWeight.bold),
+
+                          //labelText: "Enter PickUp Time",
+                          labelStyle: TextStyle(
+                              color: Colors.black, fontSize: text * 15),
+                          labelText: "Coupon Code",
+                          // border: OutlineInputBorder(
+                          //     borderRadius: BorderRadius.circular(16)),
+                          // labelText: "Email"
+                        ),
+                        // validator: (email) {
+                        //   if (isEmailValid("email"))
+                        //     return null;
+                        //   else
+                        //     return 'Enter a valid email address';
+                        // },
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 270, top: 10),
-                      child: Text(
-                        "20.00SR",
-                        style: TextStyle(
-                            // fontSize: text * 15
-                            ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 130, top: 50),
-                      child: Text(
-                        "20.00SR",
-                        style: TextStyle(
-                            // fontSize: text * 16
-                            ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 120, top: 70),
-                      child: Row(
-                        children: <Widget>[
-                          _itemCount != -1
-                              ? new IconButton(
-                                  icon: CircleAvatar(
-                                      radius: 10,
-                                      backgroundColor: Colors.black,
-                                      child: new Icon(
-                                        Icons.remove,
-                                        size: 15,
-                                      )),
-                                  onPressed: () => setState(() => _itemCount--),
-                                )
-                              : new Container(),
-                          new Text(
-                            _itemCount.toString(),
-                            style: TextStyle(fontSize: text * 15),
-                          ),
-                          new IconButton(
-                              icon: CircleAvatar(
-                                  radius: 10,
-                                  backgroundColor: Colors.black,
-                                  child: new Icon(
-                                    Icons.add,
-                                    size: 15,
-                                  )),
-                              onPressed: () => setState(() => _itemCount++))
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 240, top: 70),
+                      padding: const EdgeInsets.all(8.0),
                       child: ElevatedButton(
                         child: Text(
-                          "Remove",
+                          "Apply Code",
                           style: TextStyle(
                             // fontSize: text * 15,
                             color: Colors.black,
@@ -323,7 +191,7 @@ class _CartState extends State<Cart> {
                             //StadiumBorder(),
                             // side: BorderSide(width: 6),
                             // minimumSize: Size(60, 30),
-                            // maximumSize: Size(100, 30),
+                            // maximumSize: Size(110, 30),
                             backgroundColor: Color(0xffbaa378)),
                         onPressed: () {
                           Navigator.push(context,
@@ -334,317 +202,352 @@ class _CartState extends State<Cart> {
                   ],
                 ),
               ),
-            )
-          ]),
-          // Padding(
-          //   padding: const EdgeInsets.all(16.0),
-          //   child: Container(
-          //     height: height / 5.8,
-          //     width: width / 5,
-          //     decoration: BoxDecoration(
-          //         border: Border.all(
-          //           //width: 2,
-          //           color: Colors.black,
-          //         ),
-          //         color: Colors.grey[350],
-          //         borderRadius: BorderRadius.circular(16)),
-          //     child: Row(
-          //       children: [
-          //         Padding(
-          //           padding: const EdgeInsets.only(left: 10),
-          //           child: ClipRRect(
-          //             borderRadius: BorderRadius.circular(35),
-          //             child: Image.asset(
-          //               "assets/images/sheri-silver-1.png",
-          //               width: width / 4,
-          //               height: height / 7,
-          //             ),
-          //           ),
-          //         ),
-          //         Column(
-          //           children: [
-          //             Row(
-          //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //               children: [
-          //                 Padding(
-          //                   padding: const EdgeInsets.only(top: 20, left: 10),
-          //                   child: Text(
-          //                     "Vanilla Flavor",
-          //                     style: TextStyle(fontSize: text * 20),
-          //                   ),
-          //                 ),
-          //                 Padding(
-          //                   padding: const EdgeInsets.only(top: 20, left: 10),
-          //                   child: Text(
-          //                     "20.00SR",
-          //                     style: TextStyle(fontSize: text * 15),
-          //                   ),
-          //                 ),
-          //               ],
-          //             ),
-          //             Padding(
-          //               padding: const EdgeInsets.only(
-          //                 top: 20,
-          //               ),
-          //               child: Row(
-          //                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //                 children: [
-          //                   Row(
-          //                     children: <Widget>[
-          //                       _itemCount != 0
-          //                           ? new IconButton(
-          //                               icon: CircleAvatar(
-          //                                   radius: 10,
-          //                                   backgroundColor: Colors.black,
-          //                                   child: new Icon(
-          //                                     Icons.remove,
-          //                                     size: 15,
-          //                                   )),
-          //                               onPressed: () =>
-          //                                   setState(() => _itemCount--),
-          //                             )
-          //                           : new Container(),
-          //                       new Text(
-          //                         _itemCount.toString(),
-          //                         style: TextStyle(fontSize: text * 25),
-          //                       ),
-          //                       new IconButton(
-          //                           icon: CircleAvatar(
-          //                               radius: 10,
-          //                               backgroundColor: Colors.black,
-          //                               child: new Icon(
-          //                                 Icons.add,
-          //                                 size: 15,
-          //                               )),
-          //                           onPressed: () =>
-          //                               setState(() => _itemCount++))
-          //                     ],
-          //                   ),
-          //                   ElevatedButton(
-          //                     child: Text(
-          //                       "Remove",
-          //                       style: TextStyle(
-          //                           fontSize: text * 18,
-          //                           color: Colors.black,
-          //                           fontWeight: FontWeight.bold),
-          //                     ),
-          //                     style: TextButton.styleFrom(
-          //                         shape: RoundedRectangleBorder(
-          //                             borderRadius: BorderRadius.circular(12)),
-
-          //                         //StadiumBorder(),
-          //                         // side: BorderSide(width: 6),
-          //                         //minimumSize: Size(100, 10),
-          //                         backgroundColor: Color(0xffbaa378)),
-          //                     onPressed: () {
-          //                       Navigator.push(
-          //                           context,
-          //                           MaterialPageRoute(
-          //                               builder: (context) => Cart()));
-          //                     },
-          //                   ),
-          //                 ],
-          //               ),
-          //             ),
-          //           ],
-          //         ),
-          //       ],
-          //     ),
-          //   ),
-          // ),
-          Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20),
-                    child: Text(
-                      "Total",
-                      style: TextStyle(fontSize: text * 15),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 20),
-                    child: Text(
-                      "20.00SR",
-                      style: TextStyle(fontSize: text * 15),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10, left: 20),
-                    child: Text(
-                      "SubTotal",
-                      style: TextStyle(fontSize: text * 15),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20, right: 20),
-                    child: Text(
-                      "20.00SR",
-                      style: TextStyle(fontSize: text * 15),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20),
-            child: Container(
-              width: width / 1.0,
-              color: Colors.black87,
-              child: Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ConfirmationSlider(
-                    height: 54.0,
-                    width: 250,
-                    backgroundColor: Color(0xffbaa378),
-                    foregroundColor: Colors.brown,
-                    backgroundShape: BorderRadius.circular(10),
-                    foregroundShape: BorderRadius.circular(16),
-                    text: "Swipe To Order",
-                    textStyle: TextStyle(
-                        fontSize: text * 17,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold),
-                    onConfirmation: () => Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Checkout())),
-                  ),
-                ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Text(
+                "Cart Items",
+                style: TextStyle(
+                    // fontSize: text * 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black),
               ),
             ),
-          )
-          // Center(
-          //   child: Container(
-          //     width: MediaQuery.of(context).size.width - 100,
-          //     height: height / 19,
-          //     decoration: BoxDecoration(
-          //         color: Colors.blue, borderRadius: BorderRadius.circular(30)),
-          //     child: Row(
-          //       children: [Expanded(child: Text("Swipe"))],
-          //     ),
-          //   ),
-          // )
-          //     Column(
-          //   mainAxisAlignment: MainAxisAlignment.center,
-          //   children: <Widget>[
-          //     SwipingButton(
-          //       text: "SWIPE ME!",
-          //       onSwipeCallback: () => print("I'M SWIPED!"),
-          //     ),
-          //   ],
-          // ),
-        ],
-      ),
-      bottomNavigationBar: ClipRRect(
-        borderRadius: BorderRadius.only(
-          topRight: Radius.circular(25.0),
-          topLeft: Radius.circular(25.0),
-        ),
-        child: BottomNavigationBar(
-          onTap: onTabTapped, // new
-          currentIndex: _currentIndex,
-          backgroundColor: Color(0xffbaa378),
-          type: BottomNavigationBarType.fixed,
-          selectedItemColor: Colors.black,
-          selectedLabelStyle:
-              TextStyle(fontWeight: FontWeight.bold, fontSize: text * 15),
+            Column(children: [
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Container(
+                  height: height / 5.8,
+                  width: width / 1,
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        //width: 2,
+                        color: Colors.black,
+                      ),
+                      color: Colors.grey[350],
+                      borderRadius: BorderRadius.circular(16)),
+                  child: Stack(
+                    children: [
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(35),
+                              child: Image.asset(
+                                "assets/images/sheri-silver-1.png",
+                                width: width / 3.5,
+                                height: height / 6,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 130, top: 20),
+                        child: Row(
+                          children: [
+                            Text(
+                              "Vanilla Flavor",
+                              style: TextStyle(
+                                  // fontSize: text * 16
+                                  ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 270, top: 10),
+                        child: Text(
+                          "20.00SR",
+                          style: TextStyle(
+                              // fontSize: text * 15
+                              ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 130, top: 50),
+                        child: Text(
+                          "20.00SR",
+                          style: TextStyle(
+                              // fontSize: text * 16
+                              ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 120, top: 70),
+                        child: Row(
+                          children: <Widget>[
+                            _itemCount != -1
+                                ? new IconButton(
+                                    icon: CircleAvatar(
+                                        radius: 10,
+                                        backgroundColor: Colors.black,
+                                        child: new Icon(
+                                          Icons.remove,
+                                          size: 15,
+                                        )),
+                                    onPressed: () =>
+                                        setState(() => _itemCount--),
+                                  )
+                                : new Container(),
+                            new Text(
+                              _itemCount.toString(),
+                              style: TextStyle(fontSize: text * 15),
+                            ),
+                            new IconButton(
+                                icon: CircleAvatar(
+                                    radius: 10,
+                                    backgroundColor: Colors.black,
+                                    child: new Icon(
+                                      Icons.add,
+                                      size: 15,
+                                    )),
+                                onPressed: () => setState(() => _itemCount++))
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 240, top: 70),
+                        child: ElevatedButton(
+                          child: Text(
+                            "Remove",
+                            style: TextStyle(
+                              // fontSize: text * 15,
+                              color: Colors.black,
+                              // fontWeight: FontWeight.bold
+                            ),
+                          ),
+                          style: TextButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(12)),
 
-          unselectedItemColor: Colors.black,
-          iconSize: 25,
-
-          //elevation: 5,
-          items: [
-            BottomNavigationBarItem(
-              icon: InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Home()),
-                    );
-                  },
-                  child: Icon(Icons.home)),
-              title: Text(
-                'Home',
-                style:
-                    TextStyle(fontSize: text * 15, fontWeight: FontWeight.bold),
-              ),
-              backgroundColor: Colors.white,
-            ),
-            BottomNavigationBarItem(
-                icon: InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Cart()),
-                    );
-                  },
-                  child: Icon(
-                    Icons.store_mall_directory_outlined,
-                    color: Colors.black,
+                              //StadiumBorder(),
+                              // side: BorderSide(width: 6),
+                              // minimumSize: Size(60, 30),
+                              // maximumSize: Size(100, 30),
+                              backgroundColor: Color(0xffbaa378)),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Cart()));
+                          },
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                title: Text(
-                  'Cart',
-                  style: TextStyle(
-                      fontSize: text * 15, fontWeight: FontWeight.bold),
-                ),
-                backgroundColor: Colors.white),
-            BottomNavigationBarItem(
-              icon: InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Wishlist()),
-                  );
-                },
-                child: Icon(
-                  Icons.favorite_outline,
-                  color: Colors.black,
-                ),
-              ),
-              title: Text(
-                'Favourite',
-                style:
-                    TextStyle(fontSize: text * 15, fontWeight: FontWeight.bold),
-              ),
-              backgroundColor: Colors.white,
-            ),
-            // BottomNavigationBarItem(
-            //   icon: InkWell(
-            //     onTap: () {
-            //       Navigator.push(
-            //         context,
-            //         MaterialPageRoute(builder: (context) => Profile()),
-            //       );
-            //     },
-            //     child: Icon(
-            //       Icons.person,
-            //       color: Colors.black,
+              )
+            ]),
+            // Padding(
+            //   padding: const EdgeInsets.all(16.0),
+            //   child: Container(
+            //     height: height / 5.8,
+            //     width: width / 5,
+            //     decoration: BoxDecoration(
+            //         border: Border.all(
+            //           //width: 2,
+            //           color: Colors.black,
+            //         ),
+            //         color: Colors.grey[350],
+            //         borderRadius: BorderRadius.circular(16)),
+            //     child: Row(
+            //       children: [
+            //         Padding(
+            //           padding: const EdgeInsets.only(left: 10),
+            //           child: ClipRRect(
+            //             borderRadius: BorderRadius.circular(35),
+            //             child: Image.asset(
+            //               "assets/images/sheri-silver-1.png",
+            //               width: width / 4,
+            //               height: height / 7,
+            //             ),
+            //           ),
+            //         ),
+            //         Column(
+            //           children: [
+            //             Row(
+            //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //               children: [
+            //                 Padding(
+            //                   padding: const EdgeInsets.only(top: 20, left: 10),
+            //                   child: Text(
+            //                     "Vanilla Flavor",
+            //                     style: TextStyle(fontSize: text * 20),
+            //                   ),
+            //                 ),
+            //                 Padding(
+            //                   padding: const EdgeInsets.only(top: 20, left: 10),
+            //                   child: Text(
+            //                     "20.00SR",
+            //                     style: TextStyle(fontSize: text * 15),
+            //                   ),
+            //                 ),
+            //               ],
+            //             ),
+            //             Padding(
+            //               padding: const EdgeInsets.only(
+            //                 top: 20,
+            //               ),
+            //               child: Row(
+            //                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //                 children: [
+            //                   Row(
+            //                     children: <Widget>[
+            //                       _itemCount != 0
+            //                           ? new IconButton(
+            //                               icon: CircleAvatar(
+            //                                   radius: 10,
+            //                                   backgroundColor: Colors.black,
+            //                                   child: new Icon(
+            //                                     Icons.remove,
+            //                                     size: 15,
+            //                                   )),
+            //                               onPressed: () =>
+            //                                   setState(() => _itemCount--),
+            //                             )
+            //                           : new Container(),
+            //                       new Text(
+            //                         _itemCount.toString(),
+            //                         style: TextStyle(fontSize: text * 25),
+            //                       ),
+            //                       new IconButton(
+            //                           icon: CircleAvatar(
+            //                               radius: 10,
+            //                               backgroundColor: Colors.black,
+            //                               child: new Icon(
+            //                                 Icons.add,
+            //                                 size: 15,
+            //                               )),
+            //                           onPressed: () =>
+            //                               setState(() => _itemCount++))
+            //                     ],
+            //                   ),
+            //                   ElevatedButton(
+            //                     child: Text(
+            //                       "Remove",
+            //                       style: TextStyle(
+            //                           fontSize: text * 18,
+            //                           color: Colors.black,
+            //                           fontWeight: FontWeight.bold),
+            //                     ),
+            //                     style: TextButton.styleFrom(
+            //                         shape: RoundedRectangleBorder(
+            //                             borderRadius: BorderRadius.circular(12)),
+
+            //                         //StadiumBorder(),
+            //                         // side: BorderSide(width: 6),
+            //                         //minimumSize: Size(100, 10),
+            //                         backgroundColor: Color(0xffbaa378)),
+            //                     onPressed: () {
+            //                       Navigator.push(
+            //                           context,
+            //                           MaterialPageRoute(
+            //                               builder: (context) => Cart()));
+            //                     },
+            //                   ),
+            //                 ],
+            //               ),
+            //             ),
+            //           ],
+            //         ),
+            //       ],
             //     ),
             //   ),
-            //   title: Text(
-            //     'Profile',
+            // ),
+            Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20),
+                      child: Text(
+                        "Total",
+                        style: TextStyle(fontSize: text * 15),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 20),
+                      child: Text(
+                        "20.00SR",
+                        style: TextStyle(fontSize: text * 15),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10, left: 20),
+                      child: Text(
+                        "SubTotal",
+                        style: TextStyle(fontSize: text * 15),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 20, right: 20),
+                      child: Text(
+                        "20.00SR",
+                        style: TextStyle(fontSize: text * 15),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Container(
+                width: width / 1.0,
+                color: Colors.black87,
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ConfirmationSlider(
+                      height: 54.0,
+                      width: 250,
+                      backgroundColor: Color(0xffbaa378),
+                      foregroundColor: Colors.brown,
+                      backgroundShape: BorderRadius.circular(10),
+                      foregroundShape: BorderRadius.circular(16),
+                      text: "Swipe To Order",
+                      textStyle: TextStyle(
+                          fontSize: text * 17,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                      onConfirmation: () => Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Checkout())),
+                    ),
+                  ),
+                ),
+              ),
+            )
+            // Center(
+            //   child: Container(
+            //     width: MediaQuery.of(context).size.width - 100,
+            //     height: height / 19,
+            //     decoration: BoxDecoration(
+            //         color: Colors.blue, borderRadius: BorderRadius.circular(30)),
+            //     child: Row(
+            //       children: [Expanded(child: Text("Swipe"))],
+            //     ),
             //   ),
-            //   backgroundColor: Colors.white,
+            // )
+            //     Column(
+            //   mainAxisAlignment: MainAxisAlignment.center,
+            //   children: <Widget>[
+            //     SwipingButton(
+            //       text: "SWIPE ME!",
+            //       onSwipeCallback: () => print("I'M SWIPED!"),
+            //     ),
+            //   ],
             // ),
           ],
-          // type: BottomNavigationBarType.shifting,
-          // currentIndex: _selectedIndex,
-          // selectedItemColor: Colors.black,
-          // iconSize: 40,
-          // onTap: _onItemTapped,
-          // elevation: 5
         ),
-      ),
-    );
+        bottomNavigationBar: Bottomsheet());
   }
 
   void onTabTapped(int index) {

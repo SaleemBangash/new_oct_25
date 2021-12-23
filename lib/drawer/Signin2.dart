@@ -1,5 +1,5 @@
 // ignore: file_names
-// ignore_for_file: file_names, prefer_const_constructors, unnecessary_new
+// ignore_for_file: file_names, prefer_const_constructors, unnecessary_new, prefer_const_literals_to_create_immutables
 
 //import 'dart:js';
 //import 'package:sizer/sizer.dart';
@@ -64,7 +64,7 @@ class _Signin2State extends State<Signin2> {
               child: Text(
                 "25OCT",
                 style: TextStyle(
-                    fontSize: text * 40,
+                    fontSize: text * 25,
                     fontWeight: FontWeight.bold,
                     color: Color(0xffbaa378)),
               ),
@@ -76,7 +76,7 @@ class _Signin2State extends State<Signin2> {
                 child: Text(
               "SignIn",
               style: TextStyle(
-                  fontSize: text * 40,
+                  fontSize: text * 20,
                   fontWeight: FontWeight.bold,
                   color: Color(0xffbaa378)),
             )),
@@ -90,11 +90,11 @@ class _Signin2State extends State<Signin2> {
                   child: TextFormField(
                     keyboardType: TextInputType.phone,
                     decoration: InputDecoration(
-                      hintText: "Phone",
-                      hintStyle: TextStyle(fontSize: 20),
+                      labelText: "Phone",
+                      // hintStyle: TextStyle(fontSize: 20),
                       prefixIcon: Icon(
                         Icons.call,
-                        size: 35,
+                        size: 20,
                       ),
                     ),
                   ),
@@ -114,13 +114,15 @@ class _Signin2State extends State<Signin2> {
                       text: TextSpan(
                           text: 'You are Agreeing To Our',
                           style: TextStyle(
-                              color: Colors.black, fontSize: text * 15),
+                            color: Colors.black,
+                            // fontSize: text * 15
+                          ),
                           children: <TextSpan>[
                             TextSpan(
                               text: ' Terms and Policies',
                               style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: text * 15,
+                                  // fontSize: text * 15,
                                   fontWeight: FontWeight.bold),
                               // recognizer: TapGestureRecognizer()
                               //   ..onTap = () {
@@ -135,7 +137,7 @@ class _Signin2State extends State<Signin2> {
                   child: Text(
                     "Sign In",
                     style: TextStyle(
-                        fontSize: text * 18,
+                        // fontSize: text * 18,
                         color: Colors.black,
                         fontWeight: FontWeight.bold),
                   ),

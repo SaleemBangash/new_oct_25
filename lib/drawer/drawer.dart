@@ -71,7 +71,7 @@ class _MyDrawerState extends State<MyDrawer> {
               child: Text(
                 "25OCT",
                 style: TextStyle(
-                    fontSize: text * 40,
+                    fontSize: text * 25,
                     fontWeight: FontWeight.bold,
                     color: Colors.white),
               ),
@@ -124,12 +124,13 @@ class _MyDrawerState extends State<MyDrawer> {
                 child: ListTile(
                     leading: Icon(
                       Icons.login,
-                      size: 40,
+                      size: 20,
                     ),
                     title: Text(
                       "SignIn",
                       style: TextStyle(
-                          fontSize: text * 20, fontWeight: FontWeight.bold),
+                          // fontSize: text * 20,
+                          fontWeight: FontWeight.bold),
                     )),
               ),
             ),
@@ -141,12 +142,13 @@ class _MyDrawerState extends State<MyDrawer> {
                 child: ListTile(
                     leading: Icon(
                       Icons.app_registration,
-                      size: 40,
+                      size: 20,
                     ),
                     title: Text(
                       "Registration",
                       style: TextStyle(
-                          fontSize: text * 20, fontWeight: FontWeight.bold),
+                          // fontSize: text * 20,
+                          fontWeight: FontWeight.bold),
                     )),
               ),
             ),
@@ -158,12 +160,13 @@ class _MyDrawerState extends State<MyDrawer> {
                 child: ListTile(
                     leading: Icon(
                       Icons.headphones,
-                      size: 40,
+                      size: 20,
                     ),
                     title: Text(
                       "Customer Care",
                       style: TextStyle(
-                          fontSize: text * 20, fontWeight: FontWeight.bold),
+                          // fontSize: text * 20,
+                          fontWeight: FontWeight.bold),
                     )),
               ),
             ),
@@ -175,12 +178,13 @@ class _MyDrawerState extends State<MyDrawer> {
                 child: ListTile(
                     leading: Icon(
                       Icons.person_pin,
-                      size: 40,
+                      size: 20,
                     ),
                     title: Text(
                       "Branches",
                       style: TextStyle(
-                          fontSize: text * 20, fontWeight: FontWeight.bold),
+                          // fontSize: text * 20,
+                          fontWeight: FontWeight.bold),
                     )),
               ),
             ),
@@ -192,12 +196,13 @@ class _MyDrawerState extends State<MyDrawer> {
                 child: ListTile(
                     leading: Icon(
                       Icons.settings,
-                      size: 40,
+                      size: 20,
                     ),
                     title: Text(
                       "Settings",
                       style: TextStyle(
-                          fontSize: text * 20, fontWeight: FontWeight.bold),
+                          // fontSize: text * 20,
+                          fontWeight: FontWeight.bold),
                     )),
               ),
             ),
@@ -251,7 +256,7 @@ listTile({required IconData icon, required String title}) {
   return ListTile(
     leading: Icon(
       icon,
-      size: 32,
+      size: 20,
     ),
     title: Text(
       title,
