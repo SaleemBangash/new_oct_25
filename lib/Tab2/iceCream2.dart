@@ -82,14 +82,14 @@ class _NewIcreamState extends State<NewIcream> {
                       Padding(
                         padding: EdgeInsets.only(
                           top: 110,
-                          left: 60,
+                          left: 50,
                         ),
                         child: Stack(
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(left: 5),
                               child: Text(
-                                "Vanilla",
+                                "Vanilla", textAlign: TextAlign.center,
                                 // style: TextStyle(
                                 //     fontSize: text * 14,
                                 //     fontWeight: FontWeight.bold),

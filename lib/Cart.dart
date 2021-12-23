@@ -59,7 +59,7 @@ class _CartState extends State<Cart> {
                 style: TextStyle(
                     fontSize: text * 25,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black),
+                    color: Color(0xffbaa378)),
               ),
             ),
             Padding(
@@ -107,7 +107,7 @@ class _CartState extends State<Cart> {
                     //labelText: "Enter PickUp Time",
                     labelStyle:
                         TextStyle(color: Colors.black, fontSize: text * 15),
-                    labelText: "Coupon Code",
+                    labelText: "Enter Pickup Time",
                     // border: OutlineInputBorder(
                     //     borderRadius: BorderRadius.circular(16)),
                     // labelText: "Email"

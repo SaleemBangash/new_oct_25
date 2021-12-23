@@ -357,18 +357,17 @@ class _ChocolateState extends State<Chocolate> {
                                       "20.00SR",
                                       // style: TextStyle(fontSize: text * 15),
                                     ))),
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                    right: 20,
+                                Container(
+                                  height: 120.0,
+                                  width: 120.0,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: AssetImage(
+                                          'assets/images/addCart1.png'),
+                                      fit: BoxFit.fill,
+                                    ),
+                                    shape: BoxShape.circle,
                                   ),
-                                  child: Container(
-                                      decoration: BoxDecoration(
-                                          color: Color(0xffbaa378),
-                                          borderRadius:
-                                              BorderRadius.circular(20)),
-                                      width: width / 5,
-                                      height: height / 23,
-                                      child: Center(child: CartIcon())),
                                 )
                               ],
                             ),
