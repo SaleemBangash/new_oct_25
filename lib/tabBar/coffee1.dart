@@ -285,7 +285,7 @@ class _Coffee1State extends State<Coffee1> {
                             ),
                             Padding(
                               padding:
-                                  const EdgeInsets.only(top: 130, left: 110),
+                                  const EdgeInsets.only(top: 120, left: 110),
                               child: Favourite(),
                             ),
                             // SizedBox(

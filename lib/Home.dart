@@ -204,7 +204,7 @@ class _HomeState extends State<Home> {
                     // ),
                     labelColor: Colors.black,
                     labelStyle:
-                        TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+                        TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
                     unselectedLabelColor: Colors.grey,
                     tabs: [
                       Tab(

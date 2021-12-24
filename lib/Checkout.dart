@@ -5,6 +5,7 @@ import 'package:adobe_xd/pinned.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:new_oct_25/Location.dart';
 import 'package:new_oct_25/bottomsheet.dart';
+import 'package:new_oct_25/minus.dart';
 import 'package:new_oct_25/new.dart';
 import 'package:new_oct_25/paymentmethod.dart';
 import 'package:new_oct_25/pickup_place.dart';
@@ -943,39 +944,8 @@ class _CheckoutState extends State<Checkout> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(left: 20),
-                            child: Row(
-                              children: <Widget>[
-                                _itemCount != -1
-                                    ? new IconButton(
-                                        icon: CircleAvatar(
-                                            radius: 10,
-                                            backgroundColor: Colors.black,
-                                            child: new Icon(
-                                              Icons.remove,
-                                              size: 15,
-                                            )),
-                                        onPressed: () =>
-                                            setState(() => _itemCount--),
-                                      )
-                                    : new Container(),
-                                new Text(
-                                  _itemCount.toString(),
-                                  style: TextStyle(fontSize: text * 15),
-                                ),
-                                new IconButton(
-                                    icon: CircleAvatar(
-                                        radius: 10,
-                                        backgroundColor: Colors.black,
-                                        child: new Icon(
-                                          Icons.add,
-                                          size: 15,
-                                        )),
-                                    onPressed: () =>
-                                        setState(() => _itemCount++))
-                              ],
-                            ),
-                          ),
+                              padding: const EdgeInsets.only(left: 20),
+                              child: Minus()),
                           Padding(
                             padding: const EdgeInsets.only(right: 50),
                             child: IconButton(

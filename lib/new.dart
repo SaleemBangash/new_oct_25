@@ -24,14 +24,108 @@ class _NewState extends State<New> {
     double width = MediaQuery.of(context).size.width;
     double text = MediaQuery.textScaleFactorOf(context);
     return Scaffold(
-      backgroundColor: const Color(0xff668079),
+      appBar: AppBar(
+        // title: Text(
+        //   "250ct",
+        //   style: TextStyle(color: Colors.black),
+        // ),
+        backgroundColor: Colors.white,
+        elevation: 0,
+        centerTitle: true,
+        toolbarHeight: 130,
+        automaticallyImplyLeading: false, // Set this height
+        flexibleSpace: Container(
+          // color: Colors.orange,
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(right: 290, top: 20),
+                child: PageLink(
+                  links: [
+                    PageLinkInfo(
+                      transition: LinkTransition.Fade,
+                      ease: Curves.easeOut,
+                      duration: 0.3,
+                      pageBuilder: () => Home(),
+                    ),
+                  ],
+                  // ignore: prefer_const_constructors
+                  child: CircleAvatar(
+                      backgroundColor: Color(0xffbaa378),
+                      child: Icon(
+                        Icons.arrow_back,
+                        color: Colors.white,
+                      )),
+                ),
+              ),
+              Center(
+                child: Text(
+                  "25OCT",
+                  style: TextStyle(
+                      fontSize: text * 30,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Row(
+                  children: [
+                    Text(
+                      "Select Branch (From map)",
+                      style: TextStyle(
+                          fontSize: text * 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 100),
+                      child: ElevatedButton(
+                        child: Text(
+                          "Skip",
+                          style: TextStyle(
+                            // fontSize: text * 15,
+                            color: Colors.black,
+                            // fontWeight: FontWeight.bold
+                          ),
+                        ),
+                        style: TextButton.styleFrom(
+                            // shape: RoundedRectangleBorder(
+                            //     borderRadius: BorderRadius.circular(12)),
+
+                            //StadiumBorder(),
+                            minimumSize: Size(60, 20),
+                            maximumSize: Size(100, 20),
+                            backgroundColor: Color(0xffbaa378)),
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Home()));
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
+          // Text(
+          //   "250ct",
+          //   style: TextStyle(color: Colors.black),
+          // ),
           Stack(
             children: <Widget>[
               ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
+                  // Text(
+                  //   "250ct",
+                  //   style: TextStyle(color: Colors.black),
+                  // ),
                   Image.asset(
                     "assets/images/map4.png",
                     height: height / 2,
@@ -40,79 +134,79 @@ class _NewState extends State<New> {
                 ],
               ),
               Column(children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 290, top: 10),
-                  child: PageLink(
-                    links: [
-                      PageLinkInfo(
-                        transition: LinkTransition.Fade,
-                        ease: Curves.easeOut,
-                        duration: 0.3,
-                        pageBuilder: () => Home(),
-                      ),
-                    ],
-                    // ignore: prefer_const_constructors
-                    child: CircleAvatar(
-                        backgroundColor: Color(0xffbaa378),
-                        child: Icon(
-                          Icons.arrow_back,
-                          color: Colors.white,
-                        )),
-                  ),
-                ),
-                Center(
-                  child: Text(
-                    "25OCT",
-                    style: TextStyle(
-                        fontSize: text * 30,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 20),
-                  child: Row(
-                    children: [
-                      Text(
-                        "Select Branch (From map)",
-                        style: TextStyle(
-                            fontSize: text * 15,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 100),
-                        child: ElevatedButton(
-                          child: Text(
-                            "Skip",
-                            style: TextStyle(
-                              // fontSize: text * 15,
-                              color: Colors.black,
-                              // fontWeight: FontWeight.bold
-                            ),
-                          ),
-                          style: TextButton.styleFrom(
-                              // shape: RoundedRectangleBorder(
-                              //     borderRadius: BorderRadius.circular(12)),
+                // Padding(
+                //   padding: const EdgeInsets.only(right: 290, top: 10),
+                //   child: PageLink(
+                //     links: [
+                //       PageLinkInfo(
+                //         transition: LinkTransition.Fade,
+                //         ease: Curves.easeOut,
+                //         duration: 0.3,
+                //         pageBuilder: () => Home(),
+                //       ),
+                //     ],
+                //     // ignore: prefer_const_constructors
+                //     child: CircleAvatar(
+                //         backgroundColor: Color(0xffbaa378),
+                //         child: Icon(
+                //           Icons.arrow_back,
+                //           color: Colors.white,
+                //         )),
+                //   ),
+                // ),
+                // Center(
+                //   child: Text(
+                //     "25OCT",
+                //     style: TextStyle(
+                //         fontSize: text * 30,
+                //         fontWeight: FontWeight.bold,
+                //         color: Colors.black),
+                //   ),
+                // ),
+                // Padding(
+                //   padding: const EdgeInsets.only(left: 20),
+                //   child: Row(
+                //     children: [
+                //       Text(
+                //         "Select Branch (From map)",
+                //         style: TextStyle(
+                //             fontSize: text * 15,
+                //             fontWeight: FontWeight.bold,
+                //             color: Colors.black),
+                //       ),
+                //       Padding(
+                //         padding: const EdgeInsets.only(left: 100),
+                //         child: ElevatedButton(
+                //           child: Text(
+                //             "Skip",
+                //             style: TextStyle(
+                //               // fontSize: text * 15,
+                //               color: Colors.black,
+                //               // fontWeight: FontWeight.bold
+                //             ),
+                //           ),
+                //           style: TextButton.styleFrom(
+                //               // shape: RoundedRectangleBorder(
+                //               //     borderRadius: BorderRadius.circular(12)),
 
-                              //StadiumBorder(),
-                              minimumSize: Size(60, 20),
-                              maximumSize: Size(100, 20),
-                              backgroundColor: Color(0xffbaa378)),
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Home()));
-                          },
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                //               //StadiumBorder(),
+                //               minimumSize: Size(60, 20),
+                //               maximumSize: Size(100, 20),
+                //               backgroundColor: Color(0xffbaa378)),
+                //           onPressed: () {
+                //             Navigator.push(
+                //                 context,
+                //                 MaterialPageRoute(
+                //                     builder: (context) => Home()));
+                //           },
+                //         ),
+                //       ),
+                //     ],
+                //   ),
+                // ),
               ]),
               Padding(
-                  padding: const EdgeInsets.only(top: 410),
+                  padding: const EdgeInsets.only(top: 250),
                   child: ClipRect(
                     child: BackdropFilter(
                       filter: ui.ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),

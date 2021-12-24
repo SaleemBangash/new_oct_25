@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:new_oct_25/Checkout.dart';
 import 'package:new_oct_25/bottomsheet.dart';
+import 'package:new_oct_25/minus.dart';
 import './Home.dart';
 import 'package:adobe_xd/page_link.dart';
 
@@ -275,38 +276,8 @@ class _CartState extends State<Cart> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 120, top: 70),
-                        child: Row(
-                          children: <Widget>[
-                            _itemCount != -1
-                                ? new IconButton(
-                                    icon: CircleAvatar(
-                                        radius: 10,
-                                        backgroundColor: Colors.black,
-                                        child: new Icon(
-                                          Icons.remove,
-                                          size: 15,
-                                        )),
-                                    onPressed: () =>
-                                        setState(() => _itemCount--),
-                                  )
-                                : new Container(),
-                            new Text(
-                              _itemCount.toString(),
-                              style: TextStyle(fontSize: text * 15),
-                            ),
-                            new IconButton(
-                                icon: CircleAvatar(
-                                    radius: 10,
-                                    backgroundColor: Colors.black,
-                                    child: new Icon(
-                                      Icons.add,
-                                      size: 15,
-                                    )),
-                                onPressed: () => setState(() => _itemCount++))
-                          ],
-                        ),
-                      ),
+                          padding: const EdgeInsets.only(left: 120, top: 70),
+                          child: Minus()),
                       Padding(
                         padding: const EdgeInsets.only(left: 240, top: 70),
                         child: ElevatedButton(
@@ -499,9 +470,10 @@ class _CartState extends State<Cart> {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.only(top: 40),
               child: Container(
                 width: width / 1.0,
+                height: 80,
                 color: Colors.black87,
                 child: Center(
                   child: Padding(
@@ -510,7 +482,7 @@ class _CartState extends State<Cart> {
                       height: 54.0,
                       width: 250,
                       backgroundColor: Color(0xffbaa378),
-                      foregroundColor: Colors.brown,
+                      foregroundColor: Colors.black87,
                       backgroundShape: BorderRadius.circular(10),
                       foregroundShape: BorderRadius.circular(16),
                       text: "Swipe To Order",

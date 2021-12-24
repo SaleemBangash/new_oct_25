@@ -33,7 +33,7 @@ class _NewIcreamState extends State<NewIcream> {
             InkWell(
               onTap: () => Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Chocolate()),
+                MaterialPageRoute(builder: (context) => Vanilla()),
               ),
               child: Container(
                 decoration: BoxDecoration(
@@ -69,7 +69,7 @@ class _NewIcreamState extends State<NewIcream> {
                           ),
                           Padding(
                             padding: EdgeInsets.only(
-                              top: 70,
+                              top: 80,
                               left: 110,
                             ),
                             child: Favourite(),
@@ -153,7 +153,7 @@ class _NewIcreamState extends State<NewIcream> {
                                 child: CartIcon()),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(top: 70, left: 110),
+                            padding: const EdgeInsets.only(top: 80, left: 110),
                             child: Favourite(),
                           ),
                         ],
@@ -235,7 +235,7 @@ class _NewIcreamState extends State<NewIcream> {
                                 child: CartIcon()),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(top: 70, left: 110),
+                            padding: const EdgeInsets.only(top: 80, left: 110),
                             child: Favourite(),
                           ),
                         ],
@@ -282,7 +282,7 @@ class _NewIcreamState extends State<NewIcream> {
             InkWell(
               onTap: () => Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Chocolate()),
+                MaterialPageRoute(builder: (context) => Strawberry()),
               ),
               child: Container(
                 decoration: BoxDecoration(
@@ -317,7 +317,7 @@ class _NewIcreamState extends State<NewIcream> {
                                 child: CartIcon()),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(top: 70, left: 110),
+                            padding: const EdgeInsets.only(top: 80, left: 110),
                             child: Favourite(),
                           ),
                         ],

@@ -12,6 +12,7 @@ import '../Home.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../cartIcon.dart';
+import '../minus.dart';
 
 class Strawberry extends StatefulWidget {
   Strawberry({
@@ -280,37 +281,7 @@ class _StrawberryState extends State<Strawberry> {
                                 //   textAlign: TextAlign.left,
                                 // ),
 
-                                Row(
-                                  children: <Widget>[
-                                    _itemCount != -1
-                                        ? IconButton(
-                                            icon: CircleAvatar(
-                                                radius: 10,
-                                                backgroundColor: Colors.black,
-                                                child: Icon(
-                                                  Icons.remove,
-                                                  size: 15,
-                                                )),
-                                            onPressed: () =>
-                                                setState(() => _itemCount--),
-                                          )
-                                        : Container(),
-                                    Text(
-                                      _itemCount.toString(),
-                                      style: TextStyle(fontSize: text * 15),
-                                    ),
-                                    IconButton(
-                                        icon: CircleAvatar(
-                                            radius: 10,
-                                            backgroundColor: Colors.black,
-                                            child: Icon(
-                                              Icons.add,
-                                              size: 15,
-                                            )),
-                                        onPressed: () =>
-                                            setState(() => _itemCount++))
-                                  ],
-                                ),
+                                Minus()
                               ],
                             ),
                           ),
@@ -357,14 +328,19 @@ class _StrawberryState extends State<Strawberry> {
                                 Padding(
                                   padding:
                                       const EdgeInsets.only(right: 20, top: 10),
-                                  child: Container(
-                                      decoration: BoxDecoration(
-                                          color: Color(0xffbaa378),
-                                          borderRadius:
-                                              BorderRadius.circular(20)),
-                                      width: width / 5,
-                                      height: height / 23,
-                                      child: Center(child: CartIcon())),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                          decoration: BoxDecoration(
+                                              color: Color(0xffbaa378),
+                                              borderRadius:
+                                                  BorderRadius.circular(20)),
+                                          width: width / 5,
+                                          height: height / 23,
+                                          child: Center(child: CartIcon())),
+                                      Text("Add to Cart")
+                                    ],
+                                  ),
                                 )
                               ],
                             ),

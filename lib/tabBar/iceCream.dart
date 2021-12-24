@@ -56,7 +56,7 @@ class _IceCreamState extends State<IceCream> {
                             ),
                             Padding(
                               padding:
-                                  const EdgeInsets.only(top: 110, left: 110),
+                                  const EdgeInsets.only(top: 120, left: 110),
                               child: Favourite(),
                             ),
                             // SizedBox(

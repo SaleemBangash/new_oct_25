@@ -12,6 +12,7 @@ import '../Home.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../cartIcon.dart';
+import '../minus.dart';
 
 class Chocolate extends StatefulWidget {
   Chocolate({
@@ -283,37 +284,7 @@ class _ChocolateState extends State<Chocolate> {
                                 //   textAlign: TextAlign.left,
                                 // ),
 
-                                Row(
-                                  children: <Widget>[
-                                    _itemCount != -1
-                                        ? IconButton(
-                                            icon: CircleAvatar(
-                                                radius: 10,
-                                                backgroundColor: Colors.black,
-                                                child: Icon(
-                                                  Icons.remove,
-                                                  size: 15,
-                                                )),
-                                            onPressed: () =>
-                                                setState(() => _itemCount--),
-                                          )
-                                        : Container(),
-                                    Text(
-                                      _itemCount.toString(),
-                                      style: TextStyle(fontSize: text * 15),
-                                    ),
-                                    IconButton(
-                                        icon: CircleAvatar(
-                                            radius: 10,
-                                            backgroundColor: Colors.black,
-                                            child: Icon(
-                                              Icons.add,
-                                              size: 15,
-                                            )),
-                                        onPressed: () =>
-                                            setState(() => _itemCount++))
-                                  ],
-                                ),
+                                Minus()
                               ],
                             ),
                           ),
@@ -350,23 +321,28 @@ class _ChocolateState extends State<Chocolate> {
                                         color: Color(0xffbaa378),
                                         borderRadius:
                                             BorderRadius.circular(15)),
-                                    width: width / 4.5,
+                                    width: width / 5,
                                     height: height / 23,
                                     child: Center(
                                         child: Text(
                                       "20.00SR",
                                       // style: TextStyle(fontSize: text * 15),
                                     ))),
-                                Container(
-                                  height: 120.0,
-                                  width: 120.0,
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: AssetImage(
-                                          'assets/images/addCart1.png'),
-                                      fit: BoxFit.fill,
-                                    ),
-                                    shape: BoxShape.circle,
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.only(right: 20, top: 10),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                          decoration: BoxDecoration(
+                                              color: Color(0xffbaa378),
+                                              borderRadius:
+                                                  BorderRadius.circular(20)),
+                                          width: width / 5,
+                                          height: height / 23,
+                                          child: Center(child: CartIcon())),
+                                      Text("Add to Cart")
+                                    ],
                                   ),
                                 )
                               ],
