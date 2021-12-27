@@ -63,6 +63,9 @@ class _CartState extends State<Cart> {
                     color: Color(0xffbaa378)),
               ),
             ),
+            SizedBox(
+              height: 30,
+            ),
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: Text(
@@ -203,6 +206,9 @@ class _CartState extends State<Cart> {
                   ],
                 ),
               ),
+            ),
+            SizedBox(
+              height: 15,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 20),
@@ -468,6 +474,9 @@ class _CartState extends State<Cart> {
                   ],
                 ),
               ],
+            ),
+            SizedBox(
+              height: 10,
             ),
             Padding(
               padding: const EdgeInsets.only(top: 40),

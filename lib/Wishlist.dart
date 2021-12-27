@@ -143,7 +143,7 @@ class _WishlistState extends State<Wishlist> {
                                   child: Text(
                                     "Add to Cart",
                                     style: TextStyle(
-                                        fontSize: text * 15,
+                                        // fontSize: text * 15,
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold),
                                   ),
@@ -242,7 +242,7 @@ class _WishlistState extends State<Wishlist> {
                                   child: Text(
                                     "Add to Cart",
                                     style: TextStyle(
-                                        fontSize: text * 15,
+                                        // fontSize: text * 15,
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold),
                                   ),
@@ -340,7 +340,7 @@ class _WishlistState extends State<Wishlist> {
                                   child: Text(
                                     "Add to Cart",
                                     style: TextStyle(
-                                        fontSize: text * 15,
+                                        // fontSize: text * 15,
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold),
                                   ),

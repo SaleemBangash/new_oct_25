@@ -18,7 +18,7 @@ class _CartIconState extends State<CartIcon> {
         IconButton(
           icon: Icon(
             Icons.shopping_basket,
-            color: Colors.white,
+            color: Colors.black,
           ),
           onPressed: () {
             Navigator.push(

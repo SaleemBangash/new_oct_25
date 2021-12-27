@@ -32,39 +32,48 @@ class _NewState extends State<New> {
         backgroundColor: Colors.white,
         elevation: 0,
         centerTitle: true,
-        toolbarHeight: 130,
+        toolbarHeight: 90,
         automaticallyImplyLeading: false, // Set this height
         flexibleSpace: Container(
           // color: Colors.orange,
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(right: 290, top: 20),
-                child: PageLink(
-                  links: [
-                    PageLinkInfo(
-                      transition: LinkTransition.Fade,
-                      ease: Curves.easeOut,
-                      duration: 0.3,
-                      pageBuilder: () => Home(),
+                padding: const EdgeInsets.only(top: 20),
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5),
+                      child: PageLink(
+                        links: [
+                          PageLinkInfo(
+                            transition: LinkTransition.Fade,
+                            ease: Curves.easeOut,
+                            duration: 0.3,
+                            pageBuilder: () => Home(),
+                          ),
+                        ],
+                        // ignore: prefer_const_constructors
+                        child: CircleAvatar(
+                            backgroundColor: Color(0xffbaa378),
+                            child: Icon(
+                              Icons.arrow_back,
+                              color: Colors.white,
+                            )),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 100),
+                      child: Text(
+                        "25OCT",
+                        style: TextStyle(
+                            fontSize: text * 30,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ],
-                  // ignore: prefer_const_constructors
-                  child: CircleAvatar(
-                      backgroundColor: Color(0xffbaa378),
-                      child: Icon(
-                        Icons.arrow_back,
-                        color: Colors.white,
-                      )),
-                ),
-              ),
-              Center(
-                child: Text(
-                  "25OCT",
-                  style: TextStyle(
-                      fontSize: text * 30,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black),
                 ),
               ),
               Padding(
@@ -206,7 +215,7 @@ class _NewState extends State<New> {
                 // ),
               ]),
               Padding(
-                  padding: const EdgeInsets.only(top: 250),
+                  padding: const EdgeInsets.only(top: 280),
                   child: ClipRect(
                     child: BackdropFilter(
                       filter: ui.ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
@@ -263,7 +272,7 @@ class _NewState extends State<New> {
                                               child: Column(
                                                 children: [
                                                   Container(
-                                                    height: height / 17,
+                                                    height: height / 22,
                                                     width: width / 1.0,
                                                     decoration: BoxDecoration(
                                                       color: Color(0xffbaa378),
@@ -284,7 +293,7 @@ class _NewState extends State<New> {
                                                       child: Column(
                                                         children: [
                                                           Container(
-                                                            height: height / 60,
+                                                            height: 5,
                                                             width: width / 3.5,
                                                             decoration: BoxDecoration(
                                                                 color: Colors
@@ -1268,7 +1277,7 @@ class _NewState extends State<New> {
                                       });
                                 },
                                 child: Container(
-                                  height: height / 17,
+                                  height: height / 25,
                                   width: width / 1.0,
                                   decoration: BoxDecoration(
                                     color: Color(0xffbaa378),
@@ -1282,7 +1291,7 @@ class _NewState extends State<New> {
                                     child: Column(
                                       children: [
                                         Container(
-                                          height: height / 60,
+                                          height: 5,
                                           width: width / 3.5,
                                           decoration: BoxDecoration(
                                               color: Colors.white,

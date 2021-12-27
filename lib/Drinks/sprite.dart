@@ -352,6 +352,13 @@ class _SpriteState extends State<Sprite> {
                       ),
                     ),
                   )),
+              Positioned(
+                top: 30,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 230, left: 290),
+                  child: Favourite(),
+                ),
+              ),
             ],
           ),
         ],

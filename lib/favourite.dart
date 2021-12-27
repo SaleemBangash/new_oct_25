@@ -13,16 +13,19 @@ class _FavouriteState extends State<Favourite> {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        IconButton(
-          icon: Icon(
-            Icons.favorite,
-            color: _type ? Colors.red : Colors.black,
+        CircleAvatar(
+          backgroundColor: Colors.white,
+          child: IconButton(
+            icon: Icon(
+              Icons.favorite,
+              color: _type ? Colors.red : Colors.black,
+            ),
+            onPressed: () {
+              setState(() {
+                _type = !_type;
+              });
+            },
           ),
-          onPressed: () {
-            setState(() {
-              _type = !_type;
-            });
-          },
         )
       ],
     );

@@ -185,6 +185,7 @@ class _HomeState extends State<Home> {
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: TabBar(
+                  
                     indicatorColor: Colors.black,
                     indicatorWeight: 1,
                     indicatorSize: TabBarIndicatorSize.tab,
