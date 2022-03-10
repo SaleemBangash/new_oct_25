@@ -32,14 +32,14 @@ class _NewState extends State<New> {
         backgroundColor: Colors.white,
         elevation: 0,
         centerTitle: true,
-        toolbarHeight: 90,
+        toolbarHeight: 115,
         automaticallyImplyLeading: false, // Set this height
         flexibleSpace: Container(
           // color: Colors.orange,
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 20),
+                padding: const EdgeInsets.only(top: 40),
                 child: Row(
                   children: [
                     Padding(
@@ -331,8 +331,8 @@ class _NewState extends State<New> {
                                                             //width: 2,
                                                             color: Colors.black,
                                                           ),
-                                                          color:
-                                                              Colors.grey[350],
+                                                          color: Colors
+                                                              .transparent,
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
@@ -462,13 +462,20 @@ class _NewState extends State<New> {
                                                                           19,
                                                                   width:
                                                                       width / 5,
-                                                                  decoration: BoxDecoration(
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            12),
+                                                                    border:
+                                                                        Border
+                                                                            .all(
                                                                       color: Colors
-                                                                              .grey[
-                                                                          400],
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              12)),
+                                                                          .black,
+                                                                    ),
+                                                                  ),
                                                                   child: Row(
                                                                     children: [
                                                                       Icon(
@@ -521,8 +528,8 @@ class _NewState extends State<New> {
                                                             //width: 2,
                                                             color: Colors.black,
                                                           ),
-                                                          color:
-                                                              Colors.grey[350],
+                                                          color: Colors
+                                                              .transparent,
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
@@ -652,13 +659,20 @@ class _NewState extends State<New> {
                                                                           19,
                                                                   width:
                                                                       width / 5,
-                                                                  decoration: BoxDecoration(
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            12),
+                                                                    border:
+                                                                        Border
+                                                                            .all(
                                                                       color: Colors
-                                                                              .grey[
-                                                                          400],
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              12)),
+                                                                          .black,
+                                                                    ),
+                                                                  ),
                                                                   child: Row(
                                                                     children: [
                                                                       Icon(
@@ -711,8 +725,8 @@ class _NewState extends State<New> {
                                                             //width: 2,
                                                             color: Colors.black,
                                                           ),
-                                                          color:
-                                                              Colors.grey[350],
+                                                          color: Colors
+                                                              .transparent,
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
@@ -842,13 +856,20 @@ class _NewState extends State<New> {
                                                                           19,
                                                                   width:
                                                                       width / 5,
-                                                                  decoration: BoxDecoration(
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            12),
+                                                                    border:
+                                                                        Border
+                                                                            .all(
                                                                       color: Colors
-                                                                              .grey[
-                                                                          400],
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              12)),
+                                                                          .black,
+                                                                    ),
+                                                                  ),
                                                                   child: Row(
                                                                     children: [
                                                                       Icon(
@@ -901,8 +922,8 @@ class _NewState extends State<New> {
                                                             //width: 2,
                                                             color: Colors.black,
                                                           ),
-                                                          color:
-                                                              Colors.grey[350],
+                                                          color: Colors
+                                                              .transparent,
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
@@ -1032,13 +1053,20 @@ class _NewState extends State<New> {
                                                                           19,
                                                                   width:
                                                                       width / 5,
-                                                                  decoration: BoxDecoration(
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            12),
+                                                                    border:
+                                                                        Border
+                                                                            .all(
                                                                       color: Colors
-                                                                              .grey[
-                                                                          400],
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              12)),
+                                                                          .black,
+                                                                    ),
+                                                                  ),
                                                                   child: Row(
                                                                     children: [
                                                                       Icon(
@@ -1091,8 +1119,8 @@ class _NewState extends State<New> {
                                                             //width: 2,
                                                             color: Colors.black,
                                                           ),
-                                                          color:
-                                                              Colors.grey[350],
+                                                          color: Colors
+                                                              .transparent,
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
@@ -1222,13 +1250,20 @@ class _NewState extends State<New> {
                                                                           19,
                                                                   width:
                                                                       width / 5,
-                                                                  decoration: BoxDecoration(
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            12),
+                                                                    border:
+                                                                        Border
+                                                                            .all(
                                                                       color: Colors
-                                                                              .grey[
-                                                                          400],
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              12)),
+                                                                          .black,
+                                                                    ),
+                                                                  ),
                                                                   child: Row(
                                                                     children: [
                                                                       Icon(
@@ -1322,7 +1357,7 @@ class _NewState extends State<New> {
                                         //width: 2,
                                         color: Colors.black,
                                       ),
-                                      color: Colors.grey[350],
+                                      color: Colors.transparent,
                                       borderRadius: BorderRadius.circular(16)),
                                   child: Stack(
                                     children: [
@@ -1425,10 +1460,13 @@ class _NewState extends State<New> {
                                               height: height / 19,
                                               width: width / 5,
                                               decoration: BoxDecoration(
-                                                  color: Colors.grey[400],
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          12)),
+                                                color: Colors.transparent,
+                                                borderRadius:
+                                                    BorderRadius.circular(12),
+                                                border: Border.all(
+                                                  color: Colors.black,
+                                                ),
+                                              ),
                                               child: Row(
                                                 children: [
                                                   Icon(Icons.add_location,

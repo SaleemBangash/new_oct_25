@@ -99,7 +99,7 @@ class _CheckoutState extends State<Checkout> {
                       //width: 2,
                       color: Colors.black,
                     ),
-                    color: Colors.grey[350],
+                    color: Colors.transparent,
                     borderRadius: BorderRadius.circular(16)),
                 child: Column(
                   children: [
@@ -217,13 +217,17 @@ class _CheckoutState extends State<Checkout> {
                                                     Container(
                                                         width: width / 1.2,
                                                         height: height / 15,
-                                                        decoration: BoxDecoration(
-                                                            color: Colors
-                                                                .grey[350],
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        10)),
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: Colors
+                                                              .transparent,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(10),
+                                                          border: Border.all(
+                                                            color: Colors.black,
+                                                          ),
+                                                        ),
                                                         child: Row(
                                                           children: [
                                                             Padding(
@@ -377,13 +381,17 @@ class _CheckoutState extends State<Checkout> {
                                                     Container(
                                                         width: width / 1.2,
                                                         height: height / 15,
-                                                        decoration: BoxDecoration(
-                                                            color: Colors
-                                                                .grey[350],
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        10)),
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: Colors
+                                                              .transparent,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(10),
+                                                          border: Border.all(
+                                                            color: Colors.black,
+                                                          ),
+                                                        ),
                                                         child: Row(
                                                           children: [
                                                             Padding(
@@ -537,13 +545,17 @@ class _CheckoutState extends State<Checkout> {
                                                     Container(
                                                         width: width / 1.2,
                                                         height: height / 15,
-                                                        decoration: BoxDecoration(
-                                                            color: Colors
-                                                                .grey[350],
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        10)),
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: Colors
+                                                              .transparent,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(10),
+                                                          border: Border.all(
+                                                            color: Colors.black,
+                                                          ),
+                                                        ),
                                                         child: Row(
                                                           children: [
                                                             Padding(
@@ -972,12 +984,17 @@ class _CheckoutState extends State<Checkout> {
                 height: height / 12.5,
                 width: width / 4.5,
                 decoration: BoxDecoration(
-                    border: Border.all(
-                      //width: 2,
-                      color: Colors.black,
-                    ),
-                    color: Colors.grey[300],
-                    borderRadius: BorderRadius.circular(16)),
+                  border: Border.all(
+                    //width: 2,
+                    color: Colors.black,
+                  ),
+                  color: Colors.transparent,
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(10.0),
+                      topLeft: Radius.circular(10.0),
+                      bottomLeft: Radius.circular(5.0),
+                      bottomRight: Radius.circular(5.0)),
+                ),
                 child: Row(
                   children: [
                     Expanded(

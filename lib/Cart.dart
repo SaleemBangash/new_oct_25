@@ -82,12 +82,17 @@ class _CartState extends State<Cart> {
                 // margin: EdgeInsets.all(12),
                 height: height / 11.8,
                 decoration: BoxDecoration(
-                    border: Border.all(
-                      //width: 2,
-                      color: Colors.black,
-                    ),
-                    color: Colors.grey[300],
-                    borderRadius: BorderRadius.circular(16)),
+                  border: Border.all(
+                    //width: 2,
+                    color: Colors.black,
+                  ),
+                  color: Colors.transparent,
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(10.0),
+                      topLeft: Radius.circular(10.0),
+                      bottomLeft: Radius.circular(5.0),
+                      bottomRight: Radius.circular(5.0)),
+                ),
                 child: TextFormField(
                   maxLines: 2,
                   style: TextStyle(
@@ -97,6 +102,10 @@ class _CartState extends State<Cart> {
                       ),
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
+                    // border: OutlineInputBorder(
+                    //     borderRadius: BorderRadius.only(
+                    //         bottomLeft: Radius.circular(5.0),
+                    //         bottomRight: Radius.circular(5.0))),
                     //fillColor: Colors.grey[300],
                     //suffixText: "@gmail.com",
                     prefixIcon: Icon(
@@ -132,12 +141,17 @@ class _CartState extends State<Cart> {
                 height: height / 12.5,
                 width: width / 4.5,
                 decoration: BoxDecoration(
-                    border: Border.all(
-                      //width: 2,
-                      color: Colors.black,
-                    ),
-                    color: Colors.grey[300],
-                    borderRadius: BorderRadius.circular(16)),
+                  border: Border.all(
+                    //width: 2,
+                    color: Colors.black,
+                  ),
+                  color: Colors.transparent,
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(10.0),
+                      topLeft: Radius.circular(10.0),
+                      bottomLeft: Radius.circular(5.0),
+                      bottomRight: Radius.circular(5.0)),
+                ),
                 child: Row(
                   children: [
                     Expanded(
@@ -231,7 +245,7 @@ class _CartState extends State<Cart> {
                         //width: 2,
                         color: Colors.black,
                       ),
-                      color: Colors.grey[350],
+                      color: Colors.transparent,
                       borderRadius: BorderRadius.circular(16)),
                   child: Stack(
                     children: [
@@ -481,9 +495,14 @@ class _CartState extends State<Cart> {
             Padding(
               padding: const EdgeInsets.only(top: 40),
               child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.transparent,
+                  border: Border.all(
+                    color: Colors.black,
+                  ),
+                ),
                 width: width / 1.0,
                 height: 80,
-                color: Colors.black87,
                 child: Center(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),

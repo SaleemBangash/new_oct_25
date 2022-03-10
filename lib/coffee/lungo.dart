@@ -107,10 +107,11 @@ class _LungoState extends State<Lungo> {
                         child: Column(children: [
                           Padding(
                             padding: const EdgeInsets.only(
+                              left: 70,
                               top: 20,
                             ),
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Text(
                                   'Details',
@@ -122,7 +123,7 @@ class _LungoState extends State<Lungo> {
                                   ),
                                   textAlign: TextAlign.left,
                                 ),
-                                Favourite()
+                                // Favourite()
                               ],
                             ),
                           ),

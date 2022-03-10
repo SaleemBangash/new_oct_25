@@ -83,7 +83,7 @@ class _WishlistState extends State<Wishlist> {
                           //width: 2,
                           color: Colors.black,
                         ),
-                        color: Colors.grey[350],
+                        color: Colors.transparent,
                         borderRadius: BorderRadius.circular(16)),
                     child: Stack(
                       children: [
@@ -182,7 +182,7 @@ class _WishlistState extends State<Wishlist> {
                           //width: 2,
                           color: Colors.black,
                         ),
-                        color: Colors.grey[350],
+                        color: Colors.transparent,
                         borderRadius: BorderRadius.circular(16)),
                     child: Stack(
                       children: [
@@ -280,7 +280,7 @@ class _WishlistState extends State<Wishlist> {
                           //width: 2,
                           color: Colors.black,
                         ),
-                        color: Colors.grey[350],
+                        color: Colors.transparent,
                         borderRadius: BorderRadius.circular(16)),
                     child: Stack(
                       children: [

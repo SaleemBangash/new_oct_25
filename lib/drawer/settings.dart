@@ -237,10 +237,10 @@ class _settingsState extends State<settings> {
                                               child: Text(
                                                 "Select",
                                                 style: TextStyle(
-                                                    // fontSize: text * 10,
-                                                    //color: Colors.black,
-                                                    //fontWeight: FontWeight.bold
-                                                    ),
+                                                  fontSize: text * 10,
+                                                  //color: Colors.black,
+                                                  //fontWeight: FontWeight.bold
+                                                ),
                                               ),
                                               style: TextButton.styleFrom(
                                                   shape: RoundedRectangleBorder(

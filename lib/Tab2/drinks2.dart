@@ -68,7 +68,7 @@ class _NewDrinksState extends State<NewDrinks> {
                                 child: CartIcon()),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(top: 80, left: 110),
+                            padding: const EdgeInsets.only(top: 80, left: 120),
                             child: Favourite(),
                           ),
                         ],
@@ -150,7 +150,7 @@ class _NewDrinksState extends State<NewDrinks> {
                                 child: CartIcon()),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(top: 80, left: 110),
+                            padding: const EdgeInsets.only(top: 80, left: 120),
                             child: Favourite(),
                           ),
                         ],
@@ -232,7 +232,7 @@ class _NewDrinksState extends State<NewDrinks> {
                                 child: CartIcon()),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(top: 80, left: 110),
+                            padding: const EdgeInsets.only(top: 80, left: 120),
                             child: Favourite(),
                           ),
                         ],
@@ -314,7 +314,7 @@ class _NewDrinksState extends State<NewDrinks> {
                                 child: CartIcon()),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(top: 80, left: 110),
+                            padding: const EdgeInsets.only(top: 80, left: 120),
                             child: Favourite(),
                           ),
                         ],
