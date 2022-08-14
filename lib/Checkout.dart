@@ -1201,8 +1201,8 @@ class _CheckoutState extends State<Checkout> {
                   //   content: new Text("Sending Message"),
                   // ));
                   showToast();
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => paymentmethod()));
+                  // Navigator.push(context,
+                  //     MaterialPageRoute(builder: (context) => paymentmethod()));
                 },
               ),
             )

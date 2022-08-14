@@ -32,12 +32,12 @@ class _cardinfoState extends State<cardinfo> {
             padding: const EdgeInsets.only(right: 290, top: 10),
             child: PageLink(
               links: [
-                PageLinkInfo(
-                  transition: LinkTransition.Fade,
-                  ease: Curves.easeOut,
-                  duration: 0.3,
-                  pageBuilder: () => paymentmethod(),
-                ),
+                // PageLinkInfo(
+                //   transition: LinkTransition.Fade,
+                //   ease: Curves.easeOut,
+                //   duration: 0.3,
+                //   pageBuilder: () => Paymentmethod(),
+                // ),
               ],
               // ignore: prefer_const_constructors
               child: CircleAvatar(

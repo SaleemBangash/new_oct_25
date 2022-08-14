@@ -52,7 +52,7 @@ class _CocaColaState extends State<CocaCola> {
               //   child: Iconawesomeheart(),
               // ),
               Padding(
-                  padding: const EdgeInsets.only(top: 280),
+                  padding: const EdgeInsets.only(top: 350),
                   child: ClipRect(
                     child: BackdropFilter(
                       filter: ui.ImageFilter.blur(sigmaX: 30.0, sigmaY: 20.0),
@@ -70,16 +70,35 @@ class _CocaColaState extends State<CocaCola> {
                               width: 2.0, color: const Color(0xff707070)),
                         ),
                         child: Column(children: [
-                          Padding(
-                            padding: const EdgeInsets.only(
-                              left: 70,
-                              top: 20,
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Details',
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 40),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'Details',
+                                      style: TextStyle(
+                                        fontFamily: 'Segoe UI',
+                                        fontSize: text * 15,
+                                        color: const Color(0xff668079),
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                      textAlign: TextAlign.left,
+                                    ),
+                                    Favourite()
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 40),
+                                child: Text(
+                                  'CocaCola',
                                   style: TextStyle(
                                     fontFamily: 'Segoe UI',
                                     fontSize: text * 15,
@@ -88,22 +107,8 @@ class _CocaColaState extends State<CocaCola> {
                                   ),
                                   textAlign: TextAlign.left,
                                 ),
-                                // Favourite()
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 20, right: 200),
-                            child: Text(
-                              'CocaCola',
-                              style: TextStyle(
-                                fontFamily: 'Segoe UI',
-                                fontSize: text * 15,
-                                color: const Color(0xff668079),
-                                fontWeight: FontWeight.bold,
                               ),
-                              textAlign: TextAlign.left,
-                            ),
+                            ],
                           ),
                           Padding(
                             padding: const EdgeInsets.only(top: 20),
@@ -111,99 +116,91 @@ class _CocaColaState extends State<CocaCola> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 50),
+                                  padding: const EdgeInsets.only(left: 35),
                                   child: Row(
                                     children: [
-                                      Container(
-                                        width: width / 10,
-                                        height: height / 24,
-                                        decoration: BoxDecoration(
-                                            shape: BoxShape.circle),
-                                        child: RaisedButton(
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(40)),
-                                          child: Text('S',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  // fontSize: text * 10
-                                                  )),
-                                          textColor: Color(0xffbaa378),
-                                          // 2
-                                          color: _hasBeenPressed
-                                              ? Colors.black
-                                              : Colors.white70,
-                                          // 3
-                                          onPressed: () => {
-                                            setState(() {
-                                              _hasBeenPressed =
-                                                  !_hasBeenPressed;
-                                              _isBeenPressed = false;
-                                              _wasBeenPressed = false;
-                                            })
-                                          },
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Container(
-                                        width: width / 10,
-                                        height: height / 24,
-                                        child: RaisedButton(
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(40)),
+                                      GestureDetector(
+                                        onTap: () {
+                                          setState(() {
+                                            _hasBeenPressed = !_hasBeenPressed;
+                                            _isBeenPressed = false;
+                                            _wasBeenPressed = false;
+                                          });
+                                        },
+                                        child: Container(
+                                          width: width / 10,
+                                          height: height / 24,
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            color: _hasBeenPressed
+                                                ? Colors.black
+                                                : Color.fromARGB(
+                                                    179, 202, 200, 200),
+                                          ),
                                           child: Center(
-                                              child: Text('M',
-                                                  textAlign: TextAlign.center,
-                                                  style: TextStyle(
-                                                      // fontSize: text * 16
-                                                      ))),
-                                          textColor: Color(0xffbaa378),
-                                          // 2
-                                          color: _isBeenPressed
-                                              ? Colors.black
-                                              : Colors.white70,
-                                          // 3
-                                          onPressed: () => {
-                                            setState(() {
-                                              _isBeenPressed = !_isBeenPressed;
-                                              _hasBeenPressed = false;
-                                              _wasBeenPressed = false;
-                                            })
-                                          },
+                                            child: Text('S',
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                    color: Color(0xffbaa378))),
+                                          ),
                                         ),
                                       ),
                                       SizedBox(
                                         width: 10,
                                       ),
-                                      Container(
-                                        width: width / 10,
-                                        height: height / 24,
-                                        child: RaisedButton(
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(40)),
-                                          child: Text('L',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  // fontSize: text * 16
-                                                  )),
-                                          textColor: Color(0xffbaa378),
-                                          // 2
-                                          color: _wasBeenPressed
-                                              ? Colors.black
-                                              : Colors.white70,
-                                          // 3
-                                          onPressed: () => {
-                                            setState(() {
-                                              _wasBeenPressed =
-                                                  !_wasBeenPressed;
-                                              _hasBeenPressed = false;
-                                              _isBeenPressed = false;
-                                            })
-                                          },
+                                      GestureDetector(
+                                        onTap: () {
+                                          setState(() {
+                                            _isBeenPressed = !_isBeenPressed;
+                                            _hasBeenPressed = false;
+                                            _wasBeenPressed = false;
+                                          });
+                                        },
+                                        child: Container(
+                                          width: width / 10,
+                                          height: height / 24,
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            color: _isBeenPressed
+                                                ? Colors.black
+                                                : Color.fromARGB(
+                                                    179, 202, 200, 200),
+                                          ),
+                                          child: Center(
+                                            child: Text('M',
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                    color: Color(0xffbaa378))),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      GestureDetector(
+                                        onTap: () {
+                                          setState(() {
+                                            _wasBeenPressed = !_wasBeenPressed;
+                                            _isBeenPressed = false;
+                                            _hasBeenPressed = false;
+                                          });
+                                        },
+                                        child: Container(
+                                          width: width / 10,
+                                          height: height / 24,
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            color: _wasBeenPressed
+                                                ? Colors.black
+                                                : Color.fromARGB(
+                                                    179, 202, 200, 200),
+                                          ),
+                                          child: Center(
+                                            child: Text('L',
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                    color: Color(0xffbaa378))),
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -319,13 +316,10 @@ class _CocaColaState extends State<CocaCola> {
                       ),
                     ),
                   )),
-              Positioned(
-                top: 30,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 230, left: 290),
-                  child: Favourite(),
-                ),
-              ),
+              // Positioned(
+              //   top: 360,
+              //   child: Favourite(),
+              // ),
             ],
           ),
         ],

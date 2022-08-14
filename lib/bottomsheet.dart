@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 import 'Cart.dart';
@@ -54,10 +56,9 @@ class _BottomsheetState extends State<Bottomsheet> {
                       color: Colors.black,
                     ),
                   ),
-                  title: Text(
-                    'Cart',
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                  ),
+                  label: ('Cart'
+                      // style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                      ),
                   backgroundColor: Colors.white),
               BottomNavigationBarItem(
                 icon: InkWell(
@@ -68,10 +69,9 @@ class _BottomsheetState extends State<Bottomsheet> {
                       );
                     },
                     child: Icon(Icons.home)),
-                title: Text(
-                  'Home',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ),
+                label: ('Home'
+                    // style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    ),
                 backgroundColor: Colors.white,
               ),
               BottomNavigationBarItem(
@@ -87,10 +87,9 @@ class _BottomsheetState extends State<Bottomsheet> {
                     color: Colors.black,
                   ),
                 ),
-                title: Text(
-                  'Favourite',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ),
+                label: ('Favourite'
+                    // style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    ),
                 //backgroundColor: Colors.white,
               ),
               // BottomNavigationBarItem(

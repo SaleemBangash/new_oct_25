@@ -1,7 +1,10 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, file_names
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, file_names, unnecessary_new, prefer_typing_uninitialized_variables
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:adobe_xd/pinned.dart';
-import 'package:new_oct_25/Tab2/coffee2.dart';
+import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import 'package:new_oct_25/Tab2/soft_drinks.dart';
 import 'package:new_oct_25/Tab2/drinks2.dart';
 import 'package:new_oct_25/Tab2/iceCream2.dart';
 import 'package:new_oct_25/Tab2/snacks2.dart';
@@ -20,18 +23,7 @@ import 'package:new_oct_25/tabBar/coffee1.dart';
 import 'package:new_oct_25/tabBar/drinks1.dart';
 import 'package:new_oct_25/tabBar/iceCream.dart';
 import 'package:new_oct_25/tabBar/snacks1.dart';
-// import 'package:newoct/IceCream/chocolate.dart';
-// import 'package:newoct/IceCream/strawberry.dart';
-// import 'package:newoct/Register1.dart';
-// import 'package:newoct/Sidebar.dart';
-// import 'package:newoct/Sidebarr.dart';
-// import 'package:newoct/coffee.dart';
-// import 'package:newoct/coldDrinks.dart';
-// import 'package:newoct/snacks.dart';
-// import 'package:newoct/snacks/cheetos.dart';
-// import 'package:newoct/snacks/doritos.dart';
-// import 'package:newoct/snacks/kurkure.dart';
-// import 'package:newoct/snacks/lays.dart';
+
 import './Location.dart';
 import 'package:adobe_xd/page_link.dart';
 import 'dart:ui' as ui;
@@ -66,7 +58,46 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  // final _controller = PageController();
+  // int _activePage = 0;
+  // final PageController _pageViewController =
+  //     PageController(initialPage: 0); // set the initial page you want to show
+  // int _activePage = 0;  // will hold current active page index value
+  //Create a List Holding all the Pages
+  // final List<String> _Pages = [
+  //   Image.asset(
+  //     "assets/images/Image.png",
+  //     fit: BoxFit.cover,
+  //     width: 350,
+  //   ),
+  //   Image.asset(
+  //     "assets/images/sheri-silver-1.png",
+  //     fit: BoxFit.cover,
+  //     width: 350,
+  //   ),
+  //   Image.asset(
+  //     "assets/images/sheri-silver-7.png",
+  //     fit: BoxFit.cover,
+  //     width: 350,
+  //   ),
+  //   Image.asset(
+  //     "assets/images/americano.jpg",
+  //     fit: BoxFit.cover,
+  //     width: 350,
+  //   )
+  // ];
+  // @override
+  // void dispose() {
+  //   // TODO: implement dispose
+  //   super.dispose();
+  //   _pageViewController.dispose(); // dispose the PageController
+  // }
+
+  // final late _controller;
+  final controller = PageController();
+
   @override
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   int _currentIndex = 1;
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -77,50 +108,341 @@ class _HomeState extends State<Home> {
     return DefaultTabController(
       length: 4,
       child: Scaffold(
-        drawer: MyDrawer(),
+        key: _scaffoldKey,
+        drawer: Container(width: 250, child: MyDrawer()),
         appBar: AppBar(
-          title: Text("25OCT"),
+          iconTheme: IconThemeData(color: Colors.black),
+          leading: GestureDetector(
+            onTap: () {
+              _scaffoldKey.currentState!.openDrawer();
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset(
+                'assets/images/menu_icon.png',
+                width: 10.0,
+                height: 10.0,
+              ),
+            ),
+          ),
+          // title: Text(
+          //   "25OCT",
+          //   style: TextStyle(color: Colors.black),
+          // ),
           centerTitle: true,
           backgroundColor: Color(0xffbaa378),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: 10),
+              child: Center(
+                child: Icon(
+                  Icons.search,
+                  size: 30,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+          ],
         ),
-        backgroundColor: const Color(0xfffdfdfd),
+        backgroundColor: const Color(0xffF5ECE3),
         body: ListView(
           children: <Widget>[
             SizedBox(
-              height: 20,
+              height: 07,
             ),
-            SizedBox(
-              height: height / 5,
-              width: width / 5,
-              child: CarouselSlider(
-                options: CarouselOptions(
-                  autoPlay: true,
-                  aspectRatio: 1.0,
-                  enlargeCenterPage: false,
-                  height: height,
-                  viewportFraction: 1.0,
-                  //enlargeStrategy: CenterPageEnlargeStrategy.height,
-                  //scrollDirection: Axis.vertical,
-                ),
-                items: [
-                  Image.asset("assets/images/Image.png"),
-                  Image.asset("assets/images/sheri-silver-1.png"),
-                  Image.asset("assets/images/sheri-silver-7.png"),
-                  Image.asset("assets/images/americano.jpg")
-                  // NetworkImage('https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
-                  // NetworkImage('https://cdn-images-1.medium.com/max/2000/1*wnIEgP1gNMrK5gZU7QS0-A.jpeg'),
-                  // AssetImage("assets/images/Image.png"),
-                  // ExactAssetImage("assets/images/Image.png"),
-                  // ExactAssetImage("assets/images/Image.png"),
-                ],
-                // autoplay: false,
-                // animationDuration: Duration(milliseconds: 1000),
-                // dotSize: 6.0,
-                // dotSpacing: 15.0,
-                // dotColor: Colors.lightGreenAccent,
-                // borderRadius: true, options: null,
+            // Column(
+            //   // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            //   children: [
+            //     // Image.asset("assets/images/Image.png"),
+            //     PageView(
+            //       controller: _controller,
+            //       children: const [
+            //         Center(
+            //           child: Text('Page 1'),
+            //         ),
+            //         Center(
+            //           child: Text('Page 2'),
+            //         ),
+            //         Center(
+            //           child: Text('Page 3'),
+            //         ),
+            //         Center(
+            //           child: Text('Page 4'),
+            //         ),
+            //         Center(
+            //           child: Text('Page 5'),
+            //         ),
+            //       ],
+            //     ),
+            //     SmoothPageIndicator(
+            //       controller: _controller,
+            //       count: 5,
+            //       axisDirection: Axis.horizontal,
+            //       effect: const SlideEffect(
+            //         activeDotColor: Colors.white54,
+            //         dotHeight: 10,
+            //         dotColor: Colors.blue,
+            //         dotWidth: 10,
+            //       ),
+            //     ),
+            //     const SizedBox(height: 50),
+            //   ],
+            // ),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 05),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20.0),
+                child: Container(
+                    width: double.infinity,
+                    height: 170,
+                    child: Stack(
+                      children: <Widget>[
+                        SizedBox(
+                          height: 170,
+                          // pageview
+                          child: new PageView(
+                            // pageSnapping: false,
+                            // padEnds: true,
+                            // reverse: true,
+                            controller: controller,
+                            children: [
+                              Image.asset(
+                                "assets/images/Image.png",
+                                fit: BoxFit.cover,
+                                width: 350,
+                              ),
+                              Image.asset(
+                                "assets/images/sheri-silver-1.png",
+                                fit: BoxFit.cover,
+                                width: 350,
+                              ),
+                              Image.asset(
+                                "assets/images/sheri-silver-7.png",
+                                fit: BoxFit.cover,
+                                width: 350,
+                              ),
+                              Image.asset(
+                                "assets/images/americano.jpg",
+                                fit: BoxFit.cover,
+                                width: 350,
+                              )
+                            ],
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 20,
+                          left: 110,
+                          child: SmoothPageIndicator(
+                            controller: controller,
+                            count: 4,
+                            axisDirection: Axis.horizontal,
+                            effect: const SlideEffect(
+                              radius: 14,
+                              activeDotColor: Color(0xffBAA378),
+                              dotHeight: 10,
+                              dotColor: Color.fromARGB(255, 223, 208, 176),
+                              dotWidth: 30,
+                            ),
+                          ),
+                        )
+                      ],
+                    )),
               ),
             ),
+
+            // Stack(
+            //   children: [
+            //     Padding(
+            //       padding:
+            //           const EdgeInsets.symmetric(horizontal: 12, vertical: 05),
+            //       child: ClipRRect(
+            //         borderRadius: BorderRadius.circular(20.0),
+            //         child: ImageSlideshow(
+            //           /// Width of the [ImageSlideshow].
+            //           width: 100,
+
+            //           /// Height of the [ImageSlideshow].
+            //           height: 160,
+
+            //           /// The page to show when first creating the [ImageSlideshow].
+            //           initialPage: 0,
+
+            //           /// The color to paint the indicator.
+            //           indicatorColor: Theme.of(context).primaryColor,
+
+            //           /// The color to paint behind th indicator.
+            //           indicatorBackgroundColor: Colors.grey,
+
+            //           /// The widgets to display in the [ImageSlideshow].
+            //           /// Add the sample image file into the images folder
+            //           children: [
+            //             Image.asset(
+            //               "assets/images/Image.png",
+            //               fit: BoxFit.cover,
+            //               width: 350,
+            //             ),
+            //             Image.asset(
+            //               "assets/images/sheri-silver-1.png",
+            //               fit: BoxFit.cover,
+            //               width: 350,
+            //             ),
+            //             Image.asset(
+            //               "assets/images/sheri-silver-7.png",
+            //               fit: BoxFit.cover,
+            //               width: 350,
+            //             ),
+            //             Image.asset(
+            //               "assets/images/americano.jpg",
+            //               fit: BoxFit.cover,
+            //               width: 350,
+            //             )
+            //           ],
+
+            //           /// Called whenever the page in the center of the viewport changes.
+            //           // onPageChanged: (value) {
+            //           //   print('Page changed: $value');
+            //           // },
+            //           // onPageChanged: (int index) {
+            //           //   setState(() {
+            //           //     _activePage = index;
+            //           //   });
+            //           // },
+
+            //           /// Auto scroll interval.
+            //           /// Do not auto scroll with null or 0.
+            //           autoPlayInterval: 3000,
+
+            //           /// Loops back to first slide.
+            //           isLoop: true,
+            //         ),
+            //       ),
+            //     ),
+            //     SmoothPageIndicator(
+
+            //       controller: _controller,
+            //       count: 5,
+            //       axisDirection: Axis.horizontal,
+            //       effect: const SlideEffect(
+
+            //         radius: 14,
+            //         activeDotColor: Colors.white54,
+            //         dotHeight: 10,
+            //         dotColor: Colors.blue,
+            //         dotWidth: 30,
+            //       ),
+            //     ),
+            //   ],
+            // ),
+
+            // Stack(
+            //   children: [
+            //     PageView.builder(
+            //         controller: _pageViewController,
+            //         onPageChanged: (int index) {
+            //           setState(() {
+            //             _activePage = index;
+            //           });
+            //         },
+            //         itemCount: _Pages.length,
+            //         itemBuilder: (BuildContext context, int index) {
+            //           return _Pages[index];
+            //         }),
+            //     //creating dots at bottom
+            //     Positioned(
+            //       bottom: 0,
+            //       left: 0,
+            //       right: 0,
+            //       height: 40,
+            //       child: Container(
+            //         color: Colors.black12,
+            //         child: Row(
+            //           mainAxisAlignment: MainAxisAlignment.center,
+            //           children: List<Widget>.generate(
+            //               _Pages.length,
+            //               (index) => Padding(
+            //                     padding:
+            //                         const EdgeInsets.symmetric(horizontal: 8),
+            //                     child: InkWell(
+            //                       onTap: () {
+            //                         _pageViewController.animateToPage(index,
+            //                             duration:
+            //                                 const Duration(milliseconds: 300),
+            //                             curve: Curves.easeIn);
+            //                       },
+            //                       child: CircleAvatar(
+            //                         radius: 5,
+            //                         // check if a dot is connected to the current page
+            //                         // if true, give it a different color
+            //                         backgroundColor: _activePage == index
+            //                             ? Colors.greenAccent
+            //                             : Colors.white30,
+            //                       ),
+            //                     ),
+            //                   )),
+            //         ),
+            //       ),
+            //     ),
+            //   ],
+            // ),
+
+            // Padding(
+            //   padding: const EdgeInsets.symmetric(horizontal: 20),
+            //   child: SizedBox(
+            //     height: height / 5,
+            //     width: 200,
+            //     child: ClipRRect(
+            //       borderRadius: BorderRadius.circular(20.0),
+            //       child: CarouselSlider(
+            //         options: CarouselOptions(
+            //           autoPlay: true,
+            //           aspectRatio: 1.0,
+            //           enlargeCenterPage: false,
+            //           height: height,
+            //           viewportFraction: 2.0,
+            //           pageSnapping: true,
+
+            //           //enlargeStrategy: CenterPageEnlargeStrategy.height,
+            //           //scrollDirection: Axis.vertical,
+            //         ),
+            //         items: [
+            //           Image.asset(
+            //             "assets/images/Image.png",
+            //             fit: BoxFit.cover,
+            //             width: 350,
+            //           ),
+            //           Image.asset(
+            //             "assets/images/sheri-silver-1.png",
+            //             fit: BoxFit.cover,
+            //             width: 350,
+            //           ),
+            //           Image.asset(
+            //             "assets/images/sheri-silver-7.png",
+            //             fit: BoxFit.cover,
+            //             width: 350,
+            //           ),
+            //           Image.asset(
+            //             "assets/images/americano.jpg",
+            //             fit: BoxFit.cover,
+            //             width: 350,
+            //           )
+            //           // NetworkImage('https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
+            //           // NetworkImage('https://cdn-images-1.medium.com/max/2000/1*wnIEgP1gNMrK5gZU7QS0-A.jpeg'),
+            //           // AssetImage("assets/images/Image.png"),
+            //           // ExactAssetImage("assets/images/Image.png"),
+            //           // ExactAssetImage("assets/images/Image.png"),
+            //         ],
+            //         // autoplay: false,
+            //         // animationDuration: Duration(milliseconds: 1000),
+            //         // dotSize: 6.0,
+            //         // dotSpacing: 15.0,
+            //         // dotColor: Colors.lightGreenAccent,
+            //         // borderRadius: true, options: null,
+            //       ),
+            //     ),
+            //   ),
+            // ),
+
             // Container(
             //   width: width / 5,
             //   height: height / 4,
@@ -129,46 +451,59 @@ class _HomeState extends State<Home> {
             Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(
-                    left: 10,
-                  ),
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          bottom: 5,
-                          left: 15,
-                          right: 10,
-                        ),
-                        child: Container(
-                          width: width / 1.27,
-                          child: TextField(
-                            keyboardType: TextInputType.text,
-                            decoration: InputDecoration(
-                              labelText: "Search",
-                              hintStyle: TextStyle(fontSize: 15),
-                              suffixIcon: Icon(
-                                Icons.search,
-                                size: 30,
-                              ),
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Container(
+                    width: 370,
+                    height: 50,
+                    decoration: BoxDecoration(
+                        color: Color(0xffF5ECE3),
+                        // border: Border.all(width: 1),
+                        borderRadius: BorderRadius.circular(15.0)),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: Image.asset("assets/images/pin_icon@2x.png",
+                                height: 28, width: 28),
+                          ),
+                          Expanded(
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 5),
+                                  child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "PickUp From",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 10),
+                                        ),
+                                        Text(
+                                          "No Branch Picked",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 13),
+                                        ),
+                                      ]),
+                                ),
+                                // SizedBox(width: 100),
+                                Image.asset("assets/images/drop_arrow.png",
+                                    height: 40, width: 40),
+                              ],
                             ),
                           ),
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () => Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => New())),
-                        child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
-                              color: Color(0xffbaa378),
-                            ),
-                            height: height / 17.8,
-                            width: width / 11,
-                            child: Icon(Icons.add_location,
-                                size: 30, color: Colors.white)),
-                      )
-                    ],
+                        ]),
                   ),
                 ),
               ],
@@ -176,52 +511,53 @@ class _HomeState extends State<Home> {
             // SizedBox(
             //   height: 20,
             // ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                height: 15,
-                decoration: BoxDecoration(
-                  // color: Color(0xffbaa378),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: TabBar(
-                  
-                    indicatorColor: Colors.black,
-                    indicatorWeight: 1,
-                    indicatorSize: TabBarIndicatorSize.tab,
-                    //indicatorWeight: 15,
-                    // indicatorPadding: const EdgeInsets.all(10),
-                    //indicatorSize: TabBarIndicatorSize.label,
-                    //indicatorColor: Colors.blue,
-                    // indicator: BoxDecoration(
-                    //   // borderRadius: BorderRadius.circular(16),
-                    //   border: Border(
-                    //       bottom: BorderSide(
-                    //           // color: Colors.black,
-                    //           // width: 4.0,
-                    //           )),
-                    //   // border: Border.all(width: 5, color: Colors.black),
-                    //   // color: Color(0xffbaa378)
-                    // ),
-                    labelColor: Colors.black,
-                    labelStyle:
-                        TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
-                    unselectedLabelColor: Colors.grey,
-                    tabs: [
-                      Tab(
-                        text: "Ice Cream",
-                      ),
-                      Tab(
-                        text: "Coffee",
-                      ),
-                      Tab(
-                        text: "Snacks",
-                      ),
-                      Tab(
-                        text: "Drinks",
-                      )
-                    ]),
+            Container(
+              height: 25,
+              decoration: BoxDecoration(
+                // color: Color(0xffbaa378),
+                borderRadius: BorderRadius.circular(16),
               ),
+              child: TabBar(
+                  indicatorColor: Theme.of(context).primaryColor,
+                  indicatorWeight: 4,
+
+                  // indicatorSize: TabBarIndicatorSize.tab,
+                  //indicatorWeight: 15,
+                  // indicatorPadding: const EdgeInsets.all(10),
+                  indicatorSize: TabBarIndicatorSize.label,
+                  //indicatorColor: Colors.blue,
+                  // indicator: BoxDecoration(
+                  //   // borderRadius: BorderRadius.circular(16),
+                  //   border: Border(
+                  //       bottom: BorderSide(
+                  //           // color: Colors.black,
+                  //           // width: 4.0,
+                  //           )),
+                  //   // border: Border.all(width: 5, color: Colors.black),
+                  //   // color: Color(0xffbaa378)
+                  // ),
+
+                  padding: EdgeInsets.zero,
+                  indicatorPadding: EdgeInsets.zero,
+                  labelPadding: EdgeInsets.zero,
+                  labelColor: Colors.black,
+                  labelStyle:
+                      TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  unselectedLabelColor: Colors.black,
+                  tabs: [
+                    Tab(
+                      text: "ICE CREAM",
+                    ),
+                    Tab(
+                      text: "SOFT DRINKS",
+                    ),
+                    Tab(
+                      text: "SNACKS",
+                    ),
+                    Tab(
+                      text: "DRINKS",
+                    )
+                  ]),
             ),
             // SizedBox(
             //   height: 10,
@@ -230,14 +566,14 @@ class _HomeState extends State<Home> {
               height: 390,
               child: TabBarView(children: [
                 NewIcream(),
-                NewCoffee(),
+                SoftDrinks(),
                 NewSnacks(),
                 NewDrinks()
               ]),
             ),
           ],
         ),
-        bottomNavigationBar: Bottomsheet(),
+        // bottomNavigationBar: Bottomsheet(),
         // ClipRRect(
         //   borderRadius: BorderRadius.only(
         //     topRight: Radius.circular(25.0),

@@ -1,7 +1,7 @@
-// ignore_for_file: file_names, prefer_const_constructors
+// ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:new_oct_25/Cart.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CartIcon extends StatefulWidget {
   const CartIcon({Key? key}) : super(key: key);
@@ -11,21 +11,29 @@ class CartIcon extends StatefulWidget {
 }
 
 class _CartIconState extends State<CartIcon> {
+  bool _type = false;
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        IconButton(
-          icon: Icon(
-            Icons.shopping_basket,
-            color: Colors.black,
-          ),
-          onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => Cart()));
-          },
-        ),
-      ],
-    );
+    return Container(
+        child: GestureDetector(
+            onTap: () {
+              setState(() {
+                _type = !_type;
+              });
+            },
+            child: _type
+                ? Image.asset("assets/images/cart2.png")
+                : Image.asset("assets/images/cart1.png")));
   }
 }
+// IconButton(
+//           icon: Icon(
+//             Icons.favorite,
+//             color: _type ? Colors.red : Colors.black,
+//           ),
+//           onPressed: () {
+//             setState(() {
+//               _type = !_type;
+//             });
+//           },
+//         ),

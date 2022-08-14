@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, file_names, unnecessary_new
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:new_oct_25/bottomsheet.dart';
 import 'package:new_oct_25/favourite.dart';
 import './Home.dart';
@@ -9,6 +10,9 @@ import 'package:adobe_xd/page_link.dart';
 import './Cart.dart';
 // import './Iconawesomeheart.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import 'Drinks/cocacola.dart';
+import 'cartIcon.dart';
 //import 'package:favorite_button/favorite_button.dart';
 
 class Wishlist extends StatefulWidget {
@@ -29,351 +33,689 @@ class _WishlistState extends State<Wishlist> {
     double width = MediaQuery.of(context).size.width;
     double text = MediaQuery.textScaleFactorOf(context);
     return Scaffold(
-        backgroundColor: const Color(0xfffdfdfd),
-        body: ListView(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(right: 290, top: 10),
-              child: PageLink(
-                links: [
-                  PageLinkInfo(
-                    transition: LinkTransition.Fade,
-                    ease: Curves.easeOut,
-                    duration: 0.3,
-                    pageBuilder: () => Home(),
-                  ),
-                ],
-                // ignore: prefer_const_constructors
-                child: CircleAvatar(
-                    backgroundColor: Color(0xffbaa378),
-                    child: Icon(
-                      Icons.arrow_back,
-                      color: Colors.black,
-                    )),
-              ),
-            ),
-            Center(
-              child: Text(
-                "25OCT",
-                style: TextStyle(
-                    fontSize: text * 25,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                "Your Favourite",
-                style: TextStyle(
-                    fontSize: text * 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black),
-              ),
-            ),
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Container(
-                    height: height / 5.8,
-                    width: width / 1,
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                          //width: 2,
-                          color: Colors.black,
-                        ),
-                        color: Colors.transparent,
-                        borderRadius: BorderRadius.circular(16)),
-                    child: Stack(
-                      children: [
-                        Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(left: 10),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(35),
-                                child: Image.asset(
-                                  "assets/images/sheri-silver-1.png",
-                                  width: width / 3.5,
-                                  height: height / 6,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 130, top: 20),
-                          child: Row(
-                            children: [
-                              Text(
-                                "Vanilla Flavor",
-                                style: TextStyle(fontSize: text * 17),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 290, top: 10),
-                          child: Favourite(),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 130, top: 50),
-                          child: Text(
-                            "20.00SR",
-                            style: TextStyle(fontSize: text * 16),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 160, top: 80),
-                          child: Row(
-                            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            // crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left: 10),
-                                child: Icon(
-                                  Icons.delete_outline_rounded,
-                                  size: 20,
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 10),
-                                child: ElevatedButton(
-                                  child: Text(
-                                    "Add to Cart",
-                                    style: TextStyle(
-                                        // fontSize: text * 15,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  style: TextButton.styleFrom(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(12)),
-
-                                      //StadiumBorder(),
-                                      // side: BorderSide(width: 6),
-                                      minimumSize: Size(60, 30),
-                                      maximumSize: Size(120, 30),
-                                      backgroundColor: Color(0xffbaa378)),
-                                  onPressed: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => Cart()));
-                                  },
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Container(
-                    height: height / 5.8,
-                    width: width / 1,
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                          //width: 2,
-                          color: Colors.black,
-                        ),
-                        color: Colors.transparent,
-                        borderRadius: BorderRadius.circular(16)),
-                    child: Stack(
-                      children: [
-                        Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(left: 10),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(35),
-                                child: Image.asset(
-                                  "assets/images/sheri-silver-1.png",
-                                  width: width / 3.5,
-                                  height: height / 6,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 130, top: 20),
-                          child: Row(
-                            children: [
-                              Text(
-                                "Vanilla Flavor",
-                                style: TextStyle(fontSize: text * 17),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 290, top: 10),
-                          child: Favourite(),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 130, top: 50),
-                          child: Text(
-                            "20.00SR",
-                            style: TextStyle(fontSize: text * 16),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 160, top: 80),
-                          child: Row(
-                            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            // crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left: 10),
-                                child: Icon(
-                                  Icons.delete_outline_rounded,
-                                  size: 20,
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 10),
-                                child: ElevatedButton(
-                                  child: Text(
-                                    "Add to Cart",
-                                    style: TextStyle(
-                                        // fontSize: text * 15,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  style: TextButton.styleFrom(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(12)),
-
-                                      //StadiumBorder(),
-                                      minimumSize: Size(60, 30),
-                                      maximumSize: Size(120, 30),
-                                      backgroundColor: Color(0xffbaa378)),
-                                  onPressed: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => Cart()));
-                                  },
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Container(
-                    height: height / 5.8,
-                    width: width / 1,
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                          //width: 2,
-                          color: Colors.black,
-                        ),
-                        color: Colors.transparent,
-                        borderRadius: BorderRadius.circular(16)),
-                    child: Stack(
-                      children: [
-                        Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(left: 10),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(35),
-                                child: Image.asset(
-                                  "assets/images/sheri-silver-1.png",
-                                  width: width / 3.5,
-                                  height: height / 6,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 130, top: 20),
-                          child: Row(
-                            children: [
-                              Text(
-                                "Vanilla Flavor",
-                                style: TextStyle(fontSize: text * 17),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 290, top: 10),
-                          child: Favourite(),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 130, top: 50),
-                          child: Text(
-                            "20.00SR",
-                            style: TextStyle(fontSize: text * 16),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 160, top: 80),
-                          child: Row(
-                            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            // crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left: 10),
-                                child: Icon(
-                                  Icons.delete_outline_rounded,
-                                  size: 20,
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 10),
-                                child: ElevatedButton(
-                                  child: Text(
-                                    "Add to Cart",
-                                    style: TextStyle(
-                                        // fontSize: text * 15,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  style: TextButton.styleFrom(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(12)),
-
-                                      //StadiumBorder(),
-                                      // side: BorderSide(width: 6),
-                                      minimumSize: Size(60, 30),
-                                      maximumSize: Size(120, 30),
-                                      backgroundColor: Color(0xffbaa378)),
-                                  onPressed: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => Cart()));
-                                  },
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.black),
+        centerTitle: true,
+        backgroundColor: Color(0xffFFFFFF),
+        title: Text(
+          "FAVORITE",
+          style: TextStyle(fontSize: 17),
         ),
-        bottomNavigationBar: Bottomsheet());
+        leading: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: ((context) => Drawer())));
+            },
+            child: Image.asset("assets/images/back_errow.png")),
+      ),
+      backgroundColor: const Color(0xffF5ECE3),
+      body: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: ListView(
+            children: [
+              Container(
+                height: 110,
+                width: 290,
+                decoration: BoxDecoration(
+
+                    // border: Border.all(
+                    //   //width: 2,
+                    //   color: Colors.black,
+                    // ),
+
+                    color: Color(0xffFFF8F0),
+                    borderRadius: BorderRadius.circular(16.0)),
+                child: Row(
+                  children: [
+                    Container(
+                      height: 120,
+                      width: 110,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage(
+                                "assets/images/sheri-silver-1.png",
+                              ),
+                              fit: BoxFit.cover),
+                          // border: Border.all(
+                          //   //width: 2,
+                          //   color: Colors.black,
+                          // ),
+                          color: Color.fromARGB(255, 242, 229, 229),
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(16.0),
+                              bottomLeft: Radius.circular(16.0))),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsets.only(top: 10, bottom: 10, left: 10),
+                      child: VerticalDivider(
+                        color: Color(0xffBAA378),
+                        thickness: 4,
+                      ),
+                    ),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(),
+                        child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 10, right: 20),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "Ice Cream Box",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16),
+                                    ),
+                                    CircleAvatar(
+                                      backgroundColor:
+                                          Theme.of(context).primaryColor,
+                                      radius: 10,
+                                      child: Icon(
+                                        Icons.close,
+                                        size: 15,
+                                        color: Colors.white,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 10, right: 20),
+                                child: Text(
+                                  "Caramel",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 13),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 10, right: 20),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "14 SR",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    CartIcon()
+                                  ],
+                                ),
+                              ),
+                            ]),
+                      ),
+                    )
+                  ],
+                ),
+
+                // Padding(
+                //   padding: const EdgeInsets.only(
+                //       left: 130, top: 120),
+                //   child: Row(
+                //     children: [
+                //       Text(
+                //         "Open 24/7",
+                //         style: TextStyle(
+                //             fontSize: text * 15,
+                //             fontWeight: FontWeight.bold),
+                //       )
+                //     ],
+                //   ),
+                // )
+              ),
+              SizedBox(
+                height: 5.0,
+              ),
+              Container(
+                height: 110,
+                width: 290,
+                decoration: BoxDecoration(
+
+                    // border: Border.all(
+                    //   //width: 2,
+                    //   color: Colors.black,
+                    // ),
+
+                    color: Color(0xffFFF8F0),
+                    borderRadius: BorderRadius.circular(16.0)),
+                child: Row(
+                  children: [
+                    Container(
+                      height: 120,
+                      width: 110,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage(
+                                "assets/images/sheri-silver-2.png",
+                              ),
+                              fit: BoxFit.cover),
+                          // border: Border.all(
+                          //   //width: 2,
+                          //   color: Colors.black,
+                          // ),
+                          color: Color.fromARGB(255, 242, 229, 229),
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(16.0),
+                              bottomLeft: Radius.circular(16.0))),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsets.only(top: 10, bottom: 10, left: 10),
+                      child: VerticalDivider(
+                        color: Color(0xffBAA378),
+                        thickness: 4,
+                      ),
+                    ),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(),
+                        child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 10, right: 20),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "Ice Cream Box",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16),
+                                    ),
+                                    CircleAvatar(
+                                      backgroundColor:
+                                          Theme.of(context).primaryColor,
+                                      radius: 10,
+                                      child: Icon(
+                                        Icons.close,
+                                        size: 15,
+                                        color: Colors.white,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 10, right: 20),
+                                child: Text(
+                                  "Caramel",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 13),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 10, right: 20),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "14 SR",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    CartIcon()
+                                  ],
+                                ),
+                              ),
+                            ]),
+                      ),
+                    )
+                  ],
+                ),
+
+                // Padding(
+                //   padding: const EdgeInsets.only(
+                //       left: 130, top: 120),
+                //   child: Row(
+                //     children: [
+                //       Text(
+                //         "Open 24/7",
+                //         style: TextStyle(
+                //             fontSize: text * 15,
+                //             fontWeight: FontWeight.bold),
+                //       )
+                //     ],
+                //   ),
+                // )
+              ),
+              SizedBox(
+                height: 5.0,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: ((context) => CocaCola())));
+                },
+                child: Container(
+                  height: 110,
+                  width: 290,
+                  decoration: BoxDecoration(
+
+                      // border: Border.all(
+                      //   //width: 2,
+                      //   color: Colors.black,
+                      // ),
+
+                      color: Color(0xffFFF8F0),
+                      borderRadius: BorderRadius.circular(16.0)),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 120,
+                        width: 110,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                  "assets/images/sheri-silver-3.png",
+                                ),
+                                fit: BoxFit.cover),
+                            // border: Border.all(
+                            //   //width: 2,
+                            //   color: Colors.black,
+                            // ),
+                            color: Color.fromARGB(255, 242, 229, 229),
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(16.0),
+                                bottomLeft: Radius.circular(16.0))),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 10, bottom: 10, left: 10),
+                        child: VerticalDivider(
+                          color: Color(0xffBAA378),
+                          thickness: 4,
+                        ),
+                      ),
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.only(),
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 10, right: 20),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        "Ice Cream Box",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16),
+                                      ),
+                                      CircleAvatar(
+                                        backgroundColor:
+                                            Theme.of(context).primaryColor,
+                                        radius: 10,
+                                        child: Icon(
+                                          Icons.close,
+                                          size: 15,
+                                          color: Colors.white,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 10, right: 20),
+                                  child: Text(
+                                    "Caramel",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 13),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 10, right: 20),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        "14 SR",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      CartIcon()
+                                    ],
+                                  ),
+                                ),
+                              ]),
+                        ),
+                      )
+                    ],
+                  ),
+
+                  // Padding(
+                  //   padding: const EdgeInsets.only(
+                  //       left: 130, top: 120),
+                  //   child: Row(
+                  //     children: [
+                  //       Text(
+                  //         "Open 24/7",
+                  //         style: TextStyle(
+                  //             fontSize: text * 15,
+                  //             fontWeight: FontWeight.bold),
+                  //       )
+                  //     ],
+                  //   ),
+                  // )
+                ),
+              ),
+              SizedBox(
+                height: 5.0,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: ((context) => CocaCola())));
+                },
+                child: Container(
+                  height: 110,
+                  width: 290,
+                  decoration: BoxDecoration(
+
+                      // border: Border.all(
+                      //   //width: 2,
+                      //   color: Colors.black,
+                      // ),
+
+                      color: Color(0xffFFF8F0),
+                      borderRadius: BorderRadius.circular(16.0)),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 120,
+                        width: 110,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                  "assets/images/sheri-silver-4.png",
+                                ),
+                                fit: BoxFit.cover),
+                            // border: Border.all(
+                            //   //width: 2,
+                            //   color: Colors.black,
+                            // ),
+                            color: Color.fromARGB(255, 242, 229, 229),
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(16.0),
+                                bottomLeft: Radius.circular(16.0))),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 10, bottom: 10, left: 10),
+                        child: VerticalDivider(
+                          color: Color(0xffBAA378),
+                          thickness: 4,
+                        ),
+                      ),
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.only(),
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 10, right: 20),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        "Ice Cream Box",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16),
+                                      ),
+                                      CircleAvatar(
+                                        backgroundColor:
+                                            Theme.of(context).primaryColor,
+                                        radius: 10,
+                                        child: Icon(
+                                          Icons.close,
+                                          size: 15,
+                                          color: Colors.white,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 10, right: 20),
+                                  child: Text(
+                                    "Caramel",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 13),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 10, right: 20),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        "14 SR",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      CartIcon()
+                                    ],
+                                  ),
+                                ),
+                              ]),
+                        ),
+                      )
+                    ],
+                  ),
+
+                  // Padding(
+                  //   padding: const EdgeInsets.only(
+                  //       left: 130, top: 120),
+                  //   child: Row(
+                  //     children: [
+                  //       Text(
+                  //         "Open 24/7",
+                  //         style: TextStyle(
+                  //             fontSize: text * 15,
+                  //             fontWeight: FontWeight.bold),
+                  //       )
+                  //     ],
+                  //   ),
+                  // )
+                ),
+              ),
+              SizedBox(
+                height: 5.0,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: ((context) => CocaCola())));
+                },
+                child: Container(
+                  height: 110,
+                  width: 290,
+                  decoration: BoxDecoration(
+
+                      // border: Border.all(
+                      //   //width: 2,
+                      //   color: Colors.black,
+                      // ),
+
+                      color: Color(0xffFFF8F0),
+                      borderRadius: BorderRadius.circular(16.0)),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 120,
+                        width: 110,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                  "assets/images/sheri-silver-6.png",
+                                ),
+                                fit: BoxFit.cover),
+                            // border: Border.all(
+                            //   //width: 2,
+                            //   color: Colors.black,
+                            // ),
+                            color: Color.fromARGB(255, 242, 229, 229),
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(16.0),
+                                bottomLeft: Radius.circular(16.0))),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 10, bottom: 10, left: 10),
+                        child: VerticalDivider(
+                          color: Color(0xffBAA378),
+                          thickness: 4,
+                        ),
+                      ),
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.only(),
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 10, right: 20),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        "Ice Cream Box",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16),
+                                      ),
+                                      CircleAvatar(
+                                        backgroundColor:
+                                            Theme.of(context).primaryColor,
+                                        radius: 10,
+                                        child: Icon(
+                                          Icons.close,
+                                          size: 15,
+                                          color: Colors.white,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 10, right: 20),
+                                  child: Text(
+                                    "Caramel",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 13),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 10, right: 20),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        "14 SR",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      CartIcon()
+                                    ],
+                                  ),
+                                ),
+                              ]),
+                        ),
+                      )
+                    ],
+                  ),
+
+                  // Padding(
+                  //   padding: const EdgeInsets.only(
+                  //       left: 130, top: 120),
+                  //   child: Row(
+                  //     children: [
+                  //       Text(
+                  //         "Open 24/7",
+                  //         style: TextStyle(
+                  //             fontSize: text * 15,
+                  //             fontWeight: FontWeight.bold),
+                  //       )
+                  //     ],
+                  //   ),
+                  // )
+                ),
+              ),
+            ],
+          )),
+    );
   }
 
   void onTabTapped(int index) {
