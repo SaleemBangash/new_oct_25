@@ -7,8 +7,8 @@ import 'package:new_oct_25/snacks/kurkure.dart';
 import 'package:new_oct_25/snacks/lays.dart';
 
 import '../Drinks/cocacola.dart';
-import '../cartIcon.dart';
-import '../favourite.dart';
+import 'package:new_oct_25/widgets/favourite.dart';
+import '../widgets/cartIcon.dart';
 
 class NewSnacks extends StatefulWidget {
   const NewSnacks({Key? key}) : super(key: key);
@@ -32,7 +32,7 @@ class _NewSnacksState extends State<NewSnacks> {
               GestureDetector(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: ((context) => CocaCola())));
+                      MaterialPageRoute(builder: ((context) => Cheetos())));
                 },
                 child: Container(
                   height: 110,
@@ -158,7 +158,7 @@ class _NewSnacksState extends State<NewSnacks> {
               GestureDetector(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: ((context) => CocaCola())));
+                      MaterialPageRoute(builder: ((context) => Doritos())));
                 },
                 child: Container(
                   height: 110,
@@ -284,7 +284,7 @@ class _NewSnacksState extends State<NewSnacks> {
               GestureDetector(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: ((context) => CocaCola())));
+                      MaterialPageRoute(builder: ((context) => Lays())));
                 },
                 child: Container(
                   height: 110,
@@ -410,7 +410,7 @@ class _NewSnacksState extends State<NewSnacks> {
               GestureDetector(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: ((context) => CocaCola())));
+                      MaterialPageRoute(builder: ((context) => KurKure())));
                 },
                 child: Container(
                   height: 110,

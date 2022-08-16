@@ -1,21 +1,11 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, file_names
 
 import 'package:flutter/material.dart';
-import 'package:adobe_xd/pinned.dart';
-import 'package:new_oct_25/favourite.dart';
-import 'package:new_oct_25/plus.dart';
-import 'dart:ui' as ui;
-import '../Cart.dart';
-import 'package:adobe_xd/page_link.dart';
-// import '../Component11.dart';
-import '../Iconawesomeheart.dart';
-import '../Home.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
-import '../cartIcon.dart';
+import '../main.dart';
+import '../screens/new.dart';
+import '../widgets/favourite.dart';
+import '../widgets/plus.dart';
 import '../drawer/Signin2.dart';
-import '../minus.dart';
-import '../new.dart';
 
 class Strawberry extends StatefulWidget {
   Strawberry({
@@ -34,10 +24,12 @@ class _StrawberryState extends State<Strawberry> {
   bool _threeBeenPressed = false;
   bool _fourBeenPressed = false;
   bool _fiveBeenPressed = false;
+  bool _sixBeenPressed = false;
   int _itemCount = 0;
   bool aChecked = false;
   bool bChecked = false;
-  bool isChecked = false;
+  bool cChecked = false;
+  bool dChecked = false;
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -68,7 +60,7 @@ class _StrawberryState extends State<Strawberry> {
               Image.asset(
                 "assets/images/sheri-silver-7.png",
                 width: width / 0.4,
-                height: height / 4.2,
+                height: sizeConfig!.height(0.20),
                 fit: BoxFit.fill,
 
                 //fit: BoxFit.cover,
@@ -89,9 +81,9 @@ class _StrawberryState extends State<Strawberry> {
             ],
           ),
           Positioned(
-            top: 185,
+            top: sizeConfig!.height(0.200),
             child: Container(
-              height: 120,
+              height: sizeConfig!.height(0.120),
               decoration: BoxDecoration(
                 color: Color(0xffFFF8F0),
                 boxShadow: [
@@ -148,492 +140,534 @@ class _StrawberryState extends State<Strawberry> {
           SizedBox(
             height: 20,
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 320),
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              _oneBeenPressed = !_oneBeenPressed;
-                              _twoBeenPressed = false;
-                              _threeBeenPressed = false;
-                            });
-                          },
-                          child: Container(
-                            height: 50,
-                            width: 110,
-                            decoration: BoxDecoration(
-                                border: _oneBeenPressed
-                                    ? Border.all(
-                                        //width: 2,
-                                        color: Colors.black,
-                                      )
-                                    : Border.all(
-                                        width: 0,
-                                        color: Colors.white,
-                                      ),
-                                color: Color(0xffFFF8F0),
-                                borderRadius: BorderRadius.circular(10.0)),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Image.asset(
-                                  "assets/images/splash_icon.png",
-                                  height: 40,
-                                  width: 40,
-                                ),
-                                Text(
-                                  "SMALL",
-                                  style: TextStyle(
-                                      fontSize: 13,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 5.0,
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              _twoBeenPressed = !_twoBeenPressed;
-                              _oneBeenPressed = false;
-                              _threeBeenPressed = false;
-                            });
-                          },
-                          child: Container(
-                            height: 50,
-                            width: 110,
-                            decoration: BoxDecoration(
-                                border: _twoBeenPressed
-                                    ? Border.all(
-                                        //width: 2,
-                                        color: Colors.black,
-                                      )
-                                    : Border.all(
-                                        width: 0,
-                                        color: Colors.white,
-                                      ),
-                                color: Color(0xffFFF8F0),
-                                borderRadius: BorderRadius.circular(10.0)),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Image.asset(
-                                  "assets/images/splash_icon.png",
-                                  height: 40,
-                                  width: 40,
-                                ),
-                                Text(
-                                  "MEDIUM",
-                                  style: TextStyle(
-                                      fontSize: 13,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 5.0,
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              _threeBeenPressed = !_threeBeenPressed;
-                              _oneBeenPressed = false;
-                              _twoBeenPressed = false;
-                            });
-                          },
-                          child: Container(
-                            height: 50,
-                            width: 110,
-                            decoration: BoxDecoration(
-                                border: _threeBeenPressed
-                                    ? Border.all(
-                                        //width: 2,
-                                        color: Colors.black,
-                                      )
-                                    : Border.all(
-                                        width: 0,
-                                        color: Colors.white,
-                                      ),
-                                color: Color(0xffFFF8F0),
-                                borderRadius: BorderRadius.circular(10.0)),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Image.asset(
-                                  "assets/images/splash_icon.png",
-                                  height: 40,
-                                  width: 40,
-                                ),
-                                Text(
-                                  "LARGE",
-                                  style: TextStyle(
-                                      fontSize: 13,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25),
-                    child: Text(
-                      "EXTRA ADDITION",
-                      style: TextStyle(
-                          fontSize: 13,
-                          color: Color(0xffBAA378),
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                    child: Container(
-                      width: 370,
-                      height: 80,
-                      decoration: BoxDecoration(
-                          color: Color(0xffFFF8F0),
-                          // border: Border.all(width: 1),
-                          borderRadius: BorderRadius.circular(15.0)),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: Column(
-                            // mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Image.asset(
-                                    "assets/images/slection_slected.png",
-                                    height: 25,
-                                    width: 15,
-                                  ),
-                                  SizedBox(
-                                    width: 5.0,
-                                  ),
-                                  RichText(
-                                    text: TextSpan(
-                                      text: 'Extra Nuts',
-                                      style: TextStyle(
-                                          fontSize: 12.0,
-                                          color: Color(0xffACACAC)),
-                                      children: <TextSpan>[
-                                        TextSpan(
-                                          text: ' +1 SR',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w600,
-                                              fontSize: 9,
-                                              color: Color(0xffBAA378)),
-                                        ),
-                                      ],
+          Positioned(
+            top: sizeConfig!.height(0.340),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            _oneBeenPressed = !_oneBeenPressed;
+                            _twoBeenPressed = false;
+                            _threeBeenPressed = false;
+                          });
+                        },
+                        child: Container(
+                          height: 50,
+                          width: 110,
+                          decoration: BoxDecoration(
+                              border: _oneBeenPressed
+                                  ? Border.all(
+                                      //width: 2,
+                                      color: Colors.black,
+                                    )
+                                  : Border.all(
+                                      width: 0,
+                                      color: Colors.white,
                                     ),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Image.asset(
-                                    "assets/images/slection_slected.png",
-                                    height: 25,
-                                    width: 15,
-                                  ),
-                                  SizedBox(
-                                    width: 5.0,
-                                  ),
-                                  RichText(
-                                    text: TextSpan(
-                                      text: 'Extra Nuts',
-                                      style: TextStyle(
-                                          fontSize: 12.0,
-                                          color: Color(0xffACACAC)),
-                                      children: <TextSpan>[
-                                        TextSpan(
-                                          text: ' +1 SR',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w600,
-                                              fontSize: 9,
-                                              color: Color(0xffBAA378)),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Image.asset(
-                                    "assets/images/slection_slected.png",
-                                    height: 25,
-                                    width: 15,
-                                  ),
-                                  SizedBox(
-                                    width: 5.0,
-                                  ),
-                                  RichText(
-                                    text: TextSpan(
-                                      text: 'Extra Nuts',
-                                      style: TextStyle(
-                                          fontSize: 12.0,
-                                          color: Color(0xffACACAC)),
-                                      children: <TextSpan>[
-                                        TextSpan(
-                                          text: ' +1 SR',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w600,
-                                              fontSize: 9,
-                                              color: Color(0xffBAA378)),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ]),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25),
-                    child: Text(
-                      "Type of Milk",
-                      style: TextStyle(
-                          fontSize: 13,
-                          color: Color(0xffBAA378),
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                    child: Container(
-                      width: 370,
-                      height: 100,
-                      decoration: BoxDecoration(
-                          color: Color(0xffFFF8F0),
-                          // border: Border.all(width: 1),
-                          borderRadius: BorderRadius.circular(15.0)),
-                      child: Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Column(
+                              color: Color(0xffFFF8F0),
+                              borderRadius: BorderRadius.circular(10.0)),
+                          child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 10),
-                                    child: Container(
-                                      height: 15,
-                                      width: 15,
-                                      decoration: BoxDecoration(
-                                          border: Border.all(
-                                              width: 1, color: Colors.black),
-                                          shape: BoxShape.circle,
-                                          color: Colors.transparent),
-                                      child: Transform.scale(
-                                        scale: 0.5,
-                                        child: Checkbox(
-                                          checkColor: Colors.black,
-                                          side: BorderSide(color: Colors.white),
-                                          activeColor: Colors.black,
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(20)),
-                                          value: aChecked,
-                                          onChanged: (bool? value) {
-                                            setState(() {
-                                              aChecked = value!;
-
-                                              bChecked = false;
-                                              // cChecked = false;
-                                              // dChecked = false;
-                                              // eChecked = false;
-                                            });
-                                          },
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 5.0,
-                                  ),
-                                  Text("Type 1",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Color(0xffACACAC),
-                                          fontSize: 11)),
-                                ],
+                              Image.asset(
+                                "assets/images/splash_icon.png",
+                                height: 40,
+                                width: 40,
                               ),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 10),
-                                    child: Container(
-                                      height: 15,
-                                      width: 15,
-                                      decoration: BoxDecoration(
-                                          border: Border.all(
-                                              width: 1, color: Colors.black),
-                                          shape: BoxShape.circle,
-                                          color: Colors.transparent),
-                                      child: Transform.scale(
-                                        scale: 0.6,
-                                        child: Checkbox(
-                                          checkColor: Colors.black,
-                                          side: BorderSide(color: Colors.white),
-                                          activeColor: Colors.black,
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(20)),
-                                          value: aChecked,
-                                          onChanged: (bool? value) {
-                                            setState(() {
-                                              aChecked = value!;
-
-                                              bChecked = false;
-                                              // cChecked = false;
-                                              // dChecked = false;
-                                              // eChecked = false;
-                                            });
-                                          },
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 5.0,
-                                  ),
-                                  Text("Type 1",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Color(0xffACACAC),
-                                          fontSize: 11)),
-                                ],
+                              Text(
+                                "SMALL",
+                                style: TextStyle(
+                                    fontSize: 13, fontWeight: FontWeight.bold),
                               ),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 10),
-                                    child: Container(
-                                      height: 15,
-                                      width: 15,
-                                      decoration: BoxDecoration(
-                                          border: Border.all(
-                                              width: 1, color: Colors.black),
-                                          shape: BoxShape.circle,
-                                          color: Colors.transparent),
-                                      child: Transform.scale(
-                                        scale: 0.6,
-                                        child: Checkbox(
-                                          checkColor: Colors.black,
-                                          side: BorderSide(color: Colors.white),
-                                          activeColor: Colors.black,
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(20)),
-                                          value: aChecked,
-                                          onChanged: (bool? value) {
-                                            setState(() {
-                                              aChecked = value!;
-
-                                              bChecked = false;
-                                              // cChecked = false;
-                                              // dChecked = false;
-                                              // eChecked = false;
-                                            });
-                                          },
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 5.0,
-                                  ),
-                                  Text("Type 1",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Color(0xffACACAC),
-                                          fontSize: 11)),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 10),
-                                    child: Container(
-                                      height: 15,
-                                      width: 15,
-                                      decoration: BoxDecoration(
-                                          border: Border.all(
-                                              width: 1, color: Colors.black),
-                                          shape: BoxShape.circle,
-                                          color: Colors.transparent),
-                                      child: Transform.scale(
-                                        scale: 0.6,
-                                        child: Checkbox(
-                                          checkColor: Colors.black,
-                                          side: BorderSide(color: Colors.white),
-                                          activeColor: Colors.black,
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(20)),
-                                          value: aChecked,
-                                          onChanged: (bool? value) {
-                                            setState(() {
-                                              aChecked = value!;
-
-                                              bChecked = false;
-                                              // cChecked = false;
-                                              // dChecked = false;
-                                              // eChecked = false;
-                                            });
-                                          },
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 5.0,
-                                  ),
-                                  Text("Type 1",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Color(0xffACACAC),
-                                          fontSize: 11)),
-                                ],
-                              ),
-                            ]),
+                            ],
+                          ),
+                        ),
                       ),
+                      SizedBox(
+                        width: 5.0,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            _twoBeenPressed = !_twoBeenPressed;
+                            _oneBeenPressed = false;
+                            _threeBeenPressed = false;
+                          });
+                        },
+                        child: Container(
+                          height: 50,
+                          width: 110,
+                          decoration: BoxDecoration(
+                              border: _twoBeenPressed
+                                  ? Border.all(
+                                      //width: 2,
+                                      color: Colors.black,
+                                    )
+                                  : Border.all(
+                                      width: 0,
+                                      color: Colors.white,
+                                    ),
+                              color: Color(0xffFFF8F0),
+                              borderRadius: BorderRadius.circular(10.0)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Image.asset(
+                                "assets/images/splash_icon.png",
+                                height: 40,
+                                width: 40,
+                              ),
+                              Text(
+                                "MEDIUM",
+                                style: TextStyle(
+                                    fontSize: 13, fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 5.0,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            _threeBeenPressed = !_threeBeenPressed;
+                            _oneBeenPressed = false;
+                            _twoBeenPressed = false;
+                          });
+                        },
+                        child: Container(
+                          height: 50,
+                          width: 110,
+                          decoration: BoxDecoration(
+                              border: _threeBeenPressed
+                                  ? Border.all(
+                                      //width: 2,
+                                      color: Colors.black,
+                                    )
+                                  : Border.all(
+                                      width: 0,
+                                      color: Colors.white,
+                                    ),
+                              color: Color(0xffFFF8F0),
+                              borderRadius: BorderRadius.circular(10.0)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Image.asset(
+                                "assets/images/splash_icon.png",
+                                height: 40,
+                                width: 40,
+                              ),
+                              Text(
+                                "LARGE",
+                                style: TextStyle(
+                                    fontSize: 13, fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Text(
+                    "EXTRA ADDITION",
+                    style: TextStyle(
+                        fontSize: 13,
+                        color: Color(0xffBAA378),
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  child: Container(
+                    width: 370,
+                    height: 80,
+                    decoration: BoxDecoration(
+                        color: Color(0xffFFF8F0),
+                        // border: Border.all(width: 1),
+                        borderRadius: BorderRadius.circular(15.0)),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Column(
+                          // mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      _fourBeenPressed = !_fourBeenPressed;
+                                      // _fiveBeenPressed = false;
+                                      // _sixBeenPressed = false;
+                                    });
+                                  },
+                                  child: _fourBeenPressed
+                                      ? Image.asset(
+                                          "assets/images/slection_slected.png",
+                                          height: 25,
+                                          width: 15,
+                                        )
+                                      : Image.asset(
+                                          "assets/images/check2.png",
+                                          height: 25,
+                                          width: 15,
+                                        ),
+                                ),
+                                SizedBox(
+                                  width: 5.0,
+                                ),
+                                RichText(
+                                  text: TextSpan(
+                                    text: 'Extra Nuts',
+                                    style: TextStyle(
+                                        fontSize: 12.0,
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0xffACACAC)),
+                                    children: <TextSpan>[
+                                      TextSpan(
+                                        text: ' +1 SR',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 9,
+                                            color: Color(0xffBAA378)),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      _fiveBeenPressed = !_fiveBeenPressed;
+                                      // _fourBeenPressed = false;
+                                      // _sixBeenPressed = false;
+                                    });
+                                  },
+                                  child: _fiveBeenPressed
+                                      ? Image.asset(
+                                          "assets/images/slection_slected.png",
+                                          height: 25,
+                                          width: 15,
+                                        )
+                                      : Image.asset(
+                                          "assets/images/check2.png",
+                                          height: 25,
+                                          width: 15,
+                                        ),
+                                ),
+                                SizedBox(
+                                  width: 5.0,
+                                ),
+                                RichText(
+                                  text: TextSpan(
+                                    text: 'Extra Nuts',
+                                    style: TextStyle(
+                                        fontSize: 12.0,
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0xffACACAC)),
+                                    children: <TextSpan>[
+                                      TextSpan(
+                                        text: ' +1 SR',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 9,
+                                            color: Color(0xffBAA378)),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      _sixBeenPressed = !_sixBeenPressed;
+                                      // _fiveBeenPressed = false;
+                                      // _fourBeenPressed = false;
+                                    });
+                                  },
+                                  child: _sixBeenPressed
+                                      ? Image.asset(
+                                          "assets/images/slection_slected.png",
+                                          height: 25,
+                                          width: 15,
+                                        )
+                                      : Image.asset(
+                                          "assets/images/check2.png",
+                                          height: 25,
+                                          width: 15,
+                                        ),
+                                ),
+                                SizedBox(
+                                  width: 5.0,
+                                ),
+                                RichText(
+                                  text: TextSpan(
+                                    text: 'Extra Nuts',
+                                    style: TextStyle(
+                                        fontSize: 12.0,
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0xffACACAC)),
+                                    children: <TextSpan>[
+                                      TextSpan(
+                                        text: ' +1 SR',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 9,
+                                            color: Color(0xffBAA378)),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ]),
                     ),
                   ),
-                ],
-              ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Text(
+                    "Type of Milk",
+                    style: TextStyle(
+                        fontSize: 13,
+                        color: Color(0xffBAA378),
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  child: Container(
+                    width: 370,
+                    height: 100,
+                    decoration: BoxDecoration(
+                        color: Color(0xffFFF8F0),
+                        // border: Border.all(width: 1),
+                        borderRadius: BorderRadius.circular(15.0)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 10),
+                                  child: Container(
+                                    height: 15,
+                                    width: 15,
+                                    decoration: BoxDecoration(
+                                        border: Border.all(
+                                            width: 1, color: Colors.black),
+                                        shape: BoxShape.circle,
+                                        color: Colors.transparent),
+                                    child: Transform.scale(
+                                      scale: 0.5,
+                                      child: Checkbox(
+                                        checkColor: Colors.black,
+                                        side: BorderSide(color: Colors.white),
+                                        activeColor: Colors.black,
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(20)),
+                                        value: aChecked,
+                                        onChanged: (bool? value) {
+                                          setState(() {
+                                            aChecked = value!;
+
+                                            bChecked = false;
+                                            cChecked = false;
+                                            dChecked = false;
+                                          });
+                                        },
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 5.0,
+                                ),
+                                Text("Type 1",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0xffACACAC),
+                                        fontSize: 11)),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 10),
+                                  child: Container(
+                                    height: 15,
+                                    width: 15,
+                                    decoration: BoxDecoration(
+                                        border: Border.all(
+                                            width: 1, color: Colors.black),
+                                        shape: BoxShape.circle,
+                                        color: Colors.transparent),
+                                    child: Transform.scale(
+                                      scale: 0.6,
+                                      child: Checkbox(
+                                        checkColor: Colors.black,
+                                        side: BorderSide(color: Colors.white),
+                                        activeColor: Colors.black,
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(20)),
+                                        value: bChecked,
+                                        onChanged: (bool? value) {
+                                          setState(() {
+                                            bChecked = value!;
+
+                                            aChecked = false;
+                                            cChecked = false;
+                                            dChecked = false;
+                                            // eChecked = false;
+                                          });
+                                        },
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 5.0,
+                                ),
+                                Text("Type 1",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0xffACACAC),
+                                        fontSize: 11)),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 10),
+                                  child: Container(
+                                    height: 15,
+                                    width: 15,
+                                    decoration: BoxDecoration(
+                                        border: Border.all(
+                                            width: 1, color: Colors.black),
+                                        shape: BoxShape.circle,
+                                        color: Colors.transparent),
+                                    child: Transform.scale(
+                                      scale: 0.6,
+                                      child: Checkbox(
+                                        checkColor: Colors.black,
+                                        side: BorderSide(color: Colors.white),
+                                        activeColor: Colors.black,
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(20)),
+                                        value: cChecked,
+                                        onChanged: (bool? value) {
+                                          setState(() {
+                                            cChecked = value!;
+
+                                            bChecked = false;
+                                            aChecked = false;
+                                            dChecked = false;
+                                            // eChecked = false;
+                                          });
+                                        },
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 5.0,
+                                ),
+                                Text("Type 1",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0xffACACAC),
+                                        fontSize: 11)),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 10),
+                                  child: Container(
+                                    height: 15,
+                                    width: 15,
+                                    decoration: BoxDecoration(
+                                        border: Border.all(
+                                            width: 1, color: Colors.black),
+                                        shape: BoxShape.circle,
+                                        color: Colors.transparent),
+                                    child: Transform.scale(
+                                      scale: 0.6,
+                                      child: Checkbox(
+                                        checkColor: Colors.black,
+                                        side: BorderSide(color: Colors.white),
+                                        activeColor: Colors.black,
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(20)),
+                                        value: dChecked,
+                                        onChanged: (bool? value) {
+                                          setState(() {
+                                            dChecked = value!;
+
+                                            bChecked = false;
+                                            cChecked = false;
+                                            aChecked = false;
+                                            // eChecked = false;
+                                          });
+                                        },
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 5.0,
+                                ),
+                                Text("Type 1",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0xffACACAC),
+                                        fontSize: 11)),
+                              ],
+                            ),
+                          ]),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           Expanded(

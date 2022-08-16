@@ -5,9 +5,9 @@ import 'package:new_oct_25/IceCream/chocolate.dart';
 import 'package:new_oct_25/IceCream/strawberry.dart';
 import 'package:new_oct_25/IceCream/vanila.dart';
 import 'package:new_oct_25/Favourite.dart';
-import 'package:new_oct_25/cartIcon.dart';
 
-import '../Cart.dart';
+import '../screens/Cart.dart';
+import '../widgets/cartIcon.dart';
 
 // import 'Cart.dart';
 

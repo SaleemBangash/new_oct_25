@@ -2,12 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:new_oct_25/Cart.dart';
-import 'package:new_oct_25/Home.dart';
-import 'package:new_oct_25/Wishlist.dart';
-import 'package:new_oct_25/favourite.dart';
 
-import '../main.dart';
+import '../screens/Cart.dart';
+import '../screens/Home.dart';
+import '../screens/Wishlist.dart';
 
 class BottomBar extends StatefulWidget {
   // final Widget body;

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:new_oct_25/Home.dart';
-import 'package:new_oct_25/new.dart';
-import 'package:new_oct_25/splash_screen.dart';
+import 'package:new_oct_25/screens/splash_screen.dart';
+
 import 'package:new_oct_25/utils/app_theme.dart';
 import 'package:new_oct_25/utils/size_config.dart';
 

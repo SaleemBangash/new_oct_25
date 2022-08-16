@@ -3,8 +3,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:new_oct_25/new.dart';
-import 'package:simple_shadow/simple_shadow.dart';
+import 'package:new_oct_25/screens/new.dart';
 
 import '../main.dart';
 import '../utils/size_config.dart';

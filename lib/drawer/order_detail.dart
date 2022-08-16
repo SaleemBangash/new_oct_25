@@ -1,18 +1,12 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, file_names, unnecessary_new
+import 'package:another_stepper/dto/stepper_data.dart';
+import 'package:another_stepper/widgets/another_stepper.dart';
 import 'package:flutter/material.dart';
-import 'package:adobe_xd/pinned.dart';
-import 'package:new_oct_25/Checkout.dart';
-import 'package:new_oct_25/bottomsheet.dart';
-import 'package:new_oct_25/cartIcon.dart';
-import 'package:new_oct_25/drawer/Signin2.dart';
-import 'package:new_oct_25/minus.dart';
-import 'package:new_oct_25/new.dart';
-import 'package:swipebuttonflutter/swipebuttonflutter.dart';
 
-import 'package:adobe_xd/page_link.dart';
+import '../main.dart';
+import '../screens/new.dart';
 
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:slide_to_confirm/slide_to_confirm.dart';
+// import 'package:swipebuttonflutter/swipebuttonflutter.dart';
 
 class OrderDetail extends StatefulWidget {
   OrderDetail({
@@ -49,6 +43,42 @@ class _OrderDetailState extends State<OrderDetail> {
   _stepCancel() {
     _currentStep > 0 ? setState(() => _currentStep -= 1) : null;
   }
+
+  // List<Step> stepList() => [
+  //       const Step(
+  //           title: Text('Account'),
+  //           content: Center(
+  //             child: Text('Account'),
+  //           )),
+  //       const Step(
+  //           title: Text('Address'),
+  //           content: Center(
+  //             child: Text('Address'),
+  //           )),
+  //       const Step(
+  //           title: Text('Confirm'),
+  //           content: Center(
+  //             child: Text('Confirm'),
+  //           ))
+  //     ];
+  List<StepperData> stepperData = [
+    StepperData(
+      title: "Order\nPlaced",
+      subtitle: "",
+    ),
+    StepperData(
+      title: "Order Confirm",
+      subtitle: "",
+    ),
+    StepperData(
+      title: "Preparing",
+      subtitle: "",
+    ),
+    StepperData(
+      title: "Deliverd",
+      subtitle: "",
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -102,7 +132,7 @@ class _OrderDetailState extends State<OrderDetail> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
               child: Container(
-                  height: 150,
+                  height: 170,
                   width: 370,
                   decoration: BoxDecoration(
 
@@ -114,15 +144,21 @@ class _OrderDetailState extends State<OrderDetail> {
                       color: Color(0xffFFF8F0),
                       borderRadius: BorderRadius.circular(10.0)),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+                      SizedBox(
+                        height: 5.0,
+                      ),
                       Text(
                         "order tracking".toUpperCase(),
                         style: TextStyle(
                             fontSize: 15,
-                            color: Color(0xff82C5B1C),
+                            color: Color(0xff82C5B1),
                             fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        height: 5.0,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -174,9 +210,41 @@ class _OrderDetailState extends State<OrderDetail> {
                           )
                         ],
                       ),
+                      SizedBox(
+                        height: 5.0,
+                      ),
+                      AnotherStepper(
+                        stepperList: stepperData,
+                        stepperDirection: Axis.horizontal,
+                        horizontalStepperHeight: 90,
+                        inverted: true,
+                        gap: 25,
+                        dotWidget: CircleAvatar(
+                          radius: 20,
+                          backgroundColor: Color(0xff82C5B1),
+                          child: Image.asset(
+                            "assets/images/check.png",
+                            height: 20,
+                            width: 20,
+                          ),
+                        ),
+                        titleTextStyle: TextStyle(
+                            fontSize: 10, fontWeight: FontWeight.bold),
+                        activeBarColor: Color(0xff474747),
+                        inActiveBarColor: Color(0xff474747),
+                        activeIndex: 1,
+                      ),
                     ],
                   )),
             ),
+
+            // ConstrainedBox(
+            //     constraints: BoxConstraints.tightFor(height: 300.0),
+            //     child:
+            //         Stepper(
+
+            //           type: StepperType.horizontal, steps: stepList())),
+
             Column(
               children: [
                 Padding(
@@ -228,7 +296,7 @@ class _OrderDetailState extends State<OrderDetail> {
               ],
             ),
             SizedBox(
-              height: 10,
+              height: 5,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -243,7 +311,7 @@ class _OrderDetailState extends State<OrderDetail> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
               child: Container(
-                height: 250,
+                height: sizeConfig!.height(0.310),
                 width: 370,
                 decoration: BoxDecoration(
 
@@ -327,7 +395,7 @@ class _OrderDetailState extends State<OrderDetail> {
                       ),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 15,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -376,7 +444,7 @@ class _OrderDetailState extends State<OrderDetail> {
                       ),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 15,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -395,7 +463,7 @@ class _OrderDetailState extends State<OrderDetail> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
-                                fontSize: 17),
+                                fontSize: 15),
                           ),
                           SizedBox(
                             width: 5.0,
@@ -406,7 +474,7 @@ class _OrderDetailState extends State<OrderDetail> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
-                                fontSize: 17),
+                                fontSize: 15),
                           ),
                         ],
                       ),
@@ -421,7 +489,7 @@ class _OrderDetailState extends State<OrderDetail> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
-                                fontSize: 17),
+                                fontSize: 15),
                           ),
                           SizedBox(
                             width: 5.0,
@@ -432,7 +500,7 @@ class _OrderDetailState extends State<OrderDetail> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
-                                fontSize: 17),
+                                fontSize: 15),
                           ),
                         ],
                       ),
@@ -447,7 +515,7 @@ class _OrderDetailState extends State<OrderDetail> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
-                                fontSize: 17),
+                                fontSize: 15),
                           ),
                           SizedBox(
                             width: 5.0,
@@ -457,7 +525,7 @@ class _OrderDetailState extends State<OrderDetail> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
-                                fontSize: 17),
+                                fontSize: 15),
                           ),
                         ],
                       ),
@@ -475,7 +543,7 @@ class _OrderDetailState extends State<OrderDetail> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Color(0xffBAA378),
-                                fontSize: 17),
+                                fontSize: 15),
                           ),
                           SizedBox(
                             width: 5.0,
@@ -485,7 +553,7 @@ class _OrderDetailState extends State<OrderDetail> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Color(0xffBAA378),
-                                fontSize: 17),
+                                fontSize: 15),
                           ),
                         ],
                       ),
@@ -497,7 +565,7 @@ class _OrderDetailState extends State<OrderDetail> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
               child: Container(
-                height: 70,
+                height: 50,
                 width: 370,
                 decoration: BoxDecoration(
 
@@ -522,7 +590,7 @@ class _OrderDetailState extends State<OrderDetail> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Color(0xff474747),
-                                fontSize: 17),
+                                fontSize: 15),
                           ),
                           SizedBox(
                             width: 5.0,
@@ -532,7 +600,7 @@ class _OrderDetailState extends State<OrderDetail> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Color(0xff474747),
-                                fontSize: 17),
+                                fontSize: 15),
                           ),
                         ],
                       ),
@@ -550,7 +618,7 @@ class _OrderDetailState extends State<OrderDetail> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Color(0xff474747),
-                                fontSize: 17),
+                                fontSize: 15),
                           ),
                           SizedBox(
                             width: 5.0,
@@ -560,7 +628,7 @@ class _OrderDetailState extends State<OrderDetail> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Color(0xff474747),
-                                fontSize: 17),
+                                fontSize: 15),
                           ),
                         ],
                       ),

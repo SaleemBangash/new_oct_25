@@ -1,14 +1,5 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, file_names
 import 'package:flutter/material.dart';
-import 'package:adobe_xd/pinned.dart';
-
-import 'package:adobe_xd/page_link.dart';
-import 'package:new_oct_25/main.dart';
-import '../Home.dart';
-// import './Component31.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
-import 'drawer/Signin2.dart';
 
 class NewAccount extends StatefulWidget {
   NewAccount({

@@ -1,22 +1,16 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:adobe_xd/page_link.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:new_oct_25/Location.dart';
-import 'package:new_oct_25/account.dart';
-import 'package:new_oct_25/customer_care.dart';
+
+import 'package:new_oct_25/drawer/account.dart';
+import 'package:new_oct_25/drawer/customer_care.dart';
 import 'package:new_oct_25/drawer/order_detail.dart';
 import 'package:new_oct_25/drawer/order_history.dart';
 // import 'package:new_oct_25/Register1.dart';
 // import 'package:new_oct_25/Signin2.dart';
 import 'package:new_oct_25/drawer/settings.dart';
 
-import 'package:new_oct_25/new.dart';
-// import 'package:new_oct_25/settings.dart';
-
-import '../Home.dart';
 // import 'Home.dart';
 import 'Register1.dart';
 import 'Signin2.dart';

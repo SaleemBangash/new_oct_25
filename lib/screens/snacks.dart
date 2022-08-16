@@ -2,23 +2,23 @@
 
 import 'package:adobe_xd/page_link.dart';
 import 'package:flutter/material.dart';
-// import 'package:newoct/coffee/dopio.dart';
-// import 'package:newoct/coffee/flat.dart';
-// import 'package:newoct/coffee/lungo.dart';
+import 'package:new_oct_25/snacks/cheetos.dart';
+import 'package:new_oct_25/snacks/doritos.dart';
+import 'package:new_oct_25/snacks/kurkure.dart';
 
-import 'coffee/americano.dart';
-import 'coffee/dopio.dart';
-import 'coffee/flat.dart';
-import 'coffee/lungo.dart';
+import '../snacks/lays.dart';
+// import 'package:newoct/snacks/cheetos.dart';
+// import 'package:newoct/snacks/doritos.dart';
+// import 'package:newoct/snacks/kurkure.dart';
 
-class Coffee extends StatefulWidget {
-  const Coffee({Key? key}) : super(key: key);
+class Snacks extends StatefulWidget {
+  const Snacks({Key? key}) : super(key: key);
 
   @override
   _DrinksState createState() => _DrinksState();
 }
 
-class _DrinksState extends State<Coffee> {
+class _DrinksState extends State<Snacks> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,7 +28,7 @@ class _DrinksState extends State<Coffee> {
           centerTitle: true,
           backgroundColor: Colors.white,
           title: Text(
-            "Coffee",
+            "Snacks",
             style: TextStyle(
                 fontSize: 30, color: Colors.black, fontWeight: FontWeight.bold),
           ),
@@ -46,7 +46,7 @@ class _DrinksState extends State<Coffee> {
               child: GridTile(
                 header: Center(
                   child: Text(
-                    "Americano".toUpperCase(),
+                    "KurKure".toUpperCase(),
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
@@ -69,12 +69,12 @@ class _DrinksState extends State<Coffee> {
                               transition: LinkTransition.Fade,
                               ease: Curves.easeInOut,
                               duration: 0.6,
-                              pageBuilder: () => Americano(),
+                              pageBuilder: () => KurKure(),
                             ),
                           ],
                           child: Image.asset(
-                            "assets/images/americano.jpg",
-                            fit: BoxFit.cover,
+                            "assets/images/kurkure.jpg",
+                            fit: BoxFit.fill,
                           ),
                         ))),
                 footer: Center(
@@ -88,60 +88,11 @@ class _DrinksState extends State<Coffee> {
               color: Colors.brown[200],
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20)),
-              //padding: const Edge
-              //Insets.all(8),
+              //margin: const EdgeInsets.symmetric(vertical: 20.0),
               child: GridTile(
                 header: Center(
                   child: Text(
-                    "Doppio".toUpperCase(),
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
-                  ),
-                ),
-                // ignore: avoid_unnecessary_containers
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(
-                      width: 2,
-                    ),
-                  ),
-                  child: Padding(
-                      padding: const EdgeInsets.only(top: 20, bottom: 20),
-                      child: PageLink(
-                        links: [
-                          PageLinkInfo(
-                            transition: LinkTransition.Fade,
-                            ease: Curves.easeInOut,
-                            duration: 0.6,
-                            pageBuilder: () => Dopio(),
-                          ),
-                        ],
-                        child: Image.asset(
-                          "assets/images/doppio.jpg",
-                          fit: BoxFit.cover,
-                        ),
-                      )),
-                ),
-                footer: Center(
-                  child: Text("100",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                ),
-              ),
-            ),
-            Card(
-              semanticContainer: true,
-              color: Colors.brown[200],
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20)),
-              //padding: const EdgeInsets.all(8),
-              child: GridTile(
-                header: Center(
-                  child: Text(
-                    "Flat Coffee".toUpperCase(),
+                    "Lays".toUpperCase(),
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
@@ -164,30 +115,32 @@ class _DrinksState extends State<Coffee> {
                               transition: LinkTransition.Fade,
                               ease: Curves.easeInOut,
                               duration: 0.6,
-                              pageBuilder: () => Flat(),
+                              pageBuilder: () => Lays(),
                             ),
                           ],
                           child: Image.asset(
-                            "assets/images/flat.jpg",
-                            fit: BoxFit.cover,
+                            "assets/images/lays.jpg",
+                            fit: BoxFit.fill,
                           ),
                         ))),
                 footer: Center(
-                  child: Text("100",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                ),
+                    child: Center(
+                  child: Text(
+                    "100",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                )),
               ),
             ),
             Card(
               color: Colors.brown[200],
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20)),
-              // padding: const EdgeInsets.all(8),
+              //margin: const EdgeInsets.symmetric(vertical: 20.0),
               child: GridTile(
                 header: Center(
                   child: Text(
-                    "Lungo Coffee".toUpperCase(),
+                    "doritos".toUpperCase(),
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
@@ -210,21 +163,70 @@ class _DrinksState extends State<Coffee> {
                               transition: LinkTransition.Fade,
                               ease: Curves.easeInOut,
                               duration: 0.6,
-                              pageBuilder: () => Lungo(),
+                              pageBuilder: () => Doritos(),
                             ),
                           ],
                           child: Image.asset(
-                            "assets/images/lungo.jpg",
-                            fit: BoxFit.cover,
+                            "assets/images/doritos.jpg",
+                            fit: BoxFit.fill,
                           ),
                         ))),
                 footer: Center(
-                  child: Text("100",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                ),
+                    child: Center(
+                  child: Text(
+                    "100",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                )),
               ),
-              //color: Colors.teal[400],
+            ),
+            Card(
+              color: Colors.brown[200],
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)),
+              //margin: const EdgeInsets.symmetric(vertical: 20.0),
+              child: GridTile(
+                header: Center(
+                  child: Text(
+                    "Cheetos".toUpperCase(),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+                // ignore: avoid_unnecessary_containers
+                child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(
+                        width: 2,
+                      ),
+                    ),
+                    child: Padding(
+                        padding: const EdgeInsets.only(top: 20, bottom: 20),
+                        child: PageLink(
+                          links: [
+                            PageLinkInfo(
+                              transition: LinkTransition.Fade,
+                              ease: Curves.easeInOut,
+                              duration: 0.6,
+                              pageBuilder: () => Cheetos(),
+                            ),
+                          ],
+                          child: Image.asset(
+                            "assets/images/cheetos.jpg",
+                            fit: BoxFit.fill,
+                          ),
+                        ))),
+                footer: Center(
+                    child: Center(
+                  child: Text(
+                    "100",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                )),
+              ),
             ),
           ],
         ),

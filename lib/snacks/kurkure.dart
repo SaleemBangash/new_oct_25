@@ -1,49 +1,68 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, file_names
 
 import 'package:flutter/material.dart';
-import 'package:adobe_xd/pinned.dart';
-import 'package:new_oct_25/favourite.dart';
-import 'dart:ui' as ui;
-import '../Cart.dart';
-import 'package:adobe_xd/page_link.dart';
-// import '../Component11.dart';
-import '../Iconawesomeheart.dart';
-import '../Home.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-import '../cartIcon.dart';
-import '../minus.dart';
+import 'package:new_oct_25/widgets/favourite.dart';
+import '../drawer/Signin2.dart';
 
-class Kurkure extends StatefulWidget {
-  Kurkure({
+import '../main.dart';
+import '../screens/new.dart';
+import '../widgets/plus.dart';
+
+class KurKure extends StatefulWidget {
+  KurKure({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<Kurkure> createState() => _KurkureState();
+  State<KurKure> createState() => _KurKureState();
 }
 
-class _KurkureState extends State<Kurkure> {
+class _KurKureState extends State<KurKure> {
   bool _type = false;
-  bool _hasBeenPressed = false;
-  bool _isBeenPressed = false;
-  bool _wasBeenPressed = false;
+
+  bool _oneBeenPressed = false;
+  bool _twoBeenPressed = false;
+  bool _threeBeenPressed = false;
+  bool _fourBeenPressed = false;
+  bool _fiveBeenPressed = false;
+  bool _sixBeenPressed = false;
   int _itemCount = 0;
+  bool aChecked = false;
+  bool bChecked = false;
+  bool cChecked = false;
+  bool dChecked = false;
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     double text = MediaQuery.textScaleFactorOf(context);
     return Scaffold(
-      // backgroundColor: const Color(0xff668079),
-      body: ListView(
+      backgroundColor: Color(0xffF5ECE3),
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.black),
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        title: Text(
+          "detail".toUpperCase(),
+          style: TextStyle(fontSize: 17),
+        ),
+        actions: [Image.asset("assets/images/cart2.png")],
+        leading: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: ((context) => New())));
+            },
+            child: Image.asset("assets/images/back_errow.png")),
+      ),
+      body: Stack(
         children: [
           Stack(
             children: <Widget>[
               Image.asset(
-                "assets/images/kurkure.jpg",
+                "assets/images/sheri-silver-7.png",
                 width: width / 0.4,
-                height: height / 2.1,
+                height: sizeConfig!.height(0.20),
                 fit: BoxFit.fill,
 
                 //fit: BoxFit.cover,
@@ -55,312 +74,653 @@ class _KurkureState extends State<Kurkure> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(left: 20),
-                      child: PageLink(
-                        links: [
-                          PageLinkInfo(
-                            transition: LinkTransition.Fade,
-                            ease: Curves.easeOut,
-                            duration: 0.3,
-                            pageBuilder: () => Home(),
-                          ),
-                        ],
-                        child: CircleAvatar(
-                            backgroundColor: Color(0xffbaa378),
-                            child: Icon(
-                              Icons.arrow_back,
-                              color: Colors.black,
-                            )),
-                      ),
+                      child: CircleAvatar(
+                          backgroundColor: Colors.white, child: Favourite()),
                     ),
-                    // Padding(
-                    //   padding: const EdgeInsets.only(right: 20),
-                    //   child: Icon(
-                    //     Icons.add_alert_rounded,
-                    //   ),
-                    // )
                   ],
                 ),
               ),
-              // Padding(
-              //   padding: const EdgeInsets.only(left: 300, top: 240),
-              //   child: Iconawesomeheart(),
-              // ),
-              Padding(
-                  padding: const EdgeInsets.only(top: 280),
-                  child: ClipRect(
-                    child: BackdropFilter(
-                      filter: ui.ImageFilter.blur(sigmaX: 30.0, sigmaY: 20.0),
-                      child: Container(
-                        height: height / 1.53,
-                        width: width / 1.0,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(50.0),
-                            topRight: Radius.circular(50.0),
-                          ),
-                          //color: Colors.transparent,
-                          border: Border.all(
-                              width: 2.0, color: const Color(0xff707070)),
-                        ),
-                        child: Column(children: [
-                          Padding(
-                            padding: const EdgeInsets.only(
-                              left: 70,
-                              top: 20,
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Details',
-                                  style: TextStyle(
-                                    fontFamily: 'Segoe UI',
-                                    fontSize: text * 15,
-                                    color: const Color(0xff668079),
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                  textAlign: TextAlign.left,
-                                ),
-                                // Favourite()
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 20, right: 200),
-                            child: Text(
-                              'Kurkure',
-                              style: TextStyle(
-                                fontFamily: 'Segoe UI',
-                                fontSize: text * 15,
-                                color: const Color(0xff668079),
-                                fontWeight: FontWeight.bold,
-                              ),
-                              textAlign: TextAlign.left,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 20),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 50),
-                                  child: Row(
-                                    children: [
-                                      Container(
-                                        width: width / 10,
-                                        height: height / 24,
-                                        decoration: BoxDecoration(
-                                            shape: BoxShape.circle),
-                                        child: RaisedButton(
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(40)),
-                                          child: Text('S',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  // fontSize: text * 10
-                                                  )),
-                                          textColor: Color(0xffbaa378),
-                                          // 2
-                                          color: _hasBeenPressed
-                                              ? Colors.black
-                                              : Colors.white70,
-                                          // 3
-                                          onPressed: () => {
-                                            setState(() {
-                                              _hasBeenPressed =
-                                                  !_hasBeenPressed;
-                                              _isBeenPressed = false;
-                                              _wasBeenPressed = false;
-                                            })
-                                          },
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Container(
-                                        width: width / 10,
-                                        height: height / 24,
-                                        child: RaisedButton(
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(40)),
-                                          child: Center(
-                                              child: Text('M',
-                                                  textAlign: TextAlign.center,
-                                                  style: TextStyle(
-                                                      // fontSize: text * 16
-                                                      ))),
-                                          textColor: Color(0xffbaa378),
-                                          // 2
-                                          color: _isBeenPressed
-                                              ? Colors.black
-                                              : Colors.white70,
-                                          // 3
-                                          onPressed: () => {
-                                            setState(() {
-                                              _isBeenPressed = !_isBeenPressed;
-                                              _hasBeenPressed = false;
-                                              _wasBeenPressed = false;
-                                            })
-                                          },
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Container(
-                                        width: width / 10,
-                                        height: height / 24,
-                                        child: RaisedButton(
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(40)),
-                                          child: Text('L',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  // fontSize: text * 16
-                                                  )),
-                                          textColor: Color(0xffbaa378),
-                                          // 2
-                                          color: _wasBeenPressed
-                                              ? Colors.black
-                                              : Colors.white70,
-                                          // 3
-                                          onPressed: () => {
-                                            setState(() {
-                                              _wasBeenPressed =
-                                                  !_wasBeenPressed;
-                                              _hasBeenPressed = false;
-                                              _isBeenPressed = false;
-                                            })
-                                          },
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                // RaisedButton(
-                                //   onPressed: () {},
-                                //   color: Colors.amber,
-                                //   shape: RoundedRectangleBorder(
-                                //       borderRadius:
-                                //           BorderRadius.circular(10)),
-                                //   child: Text("s"),
-                                // ),
-                                // child: Text.rich(
-                                //   TextSpan(
-                                //     style: TextStyle(
-                                //       fontFamily: 'Segoe UI',
-                                //       fontSize: 20,
-                                //       color: const Color(0xff0a0a0a),
-                                //     ),
-                                //     children: [
-                                //       TextSpan(
-                                //         text: '300 g.',
-                                //         style: TextStyle(
-                                //           fontWeight: FontWeight.w700,
-                                //         ),
-                                //       ),
-                                //       TextSpan(
-                                //         text: '/',
-                                //         style: TextStyle(
-                                //           fontWeight: FontWeight.w300,
-                                //         ),
-                                //       ),
-                                //       TextSpan(
-                                //         text: '530kcal.  ',
-                                //         style: TextStyle(
-                                //           color: const Color(0xff668079),
-                                //           fontWeight: FontWeight.w300,
-                                //         ),
-                                //       ),
-                                //     ],
-                                //   ),
-                                //   textHeightBehavior: TextHeightBehavior(
-                                //       applyHeightToFirstAscent: false),
-                                //   textAlign: TextAlign.left,
-                                // ),
-
-                                Minus()
-                              ],
-                            ),
-                          ),
-                          Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 20, right: 200),
-                              child: Text(
-                                "Description",
-                                style: TextStyle(
-                                    fontSize: text * 15,
-                                    fontWeight: FontWeight.bold),
-                              )),
-                          SizedBox(height: 10),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 20, right: 30),
-                            child: Text(
-                              'Lorem ipsumm fusahgbfauifa agbvas\nuasgfbub8yadsifb agbfi8ofag iasbvio\n ibiahgbi9anidn9azsngofnd hgbizsngf\nLorem ipsumm fusahgbfauifa ',
-                              style: TextStyle(
-                                fontFamily: 'Poppins',
-                                fontSize: 15,
-                                color: const Color(0xff2a2a2a),
-                              ),
-                              textAlign: TextAlign.left,
-                            ),
-                          ),
-                          SizedBox(height: 10),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 50, top: 20),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Container(
-                                    decoration: BoxDecoration(
-                                        color: Color(0xffbaa378),
-                                        borderRadius:
-                                            BorderRadius.circular(15)),
-                                    width: width / 4.5,
-                                    height: height / 23,
-                                    child: Center(
-                                        child: Text(
-                                      "20.00SR",
-                                      // style: TextStyle(fontSize: text * 15),
-                                    ))),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.only(right: 20, top: 10),
-                                  child: Column(
-                                    children: [
-                                      Container(
-                                          decoration: BoxDecoration(
-                                              color: Color(0xffbaa378),
-                                              borderRadius:
-                                                  BorderRadius.circular(20)),
-                                          width: width / 5,
-                                          height: height / 23,
-                                          child: Center(child: CartIcon())),
-                                      Text("Add to Cart")
-                                    ],
-                                  ),
-                                )
-                              ],
-                            ),
-                          )
-                        ]),
+            ],
+          ),
+          Positioned(
+            top: sizeConfig!.height(0.200),
+            child: Container(
+              height: sizeConfig!.height(0.120),
+              decoration: BoxDecoration(
+                color: Color(0xffFFF8F0),
+                boxShadow: [
+                  BoxShadow(
+                    color:
+                        Color(0xff00000029).withOpacity(0.5), //color of shadow
+                    spreadRadius: 1, //spread radius
+                    blurRadius: 7, // blur radius
+                    offset: Offset(0, 2), // changes position of shadow
+                    //first paramerter of offset is left-right
+                    //second parameter is top to down
+                  ),
+                  //you can set more BoxShadow() here
+                ],
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      "ICE Cream Cheesecake Mix",
+                      style:
+                          TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+                    ),
+                    // SizedBox(
+                    //   height: 10,
+                    // ),
+                    SizedBox(
+                      width: 360,
+                      child: Text(
+                        "our signature ice cream is made of mil and full of fat with expresso. Pro Tip: enjoy it with requesting extra pump of sweet sauce.",
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xffB1AEA9)),
                       ),
                     ),
-                  )),
-              Positioned(
-                top: 30,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 230, left: 290),
-                  child: Favourite(),
+                    // SizedBox(
+                    //   height: 10,
+                    // ),
+                    Text(
+                      "20 SR",
+                      style:
+                          TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+                    ),
+                  ],
                 ),
               ),
-            ],
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Positioned(
+            top: sizeConfig!.height(0.340),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            _oneBeenPressed = !_oneBeenPressed;
+                            _twoBeenPressed = false;
+                            _threeBeenPressed = false;
+                          });
+                        },
+                        child: Container(
+                          height: 50,
+                          width: 110,
+                          decoration: BoxDecoration(
+                              border: _oneBeenPressed
+                                  ? Border.all(
+                                      //width: 2,
+                                      color: Colors.black,
+                                    )
+                                  : Border.all(
+                                      width: 0,
+                                      color: Colors.white,
+                                    ),
+                              color: Color(0xffFFF8F0),
+                              borderRadius: BorderRadius.circular(10.0)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Image.asset(
+                                "assets/images/splash_icon.png",
+                                height: 40,
+                                width: 40,
+                              ),
+                              Text(
+                                "SMALL",
+                                style: TextStyle(
+                                    fontSize: 13, fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 5.0,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            _twoBeenPressed = !_twoBeenPressed;
+                            _oneBeenPressed = false;
+                            _threeBeenPressed = false;
+                          });
+                        },
+                        child: Container(
+                          height: 50,
+                          width: 110,
+                          decoration: BoxDecoration(
+                              border: _twoBeenPressed
+                                  ? Border.all(
+                                      //width: 2,
+                                      color: Colors.black,
+                                    )
+                                  : Border.all(
+                                      width: 0,
+                                      color: Colors.white,
+                                    ),
+                              color: Color(0xffFFF8F0),
+                              borderRadius: BorderRadius.circular(10.0)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Image.asset(
+                                "assets/images/splash_icon.png",
+                                height: 40,
+                                width: 40,
+                              ),
+                              Text(
+                                "MEDIUM",
+                                style: TextStyle(
+                                    fontSize: 13, fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 5.0,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            _threeBeenPressed = !_threeBeenPressed;
+                            _oneBeenPressed = false;
+                            _twoBeenPressed = false;
+                          });
+                        },
+                        child: Container(
+                          height: 50,
+                          width: 110,
+                          decoration: BoxDecoration(
+                              border: _threeBeenPressed
+                                  ? Border.all(
+                                      //width: 2,
+                                      color: Colors.black,
+                                    )
+                                  : Border.all(
+                                      width: 0,
+                                      color: Colors.white,
+                                    ),
+                              color: Color(0xffFFF8F0),
+                              borderRadius: BorderRadius.circular(10.0)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Image.asset(
+                                "assets/images/splash_icon.png",
+                                height: 40,
+                                width: 40,
+                              ),
+                              Text(
+                                "LARGE",
+                                style: TextStyle(
+                                    fontSize: 13, fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Text(
+                    "EXTRA ADDITION",
+                    style: TextStyle(
+                        fontSize: 13,
+                        color: Color(0xffBAA378),
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  child: Container(
+                    width: 370,
+                    height: 80,
+                    decoration: BoxDecoration(
+                        color: Color(0xffFFF8F0),
+                        // border: Border.all(width: 1),
+                        borderRadius: BorderRadius.circular(15.0)),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Column(
+                          // mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      _fourBeenPressed = !_fourBeenPressed;
+                                      // _fiveBeenPressed = false;
+                                      // _sixBeenPressed = false;
+                                    });
+                                  },
+                                  child: _fourBeenPressed
+                                      ? Image.asset(
+                                          "assets/images/slection_slected.png",
+                                          height: 25,
+                                          width: 15,
+                                        )
+                                      : Image.asset(
+                                          "assets/images/check2.png",
+                                          height: 25,
+                                          width: 15,
+                                        ),
+                                ),
+                                SizedBox(
+                                  width: 5.0,
+                                ),
+                                RichText(
+                                  text: TextSpan(
+                                    text: 'Extra Nuts',
+                                    style: TextStyle(
+                                        fontSize: 12.0,
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0xffACACAC)),
+                                    children: <TextSpan>[
+                                      TextSpan(
+                                        text: ' +1 SR',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 9,
+                                            color: Color(0xffBAA378)),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      _fiveBeenPressed = !_fiveBeenPressed;
+                                      // _fourBeenPressed = false;
+                                      // _sixBeenPressed = false;
+                                    });
+                                  },
+                                  child: _fiveBeenPressed
+                                      ? Image.asset(
+                                          "assets/images/slection_slected.png",
+                                          height: 25,
+                                          width: 15,
+                                        )
+                                      : Image.asset(
+                                          "assets/images/check2.png",
+                                          height: 25,
+                                          width: 15,
+                                        ),
+                                ),
+                                SizedBox(
+                                  width: 5.0,
+                                ),
+                                RichText(
+                                  text: TextSpan(
+                                    text: 'Extra Nuts',
+                                    style: TextStyle(
+                                        fontSize: 12.0,
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0xffACACAC)),
+                                    children: <TextSpan>[
+                                      TextSpan(
+                                        text: ' +1 SR',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 9,
+                                            color: Color(0xffBAA378)),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      _sixBeenPressed = !_sixBeenPressed;
+                                      // _fiveBeenPressed = false;
+                                      // _fourBeenPressed = false;
+                                    });
+                                  },
+                                  child: _sixBeenPressed
+                                      ? Image.asset(
+                                          "assets/images/slection_slected.png",
+                                          height: 25,
+                                          width: 15,
+                                        )
+                                      : Image.asset(
+                                          "assets/images/check2.png",
+                                          height: 25,
+                                          width: 15,
+                                        ),
+                                ),
+                                SizedBox(
+                                  width: 5.0,
+                                ),
+                                RichText(
+                                  text: TextSpan(
+                                    text: 'Extra Nuts',
+                                    style: TextStyle(
+                                        fontSize: 12.0,
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0xffACACAC)),
+                                    children: <TextSpan>[
+                                      TextSpan(
+                                        text: ' +1 SR',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 9,
+                                            color: Color(0xffBAA378)),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ]),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Text(
+                    "Type of Milk",
+                    style: TextStyle(
+                        fontSize: 13,
+                        color: Color(0xffBAA378),
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  child: Container(
+                    width: 370,
+                    height: 100,
+                    decoration: BoxDecoration(
+                        color: Color(0xffFFF8F0),
+                        // border: Border.all(width: 1),
+                        borderRadius: BorderRadius.circular(15.0)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 10),
+                                  child: Container(
+                                    height: 15,
+                                    width: 15,
+                                    decoration: BoxDecoration(
+                                        border: Border.all(
+                                            width: 1, color: Colors.black),
+                                        shape: BoxShape.circle,
+                                        color: Colors.transparent),
+                                    child: Transform.scale(
+                                      scale: 0.5,
+                                      child: Checkbox(
+                                        checkColor: Colors.black,
+                                        side: BorderSide(color: Colors.white),
+                                        activeColor: Colors.black,
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(20)),
+                                        value: aChecked,
+                                        onChanged: (bool? value) {
+                                          setState(() {
+                                            aChecked = value!;
+
+                                            bChecked = false;
+                                            cChecked = false;
+                                            dChecked = false;
+                                          });
+                                        },
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 5.0,
+                                ),
+                                Text("Type 1",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0xffACACAC),
+                                        fontSize: 11)),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 10),
+                                  child: Container(
+                                    height: 15,
+                                    width: 15,
+                                    decoration: BoxDecoration(
+                                        border: Border.all(
+                                            width: 1, color: Colors.black),
+                                        shape: BoxShape.circle,
+                                        color: Colors.transparent),
+                                    child: Transform.scale(
+                                      scale: 0.6,
+                                      child: Checkbox(
+                                        checkColor: Colors.black,
+                                        side: BorderSide(color: Colors.white),
+                                        activeColor: Colors.black,
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(20)),
+                                        value: bChecked,
+                                        onChanged: (bool? value) {
+                                          setState(() {
+                                            bChecked = value!;
+
+                                            aChecked = false;
+                                            cChecked = false;
+                                            dChecked = false;
+                                            // eChecked = false;
+                                          });
+                                        },
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 5.0,
+                                ),
+                                Text("Type 1",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0xffACACAC),
+                                        fontSize: 11)),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 10),
+                                  child: Container(
+                                    height: 15,
+                                    width: 15,
+                                    decoration: BoxDecoration(
+                                        border: Border.all(
+                                            width: 1, color: Colors.black),
+                                        shape: BoxShape.circle,
+                                        color: Colors.transparent),
+                                    child: Transform.scale(
+                                      scale: 0.6,
+                                      child: Checkbox(
+                                        checkColor: Colors.black,
+                                        side: BorderSide(color: Colors.white),
+                                        activeColor: Colors.black,
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(20)),
+                                        value: cChecked,
+                                        onChanged: (bool? value) {
+                                          setState(() {
+                                            cChecked = value!;
+
+                                            bChecked = false;
+                                            aChecked = false;
+                                            dChecked = false;
+                                            // eChecked = false;
+                                          });
+                                        },
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 5.0,
+                                ),
+                                Text("Type 1",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0xffACACAC),
+                                        fontSize: 11)),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 10),
+                                  child: Container(
+                                    height: 15,
+                                    width: 15,
+                                    decoration: BoxDecoration(
+                                        border: Border.all(
+                                            width: 1, color: Colors.black),
+                                        shape: BoxShape.circle,
+                                        color: Colors.transparent),
+                                    child: Transform.scale(
+                                      scale: 0.6,
+                                      child: Checkbox(
+                                        checkColor: Colors.black,
+                                        side: BorderSide(color: Colors.white),
+                                        activeColor: Colors.black,
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(20)),
+                                        value: dChecked,
+                                        onChanged: (bool? value) {
+                                          setState(() {
+                                            dChecked = value!;
+
+                                            bChecked = false;
+                                            cChecked = false;
+                                            aChecked = false;
+                                            // eChecked = false;
+                                          });
+                                        },
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 5.0,
+                                ),
+                                Text("Type 1",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0xffACACAC),
+                                        fontSize: 11)),
+                              ],
+                            ),
+                          ]),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            flex: 2,
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(),
+                child: Container(
+                  width: double.infinity,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    color: Color(0xffBAA378),
+                    // border: Border.all(width: 1),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Plus(),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: ((context) => Signin2())));
+                            },
+                            child: Container(
+                              height: 35,
+                              width: 170,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(20.0)),
+                              child: Center(
+                                child: Text(
+                                  "ADD TO CART",
+                                  style: TextStyle(
+                                      // fontSize: text * 15,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ]),
+                  ),
+                ),
+              ),
+            ),
           ),
         ],
       ),

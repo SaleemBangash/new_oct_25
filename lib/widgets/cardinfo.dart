@@ -4,11 +4,8 @@ import 'package:adobe_xd/page_link.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:new_oct_25/paymentmethod.dart';
-//import 'package:newoct/paymentmethod.dart';
 
-import 'Home.dart';
-import 'Wishlist.dart';
+//import 'package:newoct/paymentmethod.dart';
 
 class cardinfo extends StatefulWidget {
   cardinfo({

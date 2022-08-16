@@ -1,14 +1,13 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:new_oct_25/coffee/americano.dart';
-import 'package:new_oct_25/coffee/dopio.dart';
-import 'package:new_oct_25/coffee/flat.dart';
-import 'package:new_oct_25/coffee/lungo.dart';
+import 'package:new_oct_25/Drinks/dew.dart';
+import 'package:new_oct_25/Drinks/redbull.dart';
+import 'package:new_oct_25/Drinks/sprite.dart';
+import 'package:new_oct_25/widgets/favourite.dart';
 
 import '../Drinks/cocacola.dart';
-import '../cartIcon.dart';
-import '../favourite.dart';
+import '../widgets/cartIcon.dart';
 
 class SoftDrinks extends StatefulWidget {
   const SoftDrinks({Key? key}) : super(key: key);
@@ -159,7 +158,7 @@ class _SoftDrinksState extends State<SoftDrinks> {
               GestureDetector(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: ((context) => CocaCola())));
+                      MaterialPageRoute(builder: ((context) => Dew())));
                 },
                 child: Container(
                   height: 110,
@@ -286,7 +285,7 @@ class _SoftDrinksState extends State<SoftDrinks> {
               GestureDetector(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: ((context) => CocaCola())));
+                      MaterialPageRoute(builder: ((context) => Sprite())));
                 },
                 child: Container(
                   height: 110,
@@ -413,7 +412,7 @@ class _SoftDrinksState extends State<SoftDrinks> {
               GestureDetector(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: ((context) => CocaCola())));
+                      MaterialPageRoute(builder: ((context) => RedBull())));
                 },
                 child: Container(
                   height: 110,

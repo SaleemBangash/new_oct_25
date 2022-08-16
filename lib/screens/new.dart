@@ -3,7 +3,8 @@
 import 'package:adobe_xd/page_link.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:new_oct_25/bottom_bar.dart';
+import 'package:new_oct_25/main.dart';
+
 import 'dart:ui' as ui;
 import 'Cart.dart';
 import 'Home.dart';
@@ -49,8 +50,8 @@ class _NewState extends State<New> {
         actions: [
           GestureDetector(
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => BottomBar()));
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Home()));
             },
             child: Padding(
               padding: const EdgeInsets.only(right: 05),
@@ -449,7 +450,10 @@ class _NewState extends State<New> {
                                                                     vertical:
                                                                         03),
                                                             child: Container(
-                                                              height: 70,
+                                                              height:
+                                                                  sizeConfig!
+                                                                      .height(
+                                                                          0.07),
                                                               width: width / 1,
                                                               decoration: BoxDecoration(
                                                                   border: _oneBeenPressed
@@ -483,7 +487,7 @@ class _NewState extends State<New> {
                                                                   //       "assets/images/sheri-silver-9.png",
                                                                   //       fit: BoxFit.cover,
                                                                   //       width: 120,
-                                                                  //       height: 70,
+                                                                  //       height: sizeConfig!.height(0.07),
                                                                   //     ),
                                                                   //   ),
                                                                   // ),
@@ -630,15 +634,23 @@ class _NewState extends State<New> {
                                                                       15,
                                                                   vertical: 03),
                                                           child: Container(
-                                                            height: 70,
+                                                            height: sizeConfig!
+                                                                .height(0.07),
                                                             width: width / 1,
                                                             decoration:
                                                                 BoxDecoration(
-
-                                                                    // border: Border.all(
-                                                                    //   //width: 2,
-                                                                    //   color: Colors.black,
-                                                                    // ),
+                                                                    border:
+                                                                        _twoBeenPressed
+                                                                            ? Border
+                                                                                .all(
+                                                                                //width: 2,
+                                                                                color: Colors.black,
+                                                                              )
+                                                                            : Border
+                                                                                .all(
+                                                                                width: 0,
+                                                                                color: Colors.white,
+                                                                              ),
                                                                     color: Color(
                                                                         0xffFFFFFF),
                                                                     borderRadius:
@@ -658,7 +670,7 @@ class _NewState extends State<New> {
                                                                 //       "assets/images/sheri-silver-9.png",
                                                                 //       fit: BoxFit.cover,
                                                                 //       width: 120,
-                                                                //       height: 70,
+                                                                //       height: sizeConfig!.height(0.07),
                                                                 //     ),
                                                                 //   ),
                                                                 // ),
@@ -693,13 +705,12 @@ class _NewState extends State<New> {
                                                                 Expanded(
                                                                   child:
                                                                       Padding(
-                                                                    padding: const EdgeInsets
-                                                                            .symmetric(
-                                                                        vertical:
-                                                                            10),
+                                                                    padding:
+                                                                        const EdgeInsets
+                                                                            .symmetric(),
                                                                     child: Column(
                                                                         mainAxisAlignment:
-                                                                            MainAxisAlignment.spaceBetween,
+                                                                            MainAxisAlignment.spaceEvenly,
                                                                         children: [
                                                                           Padding(
                                                                             padding:
@@ -796,11 +807,11 @@ class _NewState extends State<New> {
                                                     return GestureDetector(
                                                         onTap: () {
                                                           setState(() {
-                                                            _oneBeenPressed =
-                                                                !_oneBeenPressed;
+                                                            _threeBeenPressed =
+                                                                !_threeBeenPressed;
                                                             _twoBeenPressed =
                                                                 false;
-                                                            _threeBeenPressed =
+                                                            _oneBeenPressed =
                                                                 false;
                                                             _fourBeenPressed =
                                                                 false;
@@ -818,15 +829,23 @@ class _NewState extends State<New> {
                                                                       15,
                                                                   vertical: 03),
                                                           child: Container(
-                                                            height: 70,
+                                                            height: sizeConfig!
+                                                                .height(0.07),
                                                             width: width / 1,
                                                             decoration:
                                                                 BoxDecoration(
-
-                                                                    // border: Border.all(
-                                                                    //   //width: 2,
-                                                                    //   color: Colors.black,
-                                                                    // ),
+                                                                    border:
+                                                                        _threeBeenPressed
+                                                                            ? Border
+                                                                                .all(
+                                                                                //width: 2,
+                                                                                color: Colors.black,
+                                                                              )
+                                                                            : Border
+                                                                                .all(
+                                                                                width: 0,
+                                                                                color: Colors.white,
+                                                                              ),
                                                                     color: Color(
                                                                         0xffFFFFFF),
                                                                     borderRadius:
@@ -846,7 +865,7 @@ class _NewState extends State<New> {
                                                                 //       "assets/images/sheri-silver-9.png",
                                                                 //       fit: BoxFit.cover,
                                                                 //       width: 120,
-                                                                //       height: 70,
+                                                                //       height: sizeConfig!.height(0.07),
                                                                 //     ),
                                                                 //   ),
                                                                 // ),
@@ -881,10 +900,9 @@ class _NewState extends State<New> {
                                                                 Expanded(
                                                                   child:
                                                                       Padding(
-                                                                    padding: const EdgeInsets
-                                                                            .symmetric(
-                                                                        vertical:
-                                                                            10),
+                                                                    padding:
+                                                                        const EdgeInsets
+                                                                            .symmetric(),
                                                                     child: Column(
                                                                         mainAxisAlignment:
                                                                             MainAxisAlignment.spaceBetween,
@@ -984,13 +1002,13 @@ class _NewState extends State<New> {
                                                     return GestureDetector(
                                                       onTap: () {
                                                         setState(() {
+                                                          _fourBeenPressed =
+                                                              !_fourBeenPressed;
                                                           _oneBeenPressed =
-                                                              !_oneBeenPressed;
-                                                          _twoBeenPressed =
                                                               false;
                                                           _threeBeenPressed =
                                                               false;
-                                                          _fourBeenPressed =
+                                                          _oneBeenPressed =
                                                               false;
                                                           _fiveBeenPressed =
                                                               false;
@@ -1005,15 +1023,23 @@ class _NewState extends State<New> {
                                                                 horizontal: 15,
                                                                 vertical: 03),
                                                         child: Container(
-                                                          height: 70,
+                                                          height: sizeConfig!
+                                                              .height(0.07),
                                                           width: width / 1,
                                                           decoration:
                                                               BoxDecoration(
-
-                                                                  // border: Border.all(
-                                                                  //   //width: 2,
-                                                                  //   color: Colors.black,
-                                                                  // ),
+                                                                  border:
+                                                                      _fourBeenPressed
+                                                                          ? Border
+                                                                              .all(
+                                                                              //width: 2,
+                                                                              color: Colors.black,
+                                                                            )
+                                                                          : Border
+                                                                              .all(
+                                                                              width: 0,
+                                                                              color: Colors.white,
+                                                                            ),
                                                                   color: Color(
                                                                       0xffFFFFFF),
                                                                   borderRadius:
@@ -1034,7 +1060,7 @@ class _NewState extends State<New> {
                                                               //       "assets/images/sheri-silver-9.png",
                                                               //       fit: BoxFit.cover,
                                                               //       width: 120,
-                                                              //       height: 70,
+                                                              //       height: sizeConfig!.height(0.07),
                                                               //     ),
                                                               //   ),
                                                               // ),
@@ -1160,194 +1186,203 @@ class _NewState extends State<New> {
                                                       ),
                                                     );
                                                   }),
-                                                  GestureDetector(
-                                                    onTap: () {
-                                                      setState(() {
-                                                        _oneBeenPressed =
-                                                            !_oneBeenPressed;
-                                                        _twoBeenPressed = false;
-                                                        _threeBeenPressed =
-                                                            false;
-                                                        _fourBeenPressed =
-                                                            false;
-                                                        _fiveBeenPressed =
-                                                            false;
-                                                        _sixBeenPressed = false;
-                                                      });
-                                                    },
-                                                    child: Padding(
-                                                      padding: const EdgeInsets
-                                                              .symmetric(
-                                                          horizontal: 15,
-                                                          vertical: 03),
-                                                      child: Container(
-                                                        height: 70,
-                                                        width: width / 1,
-                                                        decoration:
-                                                            BoxDecoration(
-
-                                                                // border: Border.all(
-                                                                //   //width: 2,
-                                                                //   color: Colors.black,
-                                                                // ),
-                                                                color: Color(
-                                                                    0xffFFFFFF),
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            16)),
-                                                        child: Row(
-                                                          children: [
-                                                            // Padding(
-                                                            //   padding:
-                                                            //       const EdgeInsets.only(left: 10),
-                                                            //   child: ClipRRect(
-                                                            //     borderRadius: BorderRadius.only(
-                                                            //         topLeft: Radius.circular(15.0),
-                                                            //         bottomLeft:
-                                                            //             Radius.circular(15.0)),
-                                                            //     child: Image.asset(
-                                                            //       "assets/images/sheri-silver-9.png",
-                                                            //       fit: BoxFit.cover,
-                                                            //       width: 120,
-                                                            //       height: 70,
-                                                            //     ),
-                                                            //   ),
-                                                            // ),
-                                                            Container(
-                                                              height: 120,
-                                                              width: 120,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                image:
-                                                                    DecorationImage(
-                                                                        image:
-                                                                            AssetImage(
-                                                                          "assets/images/sheri-silver-9.png",
-                                                                        ),
-                                                                        fit: BoxFit
-                                                                            .cover),
-                                                                // border: Border.all(
-                                                                //   //width: 2,
-                                                                //   color: Colors.black,
-                                                                // ),
-                                                                color: Color(
-                                                                    0xffFFFFFF),
-
-                                                                borderRadius: BorderRadius.only(
-                                                                    topLeft: Radius
-                                                                        .circular(
-                                                                            15.0),
-                                                                    bottomLeft:
-                                                                        Radius.circular(
-                                                                            15.0)),
-                                                              ),
-                                                            ),
-                                                            Expanded(
-                                                              child: Padding(
-                                                                padding: const EdgeInsets
-                                                                        .symmetric(
-                                                                    vertical:
-                                                                        10),
-                                                                child: Column(
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .spaceBetween,
-                                                                    children: [
-                                                                      Padding(
-                                                                        padding:
-                                                                            const EdgeInsets.symmetric(horizontal: 10),
-                                                                        child:
-                                                                            Row(
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.spaceBetween,
-                                                                          children: [
-                                                                            Text(
-                                                                              "Branch1",
-                                                                              style: TextStyle(fontWeight: FontWeight.bold),
+                                                  StatefulBuilder(builder:
+                                                      (BuildContext context,
+                                                          StateSetter
+                                                              setState) {
+                                                    return GestureDetector(
+                                                      onTap: () {
+                                                        setState(() {
+                                                          _fiveBeenPressed =
+                                                              !_fiveBeenPressed;
+                                                          _twoBeenPressed =
+                                                              false;
+                                                          _threeBeenPressed =
+                                                              false;
+                                                          _fourBeenPressed =
+                                                              false;
+                                                          _oneBeenPressed =
+                                                              false;
+                                                          _sixBeenPressed =
+                                                              false;
+                                                        });
+                                                      },
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .symmetric(
+                                                                horizontal: 15,
+                                                                vertical: 03),
+                                                        child: Container(
+                                                          height: sizeConfig!
+                                                              .height(0.07),
+                                                          width: width / 1,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                                  border:
+                                                                      _fiveBeenPressed
+                                                                          ? Border
+                                                                              .all(
+                                                                              //width: 2,
+                                                                              color: Colors.black,
+                                                                            )
+                                                                          : Border
+                                                                              .all(
+                                                                              width: 0,
+                                                                              color: Colors.white,
                                                                             ),
-                                                                            // SizedBox(
-                                                                            //   width: 80,
-                                                                            // ),
-
-                                                                            // Image.asset(
-                                                                            //     "assets/images/24-hours.png",
-                                                                            //     width:
-                                                                            //         40,
-                                                                            //     height:
-                                                                            //         40),
-                                                                          ],
-                                                                        ),
+                                                                  color: Color(
+                                                                      0xffFFFFFF),
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              16)),
+                                                          child: Row(
+                                                            children: [
+                                                              // Padding(
+                                                              //   padding:
+                                                              //       const EdgeInsets.only(left: 10),
+                                                              //   child: ClipRRect(
+                                                              //     borderRadius: BorderRadius.only(
+                                                              //         topLeft: Radius.circular(15.0),
+                                                              //         bottomLeft:
+                                                              //             Radius.circular(15.0)),
+                                                              //     child: Image.asset(
+                                                              //       "assets/images/sheri-silver-9.png",
+                                                              //       fit: BoxFit.cover,
+                                                              //       width: 120,
+                                                              //       height: sizeConfig!.height(0.07),
+                                                              //     ),
+                                                              //   ),
+                                                              // ),
+                                                              Container(
+                                                                height: 120,
+                                                                width: 120,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  image: DecorationImage(
+                                                                      image: AssetImage(
+                                                                        "assets/images/sheri-silver-9.png",
                                                                       ),
-                                                                      SizedBox(
-                                                                          height:
-                                                                              5),
-                                                                      Padding(
-                                                                        padding: const EdgeInsets.only(
-                                                                            bottom:
-                                                                                5,
-                                                                            left:
-                                                                                10,
-                                                                            right:
-                                                                                10),
-                                                                        child:
-                                                                            Row(
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.spaceBetween,
-                                                                          children: [
-                                                                            Row(
-                                                                              children: [
-                                                                                Image.asset(
-                                                                                  "assets/images/time_icon.png",
-                                                                                  height: 15,
-                                                                                  width: 15,
-                                                                                ),
-                                                                                SizedBox(
-                                                                                  width: 03,
-                                                                                ),
-                                                                                Text(
-                                                                                  "6:00AM-12:30PM",
-                                                                                  style: TextStyle(
-                                                                                    fontSize: 10,
-                                                                                    fontWeight: FontWeight.bold,
-                                                                                    color: Theme.of(context).primaryColor,
+                                                                      fit: BoxFit.cover),
+                                                                  // border: Border.all(
+                                                                  //   //width: 2,
+                                                                  //   color: Colors.black,
+                                                                  // ),
+                                                                  color: Color(
+                                                                      0xffFFFFFF),
+
+                                                                  borderRadius: BorderRadius.only(
+                                                                      topLeft: Radius
+                                                                          .circular(
+                                                                              15.0),
+                                                                      bottomLeft:
+                                                                          Radius.circular(
+                                                                              15.0)),
+                                                                ),
+                                                              ),
+                                                              Expanded(
+                                                                child: Padding(
+                                                                  padding:
+                                                                      const EdgeInsets
+                                                                          .symmetric(),
+                                                                  child: Column(
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .spaceBetween,
+                                                                      children: [
+                                                                        Padding(
+                                                                          padding:
+                                                                              const EdgeInsets.symmetric(horizontal: 10),
+                                                                          child:
+                                                                              Row(
+                                                                            mainAxisAlignment:
+                                                                                MainAxisAlignment.spaceBetween,
+                                                                            children: [
+                                                                              Text(
+                                                                                "Branch1",
+                                                                                style: TextStyle(fontWeight: FontWeight.bold),
+                                                                              ),
+                                                                              // SizedBox(
+                                                                              //   width: 80,
+                                                                              // ),
+
+                                                                              // Image.asset(
+                                                                              //     "assets/images/24-hours.png",
+                                                                              //     width:
+                                                                              //         40,
+                                                                              //     height:
+                                                                              //         40),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                        SizedBox(
+                                                                            height:
+                                                                                5),
+                                                                        Padding(
+                                                                          padding: const EdgeInsets.only(
+                                                                              bottom: 5,
+                                                                              left: 10,
+                                                                              right: 10),
+                                                                          child:
+                                                                              Row(
+                                                                            mainAxisAlignment:
+                                                                                MainAxisAlignment.spaceBetween,
+                                                                            children: [
+                                                                              Row(
+                                                                                children: [
+                                                                                  Image.asset(
+                                                                                    "assets/images/time_icon.png",
+                                                                                    height: 15,
+                                                                                    width: 15,
                                                                                   ),
-                                                                                ),
-                                                                              ],
-                                                                            ),
-                                                                            // Text(
-                                                                            //     "OPEN 24/7",
-                                                                            //     style:
-                                                                            //         TextStyle(
-                                                                            //       fontSize: 12,
-                                                                            //       color: Theme.of(context).primaryColor,
-                                                                            //     )),
-                                                                          ],
+                                                                                  SizedBox(
+                                                                                    width: 03,
+                                                                                  ),
+                                                                                  Text(
+                                                                                    "6:00AM-12:30PM",
+                                                                                    style: TextStyle(
+                                                                                      fontSize: 10,
+                                                                                      fontWeight: FontWeight.bold,
+                                                                                      color: Theme.of(context).primaryColor,
+                                                                                    ),
+                                                                                  ),
+                                                                                ],
+                                                                              ),
+                                                                              // Text(
+                                                                              //     "OPEN 24/7",
+                                                                              //     style:
+                                                                              //         TextStyle(
+                                                                              //       fontSize: 12,
+                                                                              //       color: Theme.of(context).primaryColor,
+                                                                              //     )),
+                                                                            ],
+                                                                          ),
                                                                         ),
-                                                                      ),
-                                                                    ]),
-                                                              ),
-                                                            )
-                                                          ],
-                                                        ),
+                                                                      ]),
+                                                                ),
+                                                              )
+                                                            ],
+                                                          ),
 
-                                                        // Padding(
-                                                        //   padding: const EdgeInsets.only(
-                                                        //       left: 130, top: 120),
-                                                        //   child: Row(
-                                                        //     children: [
-                                                        //       Text(
-                                                        //         "Open 24/7",
-                                                        //         style: TextStyle(
-                                                        //             fontSize: text * 15,
-                                                        //             fontWeight: FontWeight.bold),
-                                                        //       )
-                                                        //     ],
-                                                        //   ),
-                                                        // )
+                                                          // Padding(
+                                                          //   padding: const EdgeInsets.only(
+                                                          //       left: 130, top: 120),
+                                                          //   child: Row(
+                                                          //     children: [
+                                                          //       Text(
+                                                          //         "Open 24/7",
+                                                          //         style: TextStyle(
+                                                          //             fontSize: text * 15,
+                                                          //             fontWeight: FontWeight.bold),
+                                                          //       )
+                                                          //     ],
+                                                          //   ),
+                                                          // )
+                                                        ),
                                                       ),
-                                                    ),
-                                                  ),
+                                                    );
+                                                  }),
                                                 ],
                                               ),
                                             ),
@@ -1382,179 +1417,173 @@ class _NewState extends State<New> {
                                   ),
                                 ),
                               ),
-                              StatefulBuilder(builder:
-                                  (BuildContext context, StateSetter setState) {
-                                return GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      _hasBeenPressed = !_hasBeenPressed;
-                                      // _oneBeenPressed = false;
-                                      // _threeBeenPressed = false;
-                                    });
-                                  },
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(16.0),
-                                    child: Container(
-                                      height: 70,
-                                      width: width / 1,
-                                      decoration: BoxDecoration(
-                                          border: _hasBeenPressed
-                                              ? Border.all(
-                                                  //width: 2,
-                                                  color: Colors.black,
-                                                )
-                                              : Border.all(
-                                                  width: 0,
-                                                  color: Colors.white,
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    _hasBeenPressed = !_hasBeenPressed;
+                                    // _oneBeenPressed = false;
+                                    // _threeBeenPressed = false;
+                                  });
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.all(16.0),
+                                  child: Container(
+                                    height: sizeConfig!.height(0.07),
+                                    width: width / 1,
+                                    decoration: BoxDecoration(
+                                        border: _hasBeenPressed
+                                            ? Border.all(
+                                                //width: 2,
+                                                color: Colors.black,
+                                              )
+                                            : Border.all(
+                                                width: 0,
+                                                color: Colors.white,
+                                              ),
+                                        color: Color(0xffFFFFFF),
+                                        borderRadius:
+                                            BorderRadius.circular(16)),
+                                    child: Row(
+                                      children: [
+                                        // Padding(
+                                        //   padding:
+                                        //       const EdgeInsets.only(left: 10),
+                                        //   child: ClipRRect(
+                                        //     borderRadius: BorderRadius.only(
+                                        //         topLeft: Radius.circular(15.0),
+                                        //         bottomLeft:
+                                        //             Radius.circular(15.0)),
+                                        //     child: Image.asset(
+                                        //       "assets/images/sheri-silver-9.png",
+                                        //       fit: BoxFit.cover,
+                                        //       width: 120,
+                                        //       height: sizeConfig!.height(0.07),
+                                        //     ),
+                                        //   ),
+                                        // ),
+                                        Container(
+                                          height: 120,
+                                          width: 120,
+                                          decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                                image: AssetImage(
+                                                  "assets/images/sheri-silver-9.png",
                                                 ),
-                                          color: Color(0xffFFFFFF),
-                                          borderRadius:
-                                              BorderRadius.circular(16)),
-                                      child: Row(
-                                        children: [
-                                          // Padding(
-                                          //   padding:
-                                          //       const EdgeInsets.only(left: 10),
-                                          //   child: ClipRRect(
-                                          //     borderRadius: BorderRadius.only(
-                                          //         topLeft: Radius.circular(15.0),
-                                          //         bottomLeft:
-                                          //             Radius.circular(15.0)),
-                                          //     child: Image.asset(
-                                          //       "assets/images/sheri-silver-9.png",
-                                          //       fit: BoxFit.cover,
-                                          //       width: 120,
-                                          //       height: 70,
-                                          //     ),
-                                          //   ),
-                                          // ),
-                                          Container(
-                                            height: 120,
-                                            width: 120,
-                                            decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                                  image: AssetImage(
-                                                    "assets/images/sheri-silver-9.png",
-                                                  ),
-                                                  fit: BoxFit.cover),
-                                              // border: Border.all(
-                                              //   //width: 2,
-                                              //   color: Colors.black,
-                                              // ),
-                                              color: Color.fromARGB(
-                                                  255, 242, 229, 229),
-                                              borderRadius: BorderRadius.only(
-                                                  topLeft:
-                                                      Radius.circular(15.0),
-                                                  bottomLeft:
-                                                      Radius.circular(15.0)),
-                                            ),
+                                                fit: BoxFit.cover),
+                                            // border: Border.all(
+                                            //   //width: 2,
+                                            //   color: Colors.black,
+                                            // ),
+                                            color: Color.fromARGB(
+                                                255, 242, 229, 229),
+                                            borderRadius: BorderRadius.only(
+                                                topLeft: Radius.circular(15.0),
+                                                bottomLeft:
+                                                    Radius.circular(15.0)),
                                           ),
-                                          Expanded(
-                                            child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  right: 10),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.center,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsets.only(
-                                                            left: 10),
-                                                    child: Column(
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .spaceEvenly,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Text(
-                                                            "Branch1",
-                                                            style: TextStyle(
+                                        ),
+                                        Expanded(
+                                          child: Padding(
+                                            padding: const EdgeInsets.only(
+                                                right: 10),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 10),
+                                                  child: Column(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceEvenly,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Text(
+                                                          "Branch1",
+                                                          style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold),
+                                                        ),
+                                                        // SizedBox(
+                                                        //   width: 80,
+                                                        // ),
+                                                        Row(
+                                                          children: [
+                                                            Image.asset(
+                                                              "assets/images/time_icon.png",
+                                                              height: 15,
+                                                              width: 15,
+                                                            ),
+                                                            SizedBox(
+                                                              width: 03,
+                                                            ),
+                                                            Text(
+                                                              "6:00AM-12:30PM",
+                                                              style: TextStyle(
+                                                                fontSize: 10,
                                                                 fontWeight:
                                                                     FontWeight
-                                                                        .bold),
-                                                          ),
-                                                          // SizedBox(
-                                                          //   width: 80,
-                                                          // ),
-                                                          Row(
-                                                            children: [
-                                                              Image.asset(
-                                                                "assets/images/time_icon.png",
-                                                                height: 15,
-                                                                width: 15,
+                                                                        .bold,
+                                                                color: Theme.of(
+                                                                        context)
+                                                                    .primaryColor,
                                                               ),
-                                                              SizedBox(
-                                                                width: 03,
-                                                              ),
-                                                              Text(
-                                                                "6:00AM-12:30PM",
-                                                                style:
-                                                                    TextStyle(
-                                                                  fontSize: 10,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                  color: Theme.of(
-                                                                          context)
-                                                                      .primaryColor,
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        ]),
-                                                  ),
-                                                  Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Image.asset(
-                                                          "assets/images/24-hours@2x.png",
-                                                          width: 30,
-                                                          height: 30),
-                                                      Text("OPEN 24/7",
-                                                          style: TextStyle(
-                                                            fontSize: 9,
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            color: Theme.of(
-                                                                    context)
-                                                                .primaryColor,
-                                                          )),
-                                                    ],
-                                                  ),
-                                                ],
-                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ]),
+                                                ),
+                                                Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    Image.asset(
+                                                        "assets/images/24-hours@2x.png",
+                                                        width: 30,
+                                                        height: 30),
+                                                    Text("OPEN 24/7",
+                                                        style: TextStyle(
+                                                          fontSize: 9,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          color:
+                                                              Theme.of(context)
+                                                                  .primaryColor,
+                                                        )),
+                                                  ],
+                                                ),
+                                              ],
                                             ),
-                                          )
-                                        ],
-                                      ),
-
-                                      // Padding(
-                                      //   padding: const EdgeInsets.only(
-                                      //       left: 130, top: 120),
-                                      //   child: Row(
-                                      //     children: [
-                                      //       Text(
-                                      //         "Open 24/7",
-                                      //         style: TextStyle(
-                                      //             fontSize: text * 15,
-                                      //             fontWeight: FontWeight.bold),
-                                      //       )
-                                      //     ],
-                                      //   ),
-                                      // )
+                                          ),
+                                        )
+                                      ],
                                     ),
+
+                                    // Padding(
+                                    //   padding: const EdgeInsets.only(
+                                    //       left: 130, top: 120),
+                                    //   child: Row(
+                                    //     children: [
+                                    //       Text(
+                                    //         "Open 24/7",
+                                    //         style: TextStyle(
+                                    //             fontSize: text * 15,
+                                    //             fontWeight: FontWeight.bold),
+                                    //       )
+                                    //     ],
+                                    //   ),
+                                    // )
                                   ),
-                                );
-                              }),
+                                ),
+                              )
                             ],
                           ),
                         ),
@@ -1570,7 +1599,7 @@ class _NewState extends State<New> {
               padding: const EdgeInsets.symmetric(),
               child: Container(
                   width: 400,
-                  height: 45,
+                  height: sizeConfig!.height(0.045),
                   decoration: BoxDecoration(
                     color: Color(0xffFFFFFF).withOpacity(0.7),
                     // border: Border.all(width: 1),

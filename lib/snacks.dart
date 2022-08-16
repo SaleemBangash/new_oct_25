@@ -69,7 +69,7 @@ class _DrinksState extends State<Snacks> {
                               transition: LinkTransition.Fade,
                               ease: Curves.easeInOut,
                               duration: 0.6,
-                              pageBuilder: () => Kurkure(),
+                              pageBuilder: () => KurKure(),
                             ),
                           ],
                           child: Image.asset(

@@ -1,18 +1,15 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, file_names, unnecessary_new
 import 'package:flutter/material.dart';
-import 'package:adobe_xd/pinned.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:new_oct_25/bottomsheet.dart';
-import 'package:new_oct_25/favourite.dart';
+import 'package:new_oct_25/Drinks/cocacola.dart';
+import 'package:new_oct_25/screens/new.dart';
+
+import 'package:new_oct_25/widgets/cartIcon.dart';
 import './Home.dart';
 import 'package:adobe_xd/page_link.dart';
 
 import './Cart.dart';
 // import './Iconawesomeheart.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-import 'Drinks/cocacola.dart';
-import 'cartIcon.dart';
 //import 'package:favorite_button/favorite_button.dart';
 
 class Wishlist extends StatefulWidget {
@@ -44,7 +41,7 @@ class _WishlistState extends State<Wishlist> {
         leading: GestureDetector(
             onTap: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: ((context) => Drawer())));
+                  context, MaterialPageRoute(builder: ((context) => New())));
             },
             child: Image.asset("assets/images/back_errow.png")),
       ),
@@ -715,6 +712,83 @@ class _WishlistState extends State<Wishlist> {
               ),
             ],
           )),
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: onTabTapped, // new
+        currentIndex: _currentIndex,
+        backgroundColor: Color(0xffbaa378),
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: Colors.black,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        selectedLabelStyle:
+            TextStyle(fontWeight: FontWeight.bold, fontSize: text * 15),
+
+        unselectedItemColor: Colors.black,
+        iconSize: 25,
+
+        //elevation: 5,
+        items: [
+          BottomNavigationBarItem(
+            icon: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Cart()),
+                  );
+                },
+                child: Image.asset("assets/images/cart3.png")),
+            label: "",
+            backgroundColor: Colors.white,
+          ),
+          BottomNavigationBarItem(
+              icon: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Home()),
+                    );
+                  },
+                  child: Image.asset("assets/images/home_notslected.png")),
+              label: "",
+              backgroundColor: Colors.white),
+          BottomNavigationBarItem(
+            icon: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Wishlist()),
+                  );
+                },
+                child: Image.asset("assets/images/fav2.png")),
+            label: "",
+            //backgroundColor: Colors.white,
+          ),
+          // BottomNavigationBarItem(
+          //   icon: InkWell(
+          //     onTap: () {
+          //       Navigator.push(
+          //         context,
+          //         MaterialPageRoute(builder: (context) => Profile()),
+          //       );
+          //     },
+          //     child: Icon(
+          //       Icons.person,
+          //       color: Colors.black,
+          //     ),
+          //   ),
+          //   title: Text(
+          //     'Profile',
+          //   ),
+          //   backgroundColor: Colors.white,
+          // ),
+        ],
+        // type: BottomNavigationBarType.shifting,
+        // currentIndex: _selectedIndex,
+        // selectedItemColor: Colors.black,
+        // iconSize: 40,
+        // onTap: _onItemTapped,
+        // elevation: 5
+      ),
     );
   }
 

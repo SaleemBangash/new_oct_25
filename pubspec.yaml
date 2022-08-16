@@ -46,6 +46,7 @@ dependencies:
   favorite_button: ^0.0.4
   slide_to_confirm: ^1.1.0
   carousel_slider: ^4.0.0
+  another_stepper: ^1.0.4
   fluttertoast: ^8.0.8
   simple_shadow: ^0.3.0
   smooth_page_indicator: ^1.0.0+2

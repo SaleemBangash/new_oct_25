@@ -2,51 +2,17 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:adobe_xd/pinned.dart';
-import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+
 import 'package:new_oct_25/Tab2/soft_drinks.dart';
 import 'package:new_oct_25/Tab2/drinks2.dart';
 import 'package:new_oct_25/Tab2/iceCream2.dart';
 import 'package:new_oct_25/Tab2/snacks2.dart';
-import 'package:new_oct_25/bottomsheet.dart';
-import 'package:new_oct_25/tabBar/coffee1.dart';
-import 'package:new_oct_25/tabBar/coldDrinks.dart';
-import 'package:new_oct_25/tabBar/drinks1.dart';
-import 'package:new_oct_25/tabBar/iceCream.dart';
-import 'package:new_oct_25/new.dart';
-import 'package:new_oct_25/snacks/cheetos.dart';
-import 'package:new_oct_25/snacks/doritos.dart';
-import 'package:new_oct_25/snacks/kurkure.dart';
-import 'package:new_oct_25/snacks/lays.dart';
-import 'package:new_oct_25/tabBar/snacks1.dart';
-import 'package:new_oct_25/tabBar/coffee1.dart';
-import 'package:new_oct_25/tabBar/drinks1.dart';
-import 'package:new_oct_25/tabBar/iceCream.dart';
-import 'package:new_oct_25/tabBar/snacks1.dart';
 
-import './Location.dart';
-import 'package:adobe_xd/page_link.dart';
-import 'dart:ui' as ui;
-import './Iconawesomeheart.dart';
-
+import '../main.dart';
 import './Cart.dart';
 import './Wishlist.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 
-import 'Drinks/cocacola.dart';
-import 'Drinks/dew.dart';
-import 'Drinks/redbull.dart';
-import 'Drinks/sprite.dart';
-import 'IceCream/chocolate.dart';
-import 'IceCream/strawberry.dart';
-
-import 'coffee/americano.dart';
-import 'coffee/dopio.dart';
-import 'coffee/flat.dart';
-import 'coffee/lungo.dart';
 import '/drawer/drawer.dart';
-import 'drawer/drawer.dart';
 
 class Home extends StatefulWidget {
   Home({
@@ -563,7 +529,7 @@ class _HomeState extends State<Home> {
             //   height: 10,
             // ),
             SizedBox(
-              height: 390,
+              height: sizeConfig!.height(0.460),
               child: TabBarView(children: [
                 NewIcream(),
                 SoftDrinks(),
@@ -573,106 +539,83 @@ class _HomeState extends State<Home> {
             ),
           ],
         ),
-        // bottomNavigationBar: Bottomsheet(),
-        // ClipRRect(
-        //   borderRadius: BorderRadius.only(
-        //     topRight: Radius.circular(25.0),
-        //     topLeft: Radius.circular(25.0),
-        //   ),
-        //   child: BottomNavigationBar(
-        //     onTap: onTabTapped, // new
-        //     currentIndex: _currentIndex,
-        //     backgroundColor: Color(0xffbaa378),
-        //     type: BottomNavigationBarType.fixed,
-        //     selectedItemColor: Colors.black,
+        bottomNavigationBar: BottomNavigationBar(
+          onTap: onTabTapped, // new
+          currentIndex: _currentIndex,
+          backgroundColor: Color(0xffbaa378),
+          type: BottomNavigationBarType.fixed,
+          selectedItemColor: Colors.black,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          selectedLabelStyle:
+              TextStyle(fontWeight: FontWeight.bold, fontSize: text * 15),
 
-        //     selectedLabelStyle:
-        //         TextStyle(fontWeight: FontWeight.bold, fontSize: text * 15),
+          unselectedItemColor: Colors.black,
+          iconSize: 25,
 
-        //     unselectedItemColor: Colors.black,
-        //     iconSize: 25,
-
-        //     //elevation: 5,
-        //     items: [
-        //       BottomNavigationBarItem(
-        //         icon: InkWell(
-        //             onTap: () {
-        //               Navigator.push(
-        //                 context,
-        //                 MaterialPageRoute(builder: (context) => Home()),
-        //               );
-        //             },
-        //             child: Icon(Icons.home)),
-        //         title: Text(
-        //           'Home',
-        //           style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-        //         ),
-        //         backgroundColor: Colors.white,
-        //       ),
-        //       BottomNavigationBarItem(
-        //           icon: InkWell(
-        //             onTap: () {
-        //               Navigator.push(
-        //                 context,
-        //                 MaterialPageRoute(builder: (context) => Cart()),
-        //               );
-        //             },
-        //             child: Icon(
-        //               Icons.store_mall_directory_outlined,
-        //               color: Colors.black,
-        //             ),
-        //           ),
-        //           title: Text(
-        //             'Cart',
-        //             style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-        //           ),
-        //           backgroundColor: Colors.white),
-        //       BottomNavigationBarItem(
-        //         icon: InkWell(
-        //           onTap: () {
-        //             Navigator.push(
-        //               context,
-        //               MaterialPageRoute(builder: (context) => Wishlist()),
-        //             );
-        //           },
-        //           child: Icon(
-        //             Icons.favorite_outline,
-        //             color: Colors.black,
-        //           ),
-        //         ),
-        //         title: Text(
-        //           'Favourite',
-        //           style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-        //         ),
-        //         //backgroundColor: Colors.white,
-        //       ),
-        //       // BottomNavigationBarItem(
-        //       //   icon: InkWell(
-        //       //     onTap: () {
-        //       //       Navigator.push(
-        //       //         context,
-        //       //         MaterialPageRoute(builder: (context) => Profile()),
-        //       //       );
-        //       //     },
-        //       //     child: Icon(
-        //       //       Icons.person,
-        //       //       color: Colors.black,
-        //       //     ),
-        //       //   ),
-        //       //   title: Text(
-        //       //     'Profile',
-        //       //   ),
-        //       //   backgroundColor: Colors.white,
-        //       // ),
-        //     ],
-        //     // type: BottomNavigationBarType.shifting,
-        //     // currentIndex: _selectedIndex,
-        //     // selectedItemColor: Colors.black,
-        //     // iconSize: 40,
-        //     // onTap: _onItemTapped,
-        //     // elevation: 5
-        //   ),
-        // ),
+          //elevation: 5,
+          items: [
+            BottomNavigationBarItem(
+              icon: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Cart()),
+                    );
+                  },
+                  child: Image.asset("assets/images/cart3.png")),
+              label: "",
+              backgroundColor: Colors.white,
+            ),
+            BottomNavigationBarItem(
+                icon: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Home()),
+                      );
+                    },
+                    child: Image.asset("assets/images/home_slected.png")),
+                label: "",
+                backgroundColor: Colors.white),
+            BottomNavigationBarItem(
+              icon: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Wishlist()),
+                    );
+                  },
+                  child: Image.asset("assets/images/bottom_fav.png")),
+              label: "",
+              //backgroundColor: Colors.white,
+            ),
+            // BottomNavigationBarItem(
+            //   icon: InkWell(
+            //     onTap: () {
+            //       Navigator.push(
+            //         context,
+            //         MaterialPageRoute(builder: (context) => Profile()),
+            //       );
+            //     },
+            //     child: Icon(
+            //       Icons.person,
+            //       color: Colors.black,
+            //     ),
+            //   ),
+            //   title: Text(
+            //     'Profile',
+            //   ),
+            //   backgroundColor: Colors.white,
+            // ),
+          ],
+          // type: BottomNavigationBarType.shifting,
+          // currentIndex: _selectedIndex,
+          // selectedItemColor: Colors.black,
+          // iconSize: 40,
+          // onTap: _onItemTapped,
+          // elevation: 5
+        ),
       ),
     );
   }

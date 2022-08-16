@@ -6,8 +6,8 @@ import 'package:new_oct_25/snacks/doritos.dart';
 import 'package:new_oct_25/snacks/kurkure.dart';
 import 'package:new_oct_25/snacks/lays.dart';
 
-import '../Cart.dart';
 import '../Favourite.dart';
+import '../screens/Cart.dart';
 // import 'Cart.dart';
 // import 'Favourite.dart';
 
@@ -252,7 +252,7 @@ class _Snacks1State extends State<Snacks1> {
                     InkWell(
                       onTap: () => Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Kurkure()),
+                        MaterialPageRoute(builder: (context) => KurKure()),
                       ),
                       child: Container(
                           decoration: BoxDecoration(

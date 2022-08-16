@@ -6,7 +6,7 @@ import 'package:new_oct_25/Drinks/dew.dart';
 import 'package:new_oct_25/Drinks/redbull.dart';
 import 'package:new_oct_25/Drinks/sprite.dart';
 
-import '../Cart.dart';
+import '../screens/Cart.dart';
 import '../Favourite.dart';
 // import 'Cart.dart';
 // import 'Favourite.dart';

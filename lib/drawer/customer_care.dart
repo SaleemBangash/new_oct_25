@@ -1,14 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, file_names
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:adobe_xd/pinned.dart';
-
-import 'package:adobe_xd/page_link.dart';
-import '../Home.dart';
-// import './Component31.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
-import 'drawer/Signin2.dart';
 
 class CustomerCare extends StatefulWidget {
   CustomerCare({
@@ -149,20 +141,72 @@ class _CustomerCareState extends State<CustomerCare> {
                     maxLines: 7,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Container(
-                    height: 50,
-                    // width: 150,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10.0),
-                        color: Color(0xff82C5B1)),
-                    child: Center(
-                        child: Text(
-                      "send message".toUpperCase(),
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )),
+                GestureDetector(
+                  onTap: () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return Expanded(
+                          child: AlertDialog(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20.0)),
+                            backgroundColor: Color(0xffFFF8F0),
+                            content: SizedBox(
+                              height: 150,
+                              // width: 350,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(),
+                                      child: Align(
+                                          alignment: Alignment.centerRight,
+                                          child: Image.asset(
+                                            "assets/images/cencel_icon.png",
+                                            height: 20,
+                                            width: 20,
+                                          )),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 20.0,
+                                  ),
+                                  Text(
+                                    "Your message send\nsuccessfully",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0xffACACAC)),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    );
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Container(
+                      height: 50,
+                      // width: 150,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.0),
+                          color: Color(0xff82C5B1)),
+                      child: Center(
+                          child: Text(
+                        "send message".toUpperCase(),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      )),
+                    ),
                   ),
                 )
               ],

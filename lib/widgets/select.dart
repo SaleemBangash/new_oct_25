@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import './drawer/settings.dart';
+
 import 'package:adobe_xd/page_link.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:new_oct_25/drawer/settings.dart';
 
 class select extends StatelessWidget {
   select({

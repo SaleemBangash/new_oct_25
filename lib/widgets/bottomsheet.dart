@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 
-import 'Cart.dart';
-import 'Home.dart';
-import 'Wishlist.dart';
+import '../screens/Cart.dart';
+import '../screens/Home.dart';
+import '../screens/Wishlist.dart';
 
 class Bottomsheet extends StatefulWidget {
   const Bottomsheet({Key? key}) : super(key: key);

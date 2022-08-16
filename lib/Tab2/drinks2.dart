@@ -7,8 +7,8 @@ import 'package:new_oct_25/Drinks/dew.dart';
 import 'package:new_oct_25/Drinks/redbull.dart';
 import 'package:new_oct_25/Drinks/sprite.dart';
 
-import '../cartIcon.dart';
-import '../favourite.dart';
+import '../widgets/cartIcon.dart';
+import 'package:new_oct_25/widgets/favourite.dart';
 
 class NewDrinks extends StatefulWidget {
   const NewDrinks({Key? key}) : super(key: key);
@@ -159,7 +159,7 @@ class _NewDrinksState extends State<NewDrinks> {
               GestureDetector(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: ((context) => CocaCola())));
+                      MaterialPageRoute(builder: ((context) => Dew())));
                 },
                 child: Container(
                   height: 110,
@@ -286,7 +286,7 @@ class _NewDrinksState extends State<NewDrinks> {
               GestureDetector(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: ((context) => CocaCola())));
+                      MaterialPageRoute(builder: ((context) => Sprite())));
                 },
                 child: Container(
                   height: 110,
@@ -413,7 +413,7 @@ class _NewDrinksState extends State<NewDrinks> {
               GestureDetector(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: ((context) => CocaCola())));
+                      MaterialPageRoute(builder: ((context) => RedBull())));
                 },
                 child: Container(
                   height: 110,

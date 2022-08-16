@@ -1,15 +1,14 @@
 // ignore_for_file: file_names, prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:new_oct_25/widgets/cartIcon.dart';
 
-import 'package:new_oct_25/Cart.dart';
+import '../screens/Cart.dart';
 import 'package:new_oct_25/Drinks/cocacola.dart';
 import 'package:new_oct_25/IceCream/chocolate.dart';
 import 'package:new_oct_25/IceCream/strawberry.dart';
 import 'package:new_oct_25/IceCream/vanila.dart';
-
-import '../cartIcon.dart';
-import '../favourite.dart';
+import 'package:new_oct_25/widgets/favourite.dart';
 
 class NewIcream extends StatefulWidget {
   const NewIcream({Key? key}) : super(key: key);
@@ -158,7 +157,7 @@ class _NewIcreamState extends State<NewIcream> {
               GestureDetector(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: ((context) => CocaCola())));
+                      MaterialPageRoute(builder: ((context) => Vanilla())));
                 },
                 child: Container(
                   height: 110,
@@ -283,7 +282,7 @@ class _NewIcreamState extends State<NewIcream> {
               GestureDetector(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: ((context) => CocaCola())));
+                      MaterialPageRoute(builder: ((context) => Chocolate())));
                 },
                 child: Container(
                   height: 110,
@@ -408,7 +407,7 @@ class _NewIcreamState extends State<NewIcream> {
               GestureDetector(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: ((context) => CocaCola())));
+                      MaterialPageRoute(builder: ((context) => Strawberry())));
                 },
                 child: Container(
                   height: 110,

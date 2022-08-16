@@ -1,21 +1,15 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, file_names, unnecessary_new
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import 'package:new_oct_25/Checkout.dart';
-import 'package:new_oct_25/bottomsheet.dart';
-import 'package:new_oct_25/cartIcon.dart';
-import 'package:new_oct_25/minus.dart';
-import 'package:new_oct_25/new.dart';
-import 'package:new_oct_25/paymentmethod.dart';
+import 'package:new_oct_25/screens/new.dart';
+import 'package:new_oct_25/screens/paymentmethod.dart';
+
+import 'package:new_oct_25/widgets/minus.dart';
 import 'package:swipebuttonflutter/swipebuttonflutter.dart';
+import '../main.dart';
 import './Home.dart';
-import 'package:adobe_xd/page_link.dart';
 
 import './Wishlist.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:slide_to_confirm/slide_to_confirm.dart';
-
-import 'Iconawesomeheart.dart';
 
 class Cart extends StatefulWidget {
   Cart({
@@ -51,7 +45,7 @@ class _CartState extends State<Cart> {
             },
             child: Image.asset("assets/images/back_errow.png")),
       ),
-      body: ListView(
+      body: Column(
         children: <Widget>[
           Column(
             children: [
@@ -171,7 +165,7 @@ class _CartState extends State<Cart> {
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             child: Container(
               height: 160,
-              width: 290,
+              width: 340,
               decoration: BoxDecoration(
 
                   // border: Border.all(
@@ -345,11 +339,11 @@ class _CartState extends State<Cart> {
           ),
 
           Padding(
-            padding: const EdgeInsets.only(left: 15, right: 15, bottom: 05),
+            padding: const EdgeInsets.only(left: 10, right: 10, bottom: 05),
             child: SizedBox(
               // margin: EdgeInsets.all(12),
-              height: 50,
-              width: 200,
+              height: sizeConfig!.height(0.07),
+              width: 340,
 
               child: TextFormField(
                 maxLines: 3,
@@ -404,7 +398,7 @@ class _CartState extends State<Cart> {
                   //labelText: "Enter PickUp Time",
                   labelStyle: TextStyle(
                       color: Color(0xffACACAC),
-                      fontSize: 15,
+                      fontSize: 13,
                       fontWeight: FontWeight.bold),
                   labelText: "Enter Coupon Code",
                   border: OutlineInputBorder(
@@ -527,9 +521,154 @@ class _CartState extends State<Cart> {
           //     ),
           //   ),
           // ),
+          Expanded(
+            flex: 2,
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 5),
+                child: Container(
+                  width: double.infinity,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    color: Color(0xffBAA378),
+                    // border: Border.all(width: 1),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "155 SA".toUpperCase(),
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                    fontSize: 20),
+                              ),
+                              Text(
+                                "Total is inclusive of VAT",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                    fontSize: 11),
+                              ),
+                            ],
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: ((context) => PaymentMethod())));
+                            },
+                            child: Container(
+                              height: 40,
+                              width: 150,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(20.0)),
+                              child: Center(
+                                child: Text(
+                                  "PACE ORDER",
+                                  style: TextStyle(
+                                      // fontSize: text * 15,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ]),
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
-      // bottomNavigationBar: Bottomsheet()
+      // bottomNavigationBar: BottomNavigationBar(
+      //   onTap: onTabTapped, // new
+      //   currentIndex: _currentIndex,
+      //   backgroundColor: Color(0xffbaa378),
+      //   type: BottomNavigationBarType.fixed,
+      //   selectedItemColor: Colors.black,
+      //   showSelectedLabels: false,
+      //   showUnselectedLabels: false,
+      //   selectedLabelStyle:
+      //       TextStyle(fontWeight: FontWeight.bold, fontSize: text * 15),
+
+      //   unselectedItemColor: Colors.black,
+      //   iconSize: 25,
+
+      //   //elevation: 5,
+      //   items: [
+      //     BottomNavigationBarItem(
+      //       icon: InkWell(
+      //           onTap: () {
+      //             Navigator.push(
+      //               context,
+      //               MaterialPageRoute(builder: (context) => Cart()),
+      //             );
+      //           },
+      //           child: Image.asset("assets/images/cart2.png")),
+      //       label: "",
+      //       backgroundColor: Colors.white,
+      //     ),
+      //     BottomNavigationBarItem(
+      //         icon: InkWell(
+      //             onTap: () {
+      //               Navigator.push(
+      //                 context,
+      //                 MaterialPageRoute(builder: (context) => Home()),
+      //               );
+      //             },
+      //             child: Image.asset("assets/images/home_notslected.png")),
+      //         label: "",
+      //         backgroundColor: Colors.white),
+      //     BottomNavigationBarItem(
+      //       icon: InkWell(
+      //           onTap: () {
+      //             Navigator.push(
+      //               context,
+      //               MaterialPageRoute(builder: (context) => Wishlist()),
+      //             );
+      //           },
+      //           child: Image.asset("assets/images/bottom_fav.png")),
+      //       label: "",
+      //       //backgroundColor: Colors.white,
+      //     ),
+      //     // BottomNavigationBarItem(
+      //     //   icon: InkWell(
+      //     //     onTap: () {
+      //     //       Navigator.push(
+      //     //         context,
+      //     //         MaterialPageRoute(builder: (context) => Profile()),
+      //     //       );
+      //     //     },
+      //     //     child: Icon(
+      //     //       Icons.person,
+      //     //       color: Colors.black,
+      //     //     ),
+      //     //   ),
+      //     //   title: Text(
+      //     //     'Profile',
+      //     //   ),
+      //     //   backgroundColor: Colors.white,
+      //     // ),
+      //   ],
+      //   // type: BottomNavigationBarType.shifting,
+      //   // currentIndex: _selectedIndex,
+      //   // selectedItemColor: Colors.black,
+      //   // iconSize: 40,
+      //   // onTap: _onItemTapped,
+      //   // elevation: 5
+      // ),
     );
   }
 

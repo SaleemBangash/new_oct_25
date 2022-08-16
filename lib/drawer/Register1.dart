@@ -1,16 +1,13 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, file_names, unnecessary_new
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:adobe_xd/pinned.dart';
-import '../Cart.dart';
-import '../Tab2/iceCream2.dart';
-import '../Tab2/snacks2.dart';
-import '../Wishlist.dart';
-import './Signin2.dart';
-import 'package:adobe_xd/page_link.dart';
-import '../Home.dart';
+
 // import './Component31.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:new_oct_25/drawer/Signin2.dart';
+
+import '../screens/Cart.dart';
+import '../screens/Home.dart';
 
 class Register1 extends StatefulWidget {
   Register1({
@@ -187,7 +184,7 @@ class _Register1State extends State<Register1>
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 17, vertical: 10),
+                            horizontal: 15, vertical: 10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -200,27 +197,35 @@ class _Register1State extends State<Register1>
                               "I agree to the terms and condition\nand the privacy policy",
                               style: TextStyle(
                                   color: Color(0xffACACAC),
-                                  fontSize: 16,
+                                  fontSize: 14,
                                   fontWeight: FontWeight.bold),
                             ),
                           ],
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 15),
-                        child: Container(
-                          height: 45,
-                          // width: 150,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.0),
-                              color: Color(0xff82C5B1)),
-                          child: Center(
-                              child: Text(
-                            "Long in".toUpperCase(),
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          )),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: ((context) => Signin2())));
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 15),
+                          child: Container(
+                            height: 45,
+                            // width: 150,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10.0),
+                                color: Color(0xff82C5B1)),
+                            child: Center(
+                                child: Text(
+                              "Log in".toUpperCase(),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            )),
+                          ),
                         ),
                       )
                     ],
@@ -324,7 +329,7 @@ class _Register1State extends State<Register1>
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 17, vertical: 10),
+                            horizontal: 15, vertical: 10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -337,7 +342,7 @@ class _Register1State extends State<Register1>
                               "I agree to the terms and condition\nand the privacy policy",
                               style: TextStyle(
                                   color: Color(0xffACACAC),
-                                  fontSize: 16,
+                                  fontSize: 14,
                                   fontWeight: FontWeight.bold),
                             ),
                           ],

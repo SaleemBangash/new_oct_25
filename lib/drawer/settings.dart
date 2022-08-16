@@ -10,8 +10,6 @@ import 'package:adobe_xd/page_link.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../Home.dart';
-
 import 'Signin2.dart';
 import 'drawer.dart';
 
