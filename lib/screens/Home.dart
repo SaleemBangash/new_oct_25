@@ -529,7 +529,7 @@ class _HomeState extends State<Home> {
             //   height: 10,
             // ),
             SizedBox(
-              height: sizeConfig!.height(0.460),
+              height: sizeConfig!.height(0.46),
               child: TabBarView(children: [
                 NewIcream(),
                 SoftDrinks(),
@@ -563,7 +563,10 @@ class _HomeState extends State<Home> {
                       MaterialPageRoute(builder: (context) => Cart()),
                     );
                   },
-                  child: Image.asset("assets/images/cart3.png")),
+                  child: Banner(
+                      message: "10",
+                      location: BannerLocation.topStart,
+                      child: Image.asset("assets/images/cart3.png"))),
               label: "",
               backgroundColor: Colors.white,
             ),

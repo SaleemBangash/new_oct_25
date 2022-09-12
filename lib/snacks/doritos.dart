@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:new_oct_25/widgets/favourite.dart';
 import '../main.dart';
+import '../screens/Home.dart';
 import '../widgets/plus.dart';
 import '../drawer/Signin2.dart';
 
@@ -51,7 +52,7 @@ class _DoritosState extends State<Doritos> {
         leading: GestureDetector(
             onTap: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: ((context) => New())));
+                  context, MaterialPageRoute(builder: ((context) => Home())));
             },
             child: Image.asset("assets/images/back_errow.png")),
       ),

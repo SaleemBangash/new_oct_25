@@ -1,5 +1,8 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, file_names
 import 'package:flutter/material.dart';
+import 'package:new_oct_25/drawer/account.dart';
+import 'package:new_oct_25/screens/Home.dart';
+import 'package:new_oct_25/screens/new.dart';
 
 class NewAccount extends StatefulWidget {
   NewAccount({
@@ -33,7 +36,7 @@ class _NewAccountState extends State<NewAccount> {
         leading: GestureDetector(
             onTap: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: ((context) => Drawer())));
+                  context, MaterialPageRoute(builder: ((context) => Home())));
             },
             child: Image.asset("assets/images/back_errow.png")),
       ),
@@ -127,41 +130,57 @@ class _NewAccountState extends State<NewAccount> {
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
                                               children: [
-                                                Container(
-                                                  height: 30,
-                                                  width: 110,
-                                                  decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              30.0),
-                                                      color: Color.fromARGB(
-                                                          255, 255, 2, 2)),
-                                                  child: Center(
-                                                      child: Text(
-                                                    "no".toUpperCase(),
-                                                    style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        color: Colors.white),
-                                                  )),
+                                                GestureDetector(
+                                                  onTap: () {
+                                                    Navigator.pop(context);
+                                                  },
+                                                  child: Container(
+                                                    height: 30,
+                                                    width: 110,
+                                                    decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(30.0),
+                                                        color: Color.fromARGB(
+                                                            255, 255, 2, 2)),
+                                                    child: Center(
+                                                        child: Text(
+                                                      "no".toUpperCase(),
+                                                      style: TextStyle(
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          color: Colors.white),
+                                                    )),
+                                                  ),
                                                 ),
                                                 SizedBox(width: 10),
-                                                Container(
-                                                  height: 30,
-                                                  width: 110,
-                                                  decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              30.0),
-                                                      color: Color(0xff82C5B1)),
-                                                  child: Center(
-                                                      child: Text(
-                                                    "yes".toUpperCase(),
-                                                    style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        color: Colors.white),
-                                                  )),
+                                                GestureDetector(
+                                                  onTap: () {
+                                                    Navigator.push(
+                                                        context,
+                                                        MaterialPageRoute(
+                                                            builder:
+                                                                ((context) =>
+                                                                    New())));
+                                                  },
+                                                  child: Container(
+                                                    height: 30,
+                                                    width: 110,
+                                                    decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(30.0),
+                                                        color:
+                                                            Color(0xff82C5B1)),
+                                                    child: Center(
+                                                        child: Text(
+                                                      "yes".toUpperCase(),
+                                                      style: TextStyle(
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          color: Colors.white),
+                                                    )),
+                                                  ),
                                                 ),
                                               ],
                                             ),
@@ -189,19 +208,28 @@ class _NewAccountState extends State<NewAccount> {
                             ),
                           ),
                           SizedBox(width: 10),
-                          Container(
-                            height: 30,
-                            width: 140,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30.0),
-                                color: Color(0xff82C5B1)),
-                            child: Center(
-                                child: Text(
-                              "edit".toUpperCase(),
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white),
-                            )),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: ((context) =>
+                                          AccountDetails())));
+                            },
+                            child: Container(
+                              height: 30,
+                              width: 140,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30.0),
+                                  color: Color(0xff82C5B1)),
+                              child: Center(
+                                  child: Text(
+                                "edit".toUpperCase(),
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                              )),
+                            ),
                           ),
                         ],
                       ),

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, file_names
 
 import 'package:flutter/material.dart';
+import 'package:new_oct_25/screens/Home.dart';
 import 'package:new_oct_25/widgets/favourite.dart';
 import '../main.dart';
 import '../widgets/plus.dart';
@@ -50,7 +51,7 @@ class _ChocolateState extends State<Chocolate> {
         leading: GestureDetector(
             onTap: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: ((context) => New())));
+                  context, MaterialPageRoute(builder: ((context) => Home())));
             },
             child: Image.asset("assets/images/back_errow.png")),
       ),

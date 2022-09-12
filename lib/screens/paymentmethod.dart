@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, file_names, unnecessary_new
 import 'package:flutter/material.dart';
+import 'package:new_oct_25/screens/Cart.dart';
+import 'package:new_oct_25/screens/card_details.dart';
 import 'package:new_oct_25/screens/new.dart';
 
 class PaymentMethod extends StatefulWidget {
@@ -36,7 +38,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
         leading: GestureDetector(
             onTap: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: ((context) => New())));
+                  context, MaterialPageRoute(builder: ((context) => Cart())));
             },
             child: Image.asset("assets/images/back_errow.png")),
       ),
@@ -454,59 +456,10 @@ class _PaymentMethodState extends State<PaymentMethod> {
                           ),
                           GestureDetector(
                             onTap: () {
-                              showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return Expanded(
-                                    child: AlertDialog(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(20.0)),
-                                      backgroundColor: Color(0xffFFF8F0),
-                                      content: SizedBox(
-                                        height: 150,
-                                        // width: 350,
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: [
-                                            GestureDetector(
-                                              onTap: () {
-                                                Navigator.pop(context);
-                                              },
-                                              child: Padding(
-                                                padding:
-                                                    const EdgeInsets.only(),
-                                                child: Align(
-                                                    alignment:
-                                                        Alignment.centerRight,
-                                                    child: Image.asset(
-                                                      "assets/images/cencel_icon.png",
-                                                      height: 20,
-                                                      width: 20,
-                                                    )),
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              height: 20.0,
-                                            ),
-                                            Text(
-                                              "Your Order placed\nsuccessfully",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  fontSize: 16,
-                                                  fontWeight: FontWeight.bold,
-                                                  color: Color(0xffACACAC)),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  );
-                                },
-                              );
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: ((context) => CardDetails())));
                             },
                             child: Container(
                               height: 40,

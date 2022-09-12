@@ -4,6 +4,7 @@ import 'package:adobe_xd/page_link.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:new_oct_25/main.dart';
+import 'package:new_oct_25/utils/size_config.dart';
 
 import 'dart:ui' as ui;
 import 'Cart.dart';
@@ -328,13 +329,13 @@ class _NewState extends State<New> {
                 // ),
               ]),
               Padding(
-                  padding: const EdgeInsets.only(top: 520),
+                  padding: EdgeInsets.only(top: sizeConfig!.height(0.70)),
                   child: ClipRect(
                     child: BackdropFilter(
                       filter: ui.ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
                       child: Container(
                         width: width / 0.8,
-                        height: height / 1.7,
+                        height: height / 1.8,
                         decoration: BoxDecoration(
                           color: Colors.transparent,
                           borderRadius: BorderRadius.only(

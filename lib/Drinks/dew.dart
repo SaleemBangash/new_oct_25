@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../drawer/Signin2.dart';
 import '../main.dart';
+import '../screens/Home.dart';
 import '../screens/new.dart';
 import '../widgets/favourite.dart';
 import '../widgets/plus.dart';
@@ -50,7 +51,7 @@ class _DewState extends State<Dew> {
         leading: GestureDetector(
             onTap: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: ((context) => New())));
+                  context, MaterialPageRoute(builder: ((context) => Home())));
             },
             child: Image.asset("assets/images/back_errow.png")),
       ),

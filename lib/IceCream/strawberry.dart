@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import '../main.dart';
+import '../screens/Home.dart';
 import '../screens/new.dart';
 import '../widgets/favourite.dart';
 import '../widgets/plus.dart';
@@ -49,7 +50,7 @@ class _StrawberryState extends State<Strawberry> {
         leading: GestureDetector(
             onTap: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: ((context) => New())));
+                  context, MaterialPageRoute(builder: ((context) => Home())));
             },
             child: Image.asset("assets/images/back_errow.png")),
       ),

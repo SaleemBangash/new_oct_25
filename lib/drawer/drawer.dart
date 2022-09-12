@@ -10,8 +10,11 @@ import 'package:new_oct_25/drawer/order_history.dart';
 // import 'package:new_oct_25/Register1.dart';
 // import 'package:new_oct_25/Signin2.dart';
 import 'package:new_oct_25/drawer/settings.dart';
+import 'package:new_oct_25/screens/Wishlist.dart';
+import 'package:new_oct_25/screens/new.dart';
 
 // import 'Home.dart';
+import '../screens/new_account.dart';
 import 'Register1.dart';
 import 'Signin2.dart';
 
@@ -203,23 +206,7 @@ class _MyDrawerState extends State<MyDrawer> {
                 )),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(1.0),
-              child: InkWell(
-                onTap: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => OrderDetail())),
-                child: ListTile(
-                    title: Center(
-                  child: Text(
-                    "Order Detail",
-                    style: TextStyle(
-                        fontSize: 17,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold),
-                  ),
-                )),
-              ),
-            ),
+
             InkWell(
               onTap: () => Navigator.push(context,
                   MaterialPageRoute(builder: (context) => CustomerCare())),
@@ -236,7 +223,7 @@ class _MyDrawerState extends State<MyDrawer> {
             ),
             InkWell(
               onTap: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => AccountDetails())),
+                  MaterialPageRoute(builder: (context) => NewAccount())),
               child: ListTile(
                   title: Center(
                 child: Text(
@@ -249,8 +236,8 @@ class _MyDrawerState extends State<MyDrawer> {
               )),
             ),
             InkWell(
-              onTap: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Register1())),
+              onTap: () => Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Wishlist())),
               child: ListTile(
                   title: Center(
                 child: Text(
@@ -264,7 +251,7 @@ class _MyDrawerState extends State<MyDrawer> {
             ),
             InkWell(
               onTap: () => Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => settings())),
+                  context, MaterialPageRoute(builder: (context) => New())),
               child: ListTile(
                   title: Center(
                 child: Text(

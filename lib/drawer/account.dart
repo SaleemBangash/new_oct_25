@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, file_names
 import 'package:flutter/material.dart';
+import 'package:new_oct_25/drawer/drawer.dart';
 import 'package:new_oct_25/main.dart';
+import 'package:new_oct_25/screens/Home.dart';
+import 'package:new_oct_25/screens/new.dart';
 
 import '../screens/new_account.dart';
 
@@ -35,8 +38,8 @@ class _AccountDetailsState extends State<AccountDetails> {
         ),
         leading: GestureDetector(
             onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: ((context) => Drawer())));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: ((context) => NewAccount())));
             },
             child: Image.asset("assets/images/back_errow.png")),
       ),
@@ -161,10 +164,54 @@ class _AccountDetailsState extends State<AccountDetails> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: ((context) => NewAccount())));
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return Expanded(
+                            child: AlertDialog(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20.0)),
+                              backgroundColor: Color(0xffFFF8F0),
+                              content: SizedBox(
+                                height: 150,
+                                // width: 350,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    GestureDetector(
+                                      onTap: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(),
+                                        child: Align(
+                                            alignment: Alignment.centerRight,
+                                            child: Image.asset(
+                                              "assets/images/cencel_icon.png",
+                                              height: 20,
+                                              width: 20,
+                                            )),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 20.0,
+                                    ),
+                                    Text(
+                                      "CHANGES SAVE\nSUCCESSFUL",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                          color: Color(0xffACACAC)),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      );
                     },
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -229,37 +276,51 @@ class _AccountDetailsState extends State<AccountDetails> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
-                                        Container(
-                                          height: 30,
-                                          width: 110,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(30.0),
-                                              color: Color.fromARGB(
-                                                  255, 255, 2, 2)),
-                                          child: Center(
-                                              child: Text(
-                                            "no".toUpperCase(),
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.white),
-                                          )),
+                                        GestureDetector(
+                                          onTap: () {
+                                            Navigator.pop(context);
+                                          },
+                                          child: Container(
+                                            height: 30,
+                                            width: 110,
+                                            decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(30.0),
+                                                color: Color.fromARGB(
+                                                    255, 255, 2, 2)),
+                                            child: Center(
+                                                child: Text(
+                                              "no".toUpperCase(),
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.white),
+                                            )),
+                                          ),
                                         ),
                                         SizedBox(width: 10),
-                                        Container(
-                                          height: 30,
-                                          width: 110,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(30.0),
-                                              color: Color(0xff82C5B1)),
-                                          child: Center(
-                                              child: Text(
-                                            "yes".toUpperCase(),
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.white),
-                                          )),
+                                        GestureDetector(
+                                          onTap: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: ((context) =>
+                                                        New())));
+                                          },
+                                          child: Container(
+                                            height: 30,
+                                            width: 110,
+                                            decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(30.0),
+                                                color: Color(0xff82C5B1)),
+                                            child: Center(
+                                                child: Text(
+                                              "yes".toUpperCase(),
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.white),
+                                            )),
+                                          ),
                                         ),
                                       ],
                                     ),

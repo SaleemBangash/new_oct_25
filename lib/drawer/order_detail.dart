@@ -2,9 +2,11 @@
 import 'package:another_stepper/dto/stepper_data.dart';
 import 'package:another_stepper/widgets/another_stepper.dart';
 import 'package:flutter/material.dart';
+import 'package:new_oct_25/screens/Home.dart';
 
 import '../main.dart';
 import '../screens/new.dart';
+import 'order_history.dart';
 
 // import 'package:swipebuttonflutter/swipebuttonflutter.dart';
 
@@ -97,8 +99,8 @@ class _OrderDetailState extends State<OrderDetail> {
         ),
         leading: GestureDetector(
             onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: ((context) => New())));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: ((context) => OrderHistory())));
             },
             child: Image.asset("assets/images/back_errow.png")),
       ),

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, file_names
 
 import 'package:flutter/material.dart';
+import 'package:new_oct_25/screens/Home.dart';
 
 class CustomerCare extends StatefulWidget {
   CustomerCare({
@@ -34,7 +35,7 @@ class _CustomerCareState extends State<CustomerCare> {
         leading: GestureDetector(
             onTap: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: ((context) => Drawer())));
+                  context, MaterialPageRoute(builder: ((context) => Home())));
             },
             child: Image.asset("assets/images/back_errow.png")),
       ),

@@ -2,6 +2,9 @@
 
 import 'package:flutter/material.dart';
 
+import '../screens/Home.dart';
+import 'order_detail.dart';
+
 class OrderHistory extends StatefulWidget {
   const OrderHistory({Key? key}) : super(key: key);
 
@@ -24,7 +27,7 @@ class _OrderHistoryState extends State<OrderHistory> {
         leading: GestureDetector(
             onTap: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: ((context) => Drawer())));
+                  context, MaterialPageRoute(builder: ((context) => Home())));
             },
             child: Image.asset("assets/images/back_errow.png")),
       ),
@@ -114,20 +117,28 @@ class _OrderHistoryState extends State<OrderHistory> {
                                               color: Color(0xffBAA378),
                                               fontWeight: FontWeight.bold),
                                         ),
-                                        Container(
-                                          height: 18,
-                                          width: 70,
-                                          decoration: BoxDecoration(
-                                              color: Color(0xff84C5B1),
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0)),
-                                          child: Center(
-                                            child: Text(
-                                              "TRACK ORDER",
-                                              style: TextStyle(
-                                                  fontSize: 9,
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.bold),
+                                        GestureDetector(
+                                          onTap: () => Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      OrderDetail())),
+                                          child: Container(
+                                            height: 18,
+                                            width: 70,
+                                            decoration: BoxDecoration(
+                                                color: Color(0xff84C5B1),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0)),
+                                            child: Center(
+                                              child: Text(
+                                                "TRACK ORDER",
+                                                style: TextStyle(
+                                                    fontSize: 9,
+                                                    color: Colors.white,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -389,20 +400,28 @@ class _OrderHistoryState extends State<OrderHistory> {
                                               color: Color(0xffBAA378),
                                               fontWeight: FontWeight.bold),
                                         ),
-                                        Container(
-                                          height: 18,
-                                          width: 70,
-                                          decoration: BoxDecoration(
-                                              color: Color(0xff84C5B1),
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0)),
-                                          child: Center(
-                                            child: Text(
-                                              "TRACK ORDER",
-                                              style: TextStyle(
-                                                  fontSize: 9,
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.bold),
+                                        GestureDetector(
+                                          onTap: () => Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      OrderDetail())),
+                                          child: Container(
+                                            height: 18,
+                                            width: 70,
+                                            decoration: BoxDecoration(
+                                                color: Color(0xff84C5B1),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0)),
+                                            child: Center(
+                                              child: Text(
+                                                "TRACK ORDER",
+                                                style: TextStyle(
+                                                    fontSize: 9,
+                                                    color: Colors.white,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -664,20 +683,28 @@ class _OrderHistoryState extends State<OrderHistory> {
                                               color: Color(0xffBAA378),
                                               fontWeight: FontWeight.bold),
                                         ),
-                                        Container(
-                                          height: 18,
-                                          width: 70,
-                                          decoration: BoxDecoration(
-                                              color: Color(0xff84C5B1),
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0)),
-                                          child: Center(
-                                            child: Text(
-                                              "TRACK ORDER",
-                                              style: TextStyle(
-                                                  fontSize: 9,
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.bold),
+                                        GestureDetector(
+                                          onTap: () => Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      OrderDetail())),
+                                          child: Container(
+                                            height: 18,
+                                            width: 70,
+                                            decoration: BoxDecoration(
+                                                color: Color(0xff84C5B1),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0)),
+                                            child: Center(
+                                              child: Text(
+                                                "TRACK ORDER",
+                                                style: TextStyle(
+                                                    fontSize: 9,
+                                                    color: Colors.white,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -939,20 +966,28 @@ class _OrderHistoryState extends State<OrderHistory> {
                                               color: Color(0xffBAA378),
                                               fontWeight: FontWeight.bold),
                                         ),
-                                        Container(
-                                          height: 18,
-                                          width: 70,
-                                          decoration: BoxDecoration(
-                                              color: Color(0xff84C5B1),
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0)),
-                                          child: Center(
-                                            child: Text(
-                                              "TRACK ORDER",
-                                              style: TextStyle(
-                                                  fontSize: 9,
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.bold),
+                                        GestureDetector(
+                                          onTap: () => Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      OrderDetail())),
+                                          child: Container(
+                                            height: 18,
+                                            width: 70,
+                                            decoration: BoxDecoration(
+                                                color: Color(0xff84C5B1),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0)),
+                                            child: Center(
+                                              child: Text(
+                                                "TRACK ORDER",
+                                                style: TextStyle(
+                                                    fontSize: 9,
+                                                    color: Colors.white,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -1214,20 +1249,28 @@ class _OrderHistoryState extends State<OrderHistory> {
                                               color: Color(0xffBAA378),
                                               fontWeight: FontWeight.bold),
                                         ),
-                                        Container(
-                                          height: 18,
-                                          width: 70,
-                                          decoration: BoxDecoration(
-                                              color: Color(0xff84C5B1),
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0)),
-                                          child: Center(
-                                            child: Text(
-                                              "TRACK ORDER",
-                                              style: TextStyle(
-                                                  fontSize: 9,
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.bold),
+                                        GestureDetector(
+                                          onTap: () => Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      OrderDetail())),
+                                          child: Container(
+                                            height: 18,
+                                            width: 70,
+                                            decoration: BoxDecoration(
+                                                color: Color(0xff84C5B1),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0)),
+                                            child: Center(
+                                              child: Text(
+                                                "TRACK ORDER",
+                                                style: TextStyle(
+                                                    fontSize: 9,
+                                                    color: Colors.white,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -1489,20 +1532,28 @@ class _OrderHistoryState extends State<OrderHistory> {
                                               color: Color(0xffBAA378),
                                               fontWeight: FontWeight.bold),
                                         ),
-                                        Container(
-                                          height: 18,
-                                          width: 70,
-                                          decoration: BoxDecoration(
-                                              color: Color(0xff84C5B1),
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0)),
-                                          child: Center(
-                                            child: Text(
-                                              "TRACK ORDER",
-                                              style: TextStyle(
-                                                  fontSize: 9,
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.bold),
+                                        GestureDetector(
+                                          onTap: () => Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      OrderDetail())),
+                                          child: Container(
+                                            height: 18,
+                                            width: 70,
+                                            decoration: BoxDecoration(
+                                                color: Color(0xff84C5B1),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0)),
+                                            child: Center(
+                                              child: Text(
+                                                "TRACK ORDER",
+                                                style: TextStyle(
+                                                    fontSize: 9,
+                                                    color: Colors.white,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
                                             ),
                                           ),
                                         ),

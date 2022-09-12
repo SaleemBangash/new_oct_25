@@ -181,7 +181,7 @@ class _NewIcreamState extends State<NewIcream> {
                                 image: AssetImage(
                                   "assets/images/sheri-silver-2.png",
                                 ),
-                                fit: BoxFit.contain),
+                                fit: BoxFit.cover),
                             // border: Border.all(
                             //   //width: 2,
                             //   color: Colors.black,
@@ -306,7 +306,7 @@ class _NewIcreamState extends State<NewIcream> {
                                 image: AssetImage(
                                   "assets/images/sheri-silver-3.png",
                                 ),
-                                fit: BoxFit.contain),
+                                fit: BoxFit.cover),
                             // border: Border.all(
                             //   //width: 2,
                             //   color: Colors.black,
@@ -431,7 +431,7 @@ class _NewIcreamState extends State<NewIcream> {
                                 image: AssetImage(
                                   "assets/images/sheri-silver-4.png",
                                 ),
-                                fit: BoxFit.contain),
+                                fit: BoxFit.cover),
                             // border: Border.all(
                             //   //width: 2,
                             //   color: Colors.black,
@@ -556,7 +556,7 @@ class _NewIcreamState extends State<NewIcream> {
                                 image: AssetImage(
                                   "assets/images/sheri-silver-6.png",
                                 ),
-                                fit: BoxFit.contain),
+                                fit: BoxFit.cover),
                             // border: Border.all(
                             //   //width: 2,
                             //   color: Colors.black,
